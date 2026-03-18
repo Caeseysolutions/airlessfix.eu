@@ -276,7 +276,6 @@ footer a:hover{color:var(--accent)}
 <script>
 // ── CONFIG — set your Anthropic API key here for local/GitHub Pages testing ──
 // NEVER commit a real key to a public repo. For production use a server proxy.
-window.AIRLESSFIX_API_KEY = 'YOUR_ANTHROPIC_API_KEY_HERE';
 
 // ── Language strings ──────────────────────────────────────────────────────────
 const T = {
@@ -973,13 +972,10 @@ async function send() {
   document.getElementById('cMsgs').scrollTop = 99999;
 
   try {
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    const resp = await fetch('https://script.google.com/macros/s/AKfycbwOLrzeoEZub3-TsqFVG0acYd4jKdJoVSDbQjNP_g6UyNXR4ZsgsC5unfoZFPmCs-wwag/exec', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': window.AIRLESSFIX_API_KEY || '',
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
