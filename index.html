@@ -266,7 +266,7 @@ footer a:hover{color:var(--accent)}
   <p>Independent service platform. Content sourced from official airless sprayer service documentation.</p>
   <p>AirlessFix is not affiliated with the manufacturer.</p>
   <div style="margin-top:10px">
-    <a href="/cdn-cgi/l/email-protection#ea999f9a9a85989eaa8b8398868f99998c8392c48f9f"><span class="__cf_email__" data-cfemail="61121411110e1315210008130d0412120708194f0414">[email&#160;protected]</span></a>
+    <a href="/cdn-cgi/l/email-protection#55262025253a272115343c2739302626333c2d7b3020"><span class="__cf_email__" data-cfemail="0d7e787d7d627f794d6c647f61687e7e6b6475236878">[email&#160;protected]</span></a>
     &nbsp;·&nbsp;
     <a href="https://airlessfix.eu/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
   </div>
@@ -1008,4 +1008,15 @@ async function send() {
     if (qFree <= 0) {
       setTimeout(() => {
         addBot('You\'ve used your 3 free questions for this session. To continue, support Marc with a coffee via Ko-fi above, or start a new session. Thank you for using AirlessFix! ☕');
-        document.getElementById('sendB').disa
+        document.getElementById('sendB').disabled = true;
+      }, 500);
+    }
+  }
+
+  busy = false;
+  document.getElementById('sendB').disabled = false;
+  document.getElementById('typing').style.display = 'none';
+}
+</script>
+</body>
+</html>
