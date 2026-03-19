@@ -266,14 +266,14 @@ footer a:hover{color:var(--accent)}
   <p>Independent service platform. Content sourced from official airless sprayer service documentation.</p>
   <p>AirlessFix is not affiliated with the manufacturer.</p>
   <div style="margin-top:10px">
-    <a href="mailto:support@airlessfix.eu">support@airlessfix.eu</a>
+    <a href="/cdn-cgi/l/email-protection#ea999f9a9a85989eaa8b8398868f99998c8392c48f9f"><span class="__cf_email__" data-cfemail="61121411110e1315210008130d0412120708194f0414">[email&#160;protected]</span></a>
     &nbsp;·&nbsp;
     <a href="https://airlessfix.eu/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
   </div>
   <div class="ai-badge">🤖 AI-assisted information system · EU AI Act Art. 52 compliant · Not a human technician</div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── CONFIG — set your Anthropic API key here for local/GitHub Pages testing ──
 // NEVER commit a real key to a public repo. For production use a server proxy.
 
@@ -972,7 +972,7 @@ async function send() {
   document.getElementById('cMsgs').scrollTop = 99999;
 
   try {
-    const resp = await fetch('https://script.google.com/macros/s/AKfycbyK7DznTMN5yk6__OagjlrAFZ2OhBBEk1DgbL3GcCLw78PZcYbtCIs2WSRW8cM4FmBJRg/exec', {
+    const resp = await fetch('https://airlessfix-proxy.floral-meadow-01b0.workers.dev', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1007,19 +1007,4 @@ async function send() {
     if (qFree <= 0) {
       setTimeout(() => {
         addBot('You\'ve used your 3 free questions for this session. To continue, support Marc with a coffee via Ko-fi above, or start a new session. Thank you for using AirlessFix! ☕');
-        document.getElementById('sendB').disabled = true;
-        document.getElementById('chatIn').disabled = true;
-      }, 800);
-    }
-  }
-
-  busy = false;
-  if (qFree > 0) document.getElementById('sendB').disabled = false;
-  inp.focus();
-}
-
-// Init
-applyLang();
-</script>
-</body>
-</html>
+        document.getElementById('sendB').disa
