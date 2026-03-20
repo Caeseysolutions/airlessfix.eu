@@ -3,1049 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AirlessFix — Free Technical Support for Airless Paint Sprayers</title>
-<meta name="description" content="Free multilingual AI support for airless paint sprayers. Ask Marc — EN, NL, FR, DE, ES.">
+<title>AirlessFix — Free AI Support for Airless Paint Sprayers · Coming Soon</title>
+<meta name="description" content="AirlessFix is launching soon. Free multilingual AI technical support for airless paint sprayers. Parts, troubleshooting, service centres — EN, NL, FR, DE, ES.">
+<meta name="robots" content="index, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #0a0f1a;
-  --surface: #111827;
-  --surface2: #1a2235;
-  --border: #1e3048;
-  --accent: #0e8fff;
-  --accent2: #00c9a7;
-  --text: #e8edf5;
-  --muted: #7a8fa8;
-  --warn: #f0a500;
-  --danger: #e5534b;
-  --radius: 12px;
-}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden}
-
-/* HEADER */
-header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(10,15,26,.95);backdrop-filter:blur(12px)}
+body{background:#0a0f1a;color:#e8edf5;font-family:'Inter',sans-serif;min-height:100vh;display:flex;flex-direction:column}
+header{padding:20px 32px;border-bottom:1px solid #1e3048;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px}
-.logo span{color:var(--accent)}
-.lang-pills{display:flex;gap:6px}
-.lang-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:600;padding:5px 10px;border-radius:20px;cursor:pointer;transition:.2s}
-.lang-btn.active,.lang-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-
-/* HERO */
-.hero{padding:80px 32px 60px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(14,143,255,.12) 0%, transparent 70%);pointer-events:none}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6vw,72px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero p{font-size:18px;color:var(--muted);max-width:540px;margin:0 auto 36px;line-height:1.6}
-.hero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
-.tag{background:var(--surface2);border:1px solid var(--border);padding:6px 14px;border-radius:20px;font-size:13px;color:var(--muted)}
-.tag strong{color:var(--text)}
-
-/* REGISTRATION MODAL OVERLAY */
-#gate{position:fixed;inset:0;z-index:200;background:rgba(5,8,15,.92);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px}
-.gate-box{background:var(--surface);border:1px solid var(--border);border-radius:20px;width:100%;max-width:480px;padding:40px 36px;position:relative;max-height:90vh;overflow-y:auto}
-.gate-box h2{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;margin-bottom:6px}
-.gate-box p.sub{color:var(--muted);font-size:14px;margin-bottom:28px;line-height:1.5}
-.field{margin-bottom:16px}
-.field label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:6px;letter-spacing:.5px;text-transform:uppercase}
-.field input,.field select{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:15px;padding:12px 14px;border-radius:var(--radius);outline:none;transition:.2s;font-family:'Inter',sans-serif}
-.field input:focus,.field select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(14,143,255,.15)}
-.field select option{background:var(--surface)}
-.consent{display:flex;gap:10px;align-items:flex-start;margin:16px 0 8px;cursor:pointer}
-.consent input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--accent);cursor:pointer}
-.consent label{font-size:13px;color:var(--muted);line-height:1.5;cursor:pointer}
-.consent label a{color:var(--accent)}
-.liability{display:flex;gap:10px;align-items:flex-start;margin:8px 0 24px;cursor:pointer;background:rgba(240,165,0,.08);border:1px solid rgba(240,165,0,.2);border-radius:8px;padding:12px}
-.liability input[type=checkbox]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--warn);cursor:pointer}
-.liability label{font-size:12px;color:rgba(240,165,0,.9);line-height:1.5;cursor:pointer}
-.btn-primary{width:100%;background:var(--accent);color:#fff;border:none;font-family:'Syne',sans-serif;font-size:16px;font-weight:700;padding:15px;border-radius:var(--radius);cursor:pointer;transition:.2s;letter-spacing:.3px}
-.btn-primary:hover{background:#0077e6;transform:translateY(-1px)}
-#gateErr{display:none;background:rgba(229,83,75,.12);border:1px solid rgba(229,83,75,.3);color:#ff8080;font-size:13px;padding:10px 14px;border-radius:8px;margin-bottom:16px}
-/* honeypot */
-.hp{position:absolute;left:-9999px;opacity:0;pointer-events:none}
-
-/* CHAT */
-#chatWrap{display:none;max-width:780px;margin:0 auto;padding:0 20px 80px}
-.chat-header{padding:24px 0 16px;border-bottom:1px solid var(--border);margin-bottom:0;display:flex;align-items:center;gap:12px}
-.marc-avatar{width:42px;height:42px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:16px;flex-shrink:0}
-.marc-info h3{font-family:'Syne',sans-serif;font-weight:700;font-size:16px}
-.marc-info span{font-size:12px;color:var(--accent2);display:flex;align-items:center;gap:5px}
-.marc-info span::before{content:'';width:7px;height:7px;background:var(--accent2);border-radius:50%;display:inline-block}
-#cMsgs{min-height:380px;max-height:520px;overflow-y:auto;padding:20px 0;display:flex;flex-direction:column;gap:12px}
-#cMsgs::-webkit-scrollbar{width:4px}
-#cMsgs::-webkit-scrollbar-track{background:transparent}
-#cMsgs::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-.msg{display:flex;flex-direction:column;max-width:82%}
-.msg.bot{align-self:flex-start}
-.msg.usr{align-self:flex-end}
-.mb{padding:13px 16px;border-radius:16px;font-size:15px;line-height:1.6}
-.msg.bot .mb{background:var(--surface);border:1px solid var(--border);border-bottom-left-radius:4px}
-.msg.usr .mb{background:var(--accent);color:#fff;border-bottom-right-radius:4px}
-.mt{font-size:11px;color:var(--muted);margin-top:4px;padding:0 4px}
-.msg.usr .mt{text-align:right}
-.dist-tag{margin-top:8px;background:rgba(0,201,167,.1);border:1px solid rgba(0,201,167,.25);color:var(--accent2);font-size:11px;font-weight:700;padding:3px 8px;border-radius:10px;display:inline-block}
-#typing{display:none;align-self:flex-start;padding:13px 16px;background:var(--surface);border:1px solid var(--border);border-radius:16px;border-bottom-left-radius:4px}
-#typing span{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--muted);margin:0 2px;animation:dot 1.2s infinite}
-#typing span:nth-child(2){animation-delay:.2s}
-#typing span:nth-child(3){animation-delay:.4s}
-@keyframes dot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
-.q-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
-.q-bar strong{color:var(--warn)}
-.input-row{display:flex;gap:10px;padding-top:10px;border-top:1px solid var(--border)}
-#chatIn{flex:1;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:15px;padding:13px 16px;border-radius:var(--radius);outline:none;font-family:'Inter',sans-serif;resize:none;transition:.2s}
-#chatIn:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(14,143,255,.12)}
-#sendB{background:var(--accent);color:#fff;border:none;padding:13px 20px;border-radius:var(--radius);cursor:pointer;font-size:20px;transition:.2s;flex-shrink:0}
-#sendB:hover{background:#0077e6}
-#sendB:disabled{opacity:.4;cursor:not-allowed}
-
-/* KOFI */
-.kofi-bar{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.kofi-bar p{font-size:13px;color:var(--muted);line-height:1.4}
-.kofi-bar a{background:#ff5e5b;color:#fff;font-size:13px;font-weight:700;padding:8px 16px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:.2s}
-.kofi-bar a:hover{background:#e04e4b}
-
-/* FEATURES */
-.features{padding:64px 32px;max-width:1100px;margin:0 auto}
-.features h2{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,40px);font-weight:800;text-align:center;margin-bottom:48px}
-.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:.2s}
-.feat-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.feat-icon{font-size:28px;margin-bottom:14px}
-.feat-card h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:8px}
-.feat-card p{font-size:14px;color:var(--muted);line-height:1.6}
-
-/* MODELS */
-.models{padding:32px;max-width:1100px;margin:0 auto}
-.models h2{font-family:'Syne',sans-serif;font-size:clamp(24px,3vw,36px);font-weight:800;text-align:center;margin-bottom:36px}
-.model-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
-.model-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;transition:.2s;cursor:default}
-.model-card:hover{border-color:var(--accent2)}
-.model-name{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:var(--accent)}
-.model-sub{font-size:12px;color:var(--muted);margin-top:4px}
-
-/* FOOTER */
-footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:var(--muted);font-size:12px;line-height:1.8}
-footer a{color:var(--muted);text-decoration:none}
-footer a:hover{color:var(--accent)}
-
-/* EU AI ACT */
-.ai-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(14,143,255,.1);border:1px solid rgba(14,143,255,.2);color:var(--accent);font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;margin-top:12px}
-
-@media(max-width:600px){
-  header{padding:14px 16px}
-  .hero{padding:48px 20px 36px}
-  .gate-box{padding:28px 20px}
-  .features,.models{padding:40px 20px}
-  .lang-pills{display:none}
-}
+.logo span{color:#0e8fff}
+.badge{background:#1a2235;border:1px solid #f0a500;color:#f0a500;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:.5px}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(36px,6vw,64px);font-weight:800;line-height:1.05;letter-spacing:-2px;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:#0e8fff}
+.hero p{font-size:17px;color:#7a8fa8;max-width:520px;margin:0 auto 32px;line-height:1.7}
+.features{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
+.feat{background:#111827;border:1px solid #1e3048;border-radius:10px;padding:10px 16px;font-size:13px;color:#7a8fa8;display:flex;align-items:center;gap:8px}
+.feat strong{color:#e8edf5}
+.notify{background:#111827;border:1px solid #1e3048;border-radius:14px;padding:28px 32px;max-width:480px;width:100%;margin:0 auto}
+.notify h3{font-size:16px;font-weight:600;margin-bottom:6px}
+.notify p{font-size:13px;color:#7a8fa8;margin-bottom:18px;line-height:1.5}
+.langs{display:flex;gap:8px;justify-content:center;margin-top:28px}
+.lang{background:#1a2235;border:1px solid #1e3048;color:#7a8fa8;font-size:12px;font-weight:600;padding:5px 12px;border-radius:20px}
+.models{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.model{background:#111827;border:1px solid #1e3048;border-radius:8px;padding:7px 14px;text-align:center}
+.model-name{font-size:13px;font-weight:700;color:#0e8fff}
+.model-sub{font-size:10px;color:#7a8fa8;margin-top:1px}
+.blog-section{background:#0d1420;border-top:1px solid #1e3048;padding:40px 24px}
+.blog-section h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;text-align:center;margin-bottom:6px}
+.blog-section p{font-size:13px;color:#7a8fa8;text-align:center;margin-bottom:28px}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;max-width:900px;margin:0 auto}
+.blog-card{background:#111827;border:1px solid #1e3048;border-radius:12px;padding:18px;text-decoration:none;color:#e8edf5;transition:border-color .15s;display:block}
+.blog-card:hover{border-color:#0e8fff}
+.blog-tag{font-size:10px;font-weight:700;color:#0e8fff;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.blog-card h3{font-size:14px;font-weight:600;margin-bottom:6px;line-height:1.4}
+.blog-card p{font-size:12px;color:#7a8fa8;line-height:1.5}
+footer{border-top:1px solid #1e3048;padding:20px 32px;text-align:center;font-size:11px;color:#7a8fa8}
+.ai-badge{background:#1a2235;border:1px solid #1e3048;display:inline-block;padding:3px 10px;border-radius:20px;margin-top:8px;font-size:10px}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo">Airless<span>Fix</span></div>
-  <div class="lang-pills">
-    <button class="lang-btn active" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('nl')">NL</button>
-    <button class="lang-btn" onclick="setLang('fr')">FR</button>
-    <button class="lang-btn" onclick="setLang('de')">DE</button>
-    <button class="lang-btn" onclick="setLang('es')">ES</button>
-  </div>
+  <div class="badge">LAUNCHING SOON</div>
 </header>
 
-<!-- REGISTRATION GATE -->
-<div id="gate">
-  <div class="gate-box">
-    <div class="hp" aria-hidden="true"><input type="text" id="hp" tabindex="-1" autocomplete="off"></div>
-    <h2 id="gTitle">Start your free session</h2>
-    <p class="sub" id="gSub">Marc will help you troubleshoot, find parts, or locate a service centre — in your language, free of charge.</p>
-    <div id="gateErr"></div>
-    <div class="field"><label id="lName">Full name</label><input type="text" id="fName" autocomplete="name" placeholder="Jan Janssen"></div>
-    <div class="field"><label id="lEmail">Email</label><input type="email" id="fEmail" autocomplete="email" placeholder="you@example.com"></div>
-    <div class="field"><label id="lPhone">Phone</label><input type="tel" id="fPhone" autocomplete="tel" placeholder="+32 ..."></div>
-    <div class="field">
-      <label id="lCountry">Country</label>
-      <select id="fCountry">
-        <option value="">— Select —</option>
-        <option value="BE">🇧🇪 Belgium</option>
-        <option value="NL">🇳🇱 Netherlands</option>
-        <option value="DE">🇩🇪 Germany</option>
-        <option value="FR">🇫🇷 France</option>
-        <option value="ES">🇪🇸 Spain</option>
-        <option value="GB">🇬🇧 UK</option>
-        <option value="AT">🇦🇹 Austria</option>
-        <option value="CH">🇨🇭 Switzerland</option>
-        <option value="PT">🇵🇹 Portugal</option>
-        <option value="SE">🇸🇪 Sweden</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-    <div class="consent">
-      <input type="checkbox" id="cbMkt">
-      <label for="cbMkt" id="lMkt">I agree that AirlessFix may contact me with product updates, service centre referrals and relevant commercial offers. I can unsubscribe at any time.</label>
-    </div>
-    <div class="liability">
-      <input type="checkbox" id="cbLiab" required>
-      <label for="cbLiab" id="lLiab">⚠️ I understand that Marc provides general technical information only. All suggestions must be verified with a qualified technician or authorised dealer before acting. AirlessFix accepts no liability for damage resulting from actions taken based on this information.</label>
-    </div>
-    <button class="btn-primary" id="gBtn" onclick="startChat()">
-      <span id="gBtnTxt">Talk to Marc — it's free</span>
-    </button>
+<div class="hero">
+  <h1>Free AI support for<br><em>airless paint sprayers.</em></h1>
+  <p>Marc — our AI technical specialist — is getting his final checks. He'll be ready to help you with parts, troubleshooting, service centres and more. In your language. 24/7. Free.</p>
+
+  <div class="features">
+    <div class="feat"><strong>Parts</strong> identification</div>
+    <div class="feat"><strong>Troubleshooting</strong> step by step</div>
+    <div class="feat"><strong>Paint & tip</strong> guidance</div>
+    <div class="feat"><strong>Service centres</strong> in your country</div>
+    <div class="feat"><strong>5 languages</strong> EN · NL · FR · DE · ES</div>
+  </div>
+
+  <div class="notify">
+    <h3>Be first to know when Marc is live</h3>
+    <p>Europe only for now. One email when we launch — no spam.</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfUADdW4Et_--lnZ5q-mCEVFeVP52nC1RCqsuItB53aEs4Kig/viewform?embedded=true" width="100%" height="520" frameborder="0" marginheight="0" marginwidth="0" style="border-radius:8px;background:#0a0f1a">Loading…</iframe>
+  </div>
+
+  <div class="langs">
+    <span class="lang">EN</span>
+    <span class="lang">NL</span>
+    <span class="lang">FR</span>
+    <span class="lang">DE</span>
+    <span class="lang">ES</span>
+  </div>
+
+  <div class="models">
+    <div class="model"><div class="model-name">A20</div><div class="model-sub">0.27HP · Entry</div></div>
+    <div class="model"><div class="model-name">A30</div><div class="model-sub">0.375HP · DIY</div></div>
+    <div class="model"><div class="model-name">A45</div><div class="model-sub">0.5HP · Semi-pro</div></div>
+    <div class="model"><div class="model-name">A60</div><div class="model-sub">0.625HP · Pro</div></div>
+    <div class="model"><div class="model-name">A80</div><div class="model-sub">0.75HP · Pro</div></div>
+    <div class="model"><div class="model-name">A100</div><div class="model-sub">1.0HP · Pro · TSL</div></div>
   </div>
 </div>
 
-<!-- HERO (behind gate, shown after) -->
-<section class="hero">
-  <h1>Broken sprayer?<br><em>Marc is here.</em></h1>
-  <p id="heroSub">Free multilingual AI support for airless paint sprayers. Parts, troubleshooting, service centres.</p>
-  <div class="hero-tags">
-    <span class="tag"><strong>A20</strong> · A30 · A45 · A60 · A80 · <strong>A100</strong></span>
-    <span class="tag">🇧🇪 🇳🇱 🇩🇪 🇫🇷 🇬🇧 🇪🇸 🇦🇹 🇨🇭</span>
-    <span class="tag">Free · No subscription</span>
-  </div>
-</section>
-
-<!-- CHAT SECTION -->
-<div id="chatWrap">
-  <div class="chat-header">
-    <div class="marc-avatar">M</div>
-    <div class="marc-info">
-      <h3>Marc</h3>
-      <span id="marcStatus">Online — ready to help</span>
-    </div>
-  </div>
-  <div id="cMsgs">
-    <div id="typing"><span></span><span></span><span></span></div>
-  </div>
-  <div class="q-bar">
-    <span id="qLabel">Free questions remaining:</span> <strong id="qCount">3</strong>
-    <span id="sessionInfo" style="font-size:11px"></span>
-  </div>
-  <div class="input-row">
-    <textarea id="chatIn" rows="1" placeholder="Type your question..." onkeydown="handleKey(event)"></textarea>
-    <button id="sendB" onclick="send()">➤</button>
-  </div>
-  <div class="kofi-bar">
-    <p id="kofiTxt">Marc works for free. If he helped you, a coffee keeps the lights on ☕</p>
-    <a href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener">Buy Marc a coffee</a>
+<div class="blog-section">
+  <h2>Learn about airless sprayers</h2>
+  <p>While Marc gets ready — read up on everything airless.</p>
+  <div class="blog-grid">
+    <a href="/blog/what-is-an-airless-paint-sprayer.html" class="blog-card">
+      <div class="blog-tag">Guide</div>
+      <h3>What is an airless paint sprayer?</h3>
+      <p>How airless technology works, why it's different from compressed air, and when to use it.</p>
+    </a>
+    <a href="/blog/airless-sprayer-tip-sizes-explained.html" class="blog-card">
+      <div class="blog-tag">Technical</div>
+      <h3>Tip sizes explained — choosing the right tip</h3>
+      <p>Fan width, orifice size, paint viscosity. How to read tip codes and pick the right one for your job.</p>
+    </a>
+    <a href="/blog/how-long-do-airless-sprayers-last.html" class="blog-card">
+      <div class="blog-tag">Maintenance</div>
+      <h3>How long do airless sprayers last?</h3>
+      <p>What determines lifespan, what wears first, and how to get years more life from your machine.</p>
+    </a>
+    <a href="/blog/best-paints-for-airless-sprayers.html" class="blog-card">
+      <div class="blog-tag">Paints</div>
+      <h3>Best paints for airless sprayers</h3>
+      <p>Wall paints, lacquers, primers, varnishes. What each model can handle and how to thin correctly.</p>
+    </a>
+    <a href="/blog/airless-sprayer-winter-storage.html" class="blog-card">
+      <div class="blog-tag">Seasonal</div>
+      <h3>Winter storage — protect your pump</h3>
+      <p>The Pump Armor procedure, flushing correctly, and why skipping this step destroys your machine.</p>
+    </a>
+    <a href="/blog/troubleshooting-no-pressure.html" class="blog-card">
+      <div class="blog-tag">Troubleshooting</div>
+      <h3>No pressure — diagnosing the most common fault</h3>
+      <p>Step by step: strainer, filter, tip, valves, pump. How to find the cause without guessing.</p>
+    </a>
   </div>
 </div>
 
-<!-- FEATURES -->
-<section class="features">
-  <h2 id="featTitle">What Marc can help with</h2>
-  <div class="feat-grid">
-    <div class="feat-card"><div class="feat-icon">🔧</div><h3 id="f1t">Parts identification</h3><p id="f1p">Correct part numbers for your model. ProConnect pump, tip guard, filters, hoses and more.</p></div>
-    <div class="feat-card"><div class="feat-icon">⚡</div><h3 id="f2t">Troubleshooting</h3><p id="f2p">Pressure loss, no-spray, motor trips, leaks. Marc guides you through the most likely causes step by step.</p></div>
-    <div class="feat-card"><div class="feat-icon">🧴</div><h3 id="f3t">Storage & winterising</h3><p id="f3p">Pump Armor procedure, storage tips, how to avoid costly pump seizure over winter.</p></div>
-    <div class="feat-card"><div class="feat-icon">📍</div><h3 id="f4t">Service centres</h3><p id="f4p">Marc points you toward authorised dealers in your country using referral code AFX10.</p></div>
-    <div class="feat-card"><div class="feat-icon">🌍</div><h3 id="f5t">5 languages</h3><p id="f5p">Write in English, Dutch, French, German or Spanish. Marc responds in your language automatically.</p></div>
-    <div class="feat-card"><div class="feat-icon">📄</div><h3 id="f6t">Manual support</h3><p id="f6p">Based on official Graco Magnum service documentation for all models A20 through A100.</p></div>
-  </div>
-</section>
-
-<!-- MODELS -->
-<section class="models">
-  <h2 id="modTitle">Supported models</h2>
-  <div class="model-grid">
-    <div class="model-card"><div class="model-name">A20</div><div class="model-sub">Entry · 0.27 HP</div></div>
-    <div class="model-card"><div class="model-name">A30</div><div class="model-sub">DIY · 0.375 HP</div></div>
-    <div class="model-card"><div class="model-name">A45</div><div class="model-sub">Semi-pro · 0.5 HP</div></div>
-    <div class="model-card"><div class="model-name">A60</div><div class="model-sub">Pro · 0.625 HP</div></div>
-    <div class="model-card"><div class="model-name">A80</div><div class="model-sub">Pro · 0.75 HP</div></div>
-    <div class="model-card"><div class="model-name">A100</div><div class="model-sub">Pro · 1.0 HP · TSL</div></div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="logo" style="justify-content:center;display:flex;margin-bottom:10px">Airless<span style="color:var(--accent)">Fix</span></div>
-  <p>Technical support platform by AirlessFix &nbsp;·&nbsp; airlessfix.eu</p>
-  <p>Independent service platform. Content sourced from official airless sprayer service documentation.</p>
-  <p>AirlessFix is not affiliated with the manufacturer.</p>
-  <div style="margin-top:10px">
-    <a href="/cdn-cgi/l/email-protection#55262025253a272115343c2739302626333c2d7b3020"><span class="__cf_email__" data-cfemail="0d7e787d7d627f794d6c647f61687e7e6b6475236878">[email&#160;protected]</span></a>
-    &nbsp;·&nbsp;
-    <a href="https://airlessfix.eu/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
-  </div>
-  <div class="ai-badge">🤖 AI-assisted information system · EU AI Act Art. 52 compliant · Not a human technician</div>
+  <div>AirlessFix · airlessfix.eu · Independent technical support platform</div>
+  <div>Not affiliated with the manufacturer · All models A20 through A100</div>
+  <div class="ai-badge">🤖 AI-assisted · EU AI Act Art. 52 · Not a human technician</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script data-cfasync="false">
-// ── CONFIG — set your Anthropic API key here for local/GitHub Pages testing ──
-// NEVER commit a real key to a public repo. For production use a server proxy.
-
-// ── Language strings ──────────────────────────────────────────────────────────
-const T = {
-  en: {
-    gTitle:'Start your free session', gSub:'Marc will help you troubleshoot, find parts, or locate a service centre — in your language, free of charge.',
-    lName:'Full name', lEmail:'Email', lPhone:'Phone', lCountry:'Country',
-    lMkt:'I agree that AirlessFix may contact me with product updates, service centre referrals and relevant commercial offers. I can unsubscribe at any time.',
-    lLiab:'⚠️ I understand that Marc provides general technical information only. All suggestions must be verified with a qualified technician or authorised dealer before acting. AirlessFix accepts no liability for damage resulting from actions taken based on this information.',
-    gBtn:'Talk to Marc — it\'s free',
-    errFill:'Please fill in all fields.', errLiab:'Please accept the disclaimer to continue.',
-    errSpam:'Registration failed. Please try again.',
-    qLabel:'Free questions remaining:', qPaid:'Unlimited session active',
-    marcStatus:'Online — ready to help',
-    kofi:'Marc works for free. If he helped you, a coffee keeps the lights on ☕',
-    featTitle:'What Marc can help with',
-    heroSub:'Free multilingual AI support for airless paint sprayers. Parts, troubleshooting, service centres.',
-    modTitle:'Supported models',
-    dist:'Service centre referral',
-    f1t:'Parts identification', f1p:'Correct part numbers for your model. ProConnect pump, tip guard, filters, hoses and more.',
-    f2t:'Troubleshooting', f2p:'Pressure loss, no-spray, motor trips, leaks. Marc guides you through the most likely causes step by step.',
-    f3t:'Storage & winterising', f3p:'Pump Armor procedure, storage tips, how to avoid costly pump seizure over winter.',
-    f4t:'Service centres', f4p:'Marc points you toward authorised dealers in your country using referral code AFX10.',
-    f5t:'5 languages', f5p:'Write in English, Dutch, French, German or Spanish. Marc responds in your language automatically.',
-    f6t:'Manual support', f6p:'Based on official Graco Magnum service documentation for all models A20 through A100.',
-    welcome:'Welcome to AirlessFix! 👋 I\'m Marc, an AI information assistant for airless paint sprayers. I provide general technical information to help you identify parts and understand common issues — I\'m not a human technician and my suggestions are a starting point, not a professional diagnosis. Which model do you have, which country are you in, and what do you need: parts information, troubleshooting guidance, or a service centre?'
-  },
-  nl: {
-    gTitle:'Start uw gratis sessie', gSub:'Marc helpt u met storingen, onderdelen of een servicecentrum — in uw taal, gratis.',
-    lName:'Volledige naam', lEmail:'E-mailadres', lPhone:'Telefoonnummer', lCountry:'Land',
-    lMkt:'Ik ga ermee akkoord dat AirlessFix contact met mij opneemt over productupdates, servicecentrumverwijzingen en relevante commerciële aanbiedingen. Ik kan me op elk moment uitschrijven.',
-    lLiab:'⚠️ Ik begrijp dat Marc alleen algemene technische informatie verstrekt. Alle suggesties moeten worden geverifieerd met een gekwalificeerde technicus of erkende dealer voordat er actie wordt ondernomen. AirlessFix aanvaardt geen aansprakelijkheid voor schade.',
-    gBtn:'Praat met Marc — gratis',
-    errFill:'Vul alle velden in.', errLiab:'Accepteer de disclaimer om door te gaan.',
-    errSpam:'Registratie mislukt. Probeer het opnieuw.',
-    qLabel:'Gratis vragen resterend:', qPaid:'Onbeperkte sessie actief',
-    marcStatus:'Online — klaar om te helpen',
-    kofi:'Marc werkt gratis. Als hij je heeft geholpen, houdt een koffie het licht aan ☕',
-    featTitle:'Waarmee Marc kan helpen',
-    heroSub:'Gratis meertalige AI-ondersteuning voor airless verfspuiten. Onderdelen, probleemoplossing, servicecentra.',
-    modTitle:'Ondersteunde modellen',
-    dist:'Servicecentrum verwijzing',
-    f1t:'Onderdelen identificatie', f1p:'Correcte onderdeelnummers voor uw model. ProConnect pomp, tipbeveiliging, filters, slangen en meer.',
-    f2t:'Probleemoplossing', f2p:'Drukval, niet spuiten, motorstoring, lekken. Marc begeleidt u stap voor stap door de meest waarschijnlijke oorzaken.',
-    f3t:'Opslag & winterisering', f3p:'Pump Armor procedure, opslagtips, hoe u kostbare pompbeschadiging in de winter voorkomt.',
-    f4t:'Servicecentra', f4p:'Marc verwijst u naar erkende dealers in uw land met referentiecode AFX10.',
-    f5t:'5 talen', f5p:'Schrijf in het Engels, Nederlands, Frans, Duits of Spaans. Marc antwoordt automatisch in uw taal.',
-    f6t:'Handleiding ondersteuning', f6p:'Gebaseerd op officiële airless spuit servicedocumentatie voor alle modellen A20 tot A100.',
-    welcome:'Welkom bij AirlessFix! 👋 Ik ben Marc, een AI-informatieassistent voor airless spuiten. Ik geef algemene technische informatie om u te helpen onderdelen te identificeren en veelvoorkomende problemen te begrijpen — ik ben geen menselijke technicus en mijn suggesties zijn een startpunt, geen professionele diagnose. Welk model heeft u, in welk land bent u, en waarmee kan ik u helpen: onderdeleninformatie, probleemoplossing, of een servicecentrum?'
-  },
-  fr: {
-    gTitle:'Démarrez votre session gratuite', gSub:'Marc vous aide à dépanner, trouver des pièces ou localiser un centre de service — dans votre langue, gratuitement.',
-    lName:'Nom complet', lEmail:'E-mail', lPhone:'Téléphone', lCountry:'Pays',
-    lMkt:'J\'accepte qu\'AirlessFix me contacte avec des mises à jour produits, des recommandations de centres de service et des offres commerciales pertinentes. Je peux me désabonner à tout moment.',
-    lLiab:'⚠️ Je comprends que Marc fournit uniquement des informations techniques générales. Toutes les suggestions doivent être vérifiées auprès d\'un technicien qualifié ou d\'un revendeur agréé avant toute action. AirlessFix décline toute responsabilité.',
-    gBtn:'Parler à Marc — c\'est gratuit',
-    errFill:'Veuillez remplir tous les champs.', errLiab:'Veuillez accepter la clause de non-responsabilité pour continuer.',
-    errSpam:'Échec de l\'inscription. Veuillez réessayer.',
-    qLabel:'Questions gratuites restantes:', qPaid:'Session illimitée active',
-    marcStatus:'En ligne — prêt à aider',
-    kofi:'Marc travaille gratuitement. S\'il vous a aidé, un café garde les lumières allumées ☕',
-    featTitle:'Ce que Marc peut faire pour vous',
-    heroSub:'Support IA multilingue gratuit pour pistolets airless. Pièces, dépannage, centres de service.',
-    modTitle:'Modèles pris en charge',
-    dist:'Recommandation centre de service',
-    f1t:'Identification des pièces', f1p:'Numéros de pièces corrects pour votre modèle. Pompe ProConnect, protection de buse, filtres, tuyaux et plus.',
-    f2t:'Dépannage', f2p:'Perte de pression, pas de pulvérisation, déclenchement moteur, fuites. Marc vous guide étape par étape.',
-    f3t:'Stockage & hivernage', f3p:'Procédure Pump Armor, conseils de stockage, comment éviter une saisie coûteuse de la pompe en hiver.',
-    f4t:'Centres de service', f4p:'Marc vous oriente vers des revendeurs agréés dans votre pays avec le code de référence AFX10.',
-    f5t:'5 langues', f5p:'Écrivez en anglais, néerlandais, français, allemand ou espagnol. Marc répond automatiquement dans votre langue.',
-    f6t:'Support manuel', f6p:'Basé sur la documentation de service airless pour tous les modèles A20 à A100.',
-    welcome:'Bienvenue chez AirlessFix! 👋 Je suis Marc, un assistant IA d\'information pour les pistolets airless. Je fournis des informations techniques générales pour vous aider à identifier des pièces et comprendre les problèmes courants — je ne suis pas un technicien humain et mes suggestions sont un point de départ, pas un diagnostic professionnel. Quel modèle avez-vous, dans quel pays êtes-vous, et que cherchez-vous: informations sur les pièces, dépannage, ou un centre de service?'
-  },
-  de: {
-    gTitle:'Starten Sie Ihre kostenlose Sitzung', gSub:'Marc hilft Ihnen bei der Fehlersuche, bei Ersatzteilen oder bei der Suche nach einem Servicecenter — in Ihrer Sprache, kostenlos.',
-    lName:'Vollständiger Name', lEmail:'E-Mail', lPhone:'Telefon', lCountry:'Land',
-    lMkt:'Ich bin damit einverstanden, dass AirlessFix mich mit Produktupdates, Servicecenter-Empfehlungen und relevanten Angeboten kontaktiert. Ich kann mich jederzeit abmelden.',
-    lLiab:'⚠️ Ich verstehe, dass Marc nur allgemeine technische Informationen bereitstellt. Alle Vorschläge müssen vor der Umsetzung von einem qualifizierten Techniker oder autorisierten Händler überprüft werden. AirlessFix übernimmt keine Haftung.',
-    gBtn:'Mit Marc sprechen — kostenlos',
-    errFill:'Bitte füllen Sie alle Felder aus.', errLiab:'Bitte akzeptieren Sie den Haftungsausschluss, um fortzufahren.',
-    errSpam:'Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut.',
-    qLabel:'Verbleibende Gratisfragen:', qPaid:'Unbegrenzte Sitzung aktiv',
-    marcStatus:'Online — bereit zu helfen',
-    kofi:'Marc arbeitet kostenlos. Wenn er Ihnen geholfen hat, hält ein Kaffee das Licht an ☕',
-    featTitle:'Womit Marc helfen kann',
-    heroSub:'Kostenloser mehrsprachiger KI-Support für Airless-Sprühgeräte. Teile, Fehlersuche, Servicecenter.',
-    modTitle:'Unterstützte Modelle',
-    dist:'Servicecenter-Empfehlung',
-    f1t:'Teileidentifikation', f1p:'Korrekte Teilenummern für Ihr Modell. ProConnect-Pumpe, Düsenschutz, Filter, Schläuche und mehr.',
-    f2t:'Fehlerdiagnose', f2p:'Druckverlust, kein Sprühen, Motorauslösung, Undichtigkeiten. Marc führt Sie Schritt für Schritt durch die wahrscheinlichsten Ursachen.',
-    f3t:'Lagerung & Einwinterung', f3p:'Pump Armor-Verfahren, Lagerungstipps, wie Sie kostspielige Pumpenschäden im Winter vermeiden.',
-    f4t:'Servicecenter', f4p:'Marc verweist Sie an autorisierte Händler in Ihrem Land mit dem Empfehlungscode AFX10.',
-    f5t:'5 Sprachen', f5p:'Schreiben Sie auf Englisch, Niederländisch, Französisch, Deutsch oder Spanisch. Marc antwortet automatisch in Ihrer Sprache.',
-    f6t:'Handbuch-Unterstützung', f6p:'Basiert auf der offiziellen Airless Servicedokumentation für alle Modelle A20 bis A100.',
-    welcome:'Willkommen bei AirlessFix! 👋 Ich bin Marc, ein KI-Informationsassistent für Airless-Sprühgeräte. Ich stelle allgemeine technische Informationen bereit, um Ihnen bei der Identifizierung von Teilen und dem Verständnis häufiger Probleme zu helfen — ich bin kein menschlicher Techniker und meine Vorschläge sind ein Ausgangspunkt, keine professionelle Diagnose. Welches Modell haben Sie, in welchem Land sind Sie, und was benötigen Sie: Teileinformationen, Fehlerdiagnose oder ein Servicecenter?'
-  },
-  es: {
-    gTitle:'Inicie su sesión gratuita', gSub:'Marc le ayuda a solucionar problemas, encontrar piezas o localizar un centro de servicio — en su idioma, gratis.',
-    lName:'Nombre completo', lEmail:'Correo electrónico', lPhone:'Teléfono', lCountry:'País',
-    lMkt:'Acepto que AirlessFix me contacte con actualizaciones de productos, recomendaciones de centros de servicio y ofertas comerciales relevantes. Puedo darme de baja en cualquier momento.',
-    lLiab:'⚠️ Entiendo que Marc proporciona solo información técnica general. Todas las sugerencias deben ser verificadas por un técnico cualificado o distribuidor autorizado antes de actuar. AirlessFix no acepta ninguna responsabilidad.',
-    gBtn:'Hablar con Marc — es gratis',
-    errFill:'Por favor complete todos los campos.', errLiab:'Por favor acepte el aviso de exención de responsabilidad para continuar.',
-    errSpam:'Registro fallido. Por favor inténtelo de nuevo.',
-    qLabel:'Preguntas gratuitas restantes:', qPaid:'Sesión ilimitada activa',
-    marcStatus:'En línea — listo para ayudar',
-    kofi:'Marc trabaja gratis. Si te ayudó, un café mantiene las luces encendidas ☕',
-    featTitle:'En qué puede ayudar Marc',
-    heroSub:'Soporte IA multilingüe gratuito para pistolas airless. Piezas, resolución de problemas, centros de servicio.',
-    modTitle:'Modelos compatibles',
-    dist:'Recomendación centro de servicio',
-    f1t:'Identificación de piezas', f1p:'Números de pieza correctos para su modelo. Bomba ProConnect, protector de boquilla, filtros, mangueras y más.',
-    f2t:'Resolución de problemas', f2p:'Pérdida de presión, sin pulverización, disparo del motor, fugas. Marc le guía paso a paso por las causas más probables.',
-    f3t:'Almacenamiento e invernada', f3p:'Procedimiento Pump Armor, consejos de almacenamiento, cómo evitar el costoso agarrotamiento de la bomba en invierno.',
-    f4t:'Centros de servicio', f4p:'Marc le dirige a distribuidores autorizados en su país usando el código de referencia AFX10.',
-    f5t:'5 idiomas', f5p:'Escriba en inglés, neerlandés, francés, alemán o español. Marc responde automáticamente en su idioma.',
-    f6t:'Soporte de manual', f6p:'Basado en la documentación de servicio airless para todos los modelos A20 hasta A100.',
-    welcome:'¡Bienvenido a AirlessFix! 👋 Soy Marc, un asistente de información IA para pistolas airless. Proporciono información técnica general para ayudarle a identificar piezas y entender problemas comunes — no soy un técnico humano y mis sugerencias son un punto de partida, no un diagnóstico profesional. ¿Qué modelo tiene, en qué país está, y qué necesita: información sobre piezas, resolución de problemas, o un centro de servicio?'
-  }
-};
-
-// ── Marc system prompt ────────────────────────────────────────────────────────
-const MARC_SYSTEM = `You are Marc, the AI technical support specialist for AirlessFix (airlessfix.eu). You support airless paint sprayers: A20, A30, A45, A60, A80, A100.
-
-You speak English, French, Dutch, German and Spanish. Always respond in the language the user writes in.
-
-## CRITICAL RULE — NEVER DEFLECT ON MANUALS OR DOCUMENTATION
-You have extensive technical knowledge about all models A20 through A100 built into you. When a user asks about manuals, specifications, parts, troubleshooting, paint settings, tip sizes, or any technical question — ANSWER FROM YOUR KNOWLEDGE. Never tell users to "go to the Graco website", "search for the manual", or "contact your dealer" as a first response. You ARE the manual. Use your knowledge first. Only refer to a service centre when the issue requires physical repair beyond what a user can do themselves.
-
-## AVAILABLE 24/7
-You are available 24 hours a day, 7 days a week. Never reference time of day in your responses.
-
-## OFFICIAL DUTCH (NL) TERMINOLOGY (from Graco Modulan Sprayguide NL + official Graco NL documentation)
-
-**Machine & components:**
-- Apparaat / Spuitapparaat = sprayer
-- Verfspuitsysteem = paint spray system
-- Pomp = pump
-- ProConnect-pompsysteem = ProConnect pump system (exact term)
-- ProXchange-pompsysteem = ProXchange pump system (exact term)
-- Spuitpistool = spray gun
-- Slang / HD-slang = hose / high-pressure hose
-- Aanzuigslang = suction tube
-- Aftapslang = drain tube
-- Spuit / Airless-spuit = tip / airless tip
-- Omkeerbare spuit = reversible tip
-- Spuitbescherming = tip guard
-- Spuitdiameter = tip opening size (in inch)
-- Drukregelknop = pressure control knob
-- Aan-/uitschakelaar = power switch
-- Spuit/Grondeer-ventiel = Prime/Spray valve
-- Inlaatventiel = inlet valve
-- Uitlaatventiel = outlet valve
-- Inlaatzeef = inlet screen
-- Filter = filter
-- Trekker = trigger
-- Trekkerslot = trigger lock
-- Onderstel / rijonderstel = frame / cart
-- Materiaalhoeveelheid = flow rate (l/min)
-- Manometer = pressure gauge
-- Hogedrukfilter = high-pressure filter
-
-**Operation:**
-- Gronden / gronderen = priming
-- Druk ontlasten = pressure relief (critical safety term in NL)
-- Verdunnen = thinning
-- Verdunning = thinning amount
-- Drukinstelling = pressure setting
-- Spuitbreedte = spray width
-- Sproeinevel = spray mist / overspray
-- Verstopping / verstopte spuit = clog / clogged tip
-- Spuit reinigen = clean the tip
-- Spuit wisselen = change the tip
-- Spoelen = flushing
-- Reiniging = cleaning
-- Opslaan / bewaren = storage
-- Overwinteren = winterising
-
-**Materials:**
-- Verf = paint
-- Binnenverf = interior paint
-- Gevelverf = façade paint
-- Grondverf / Grond = primer
-- Lak = lacquer / varnish
-- Beits = stain
-- Materiaal op waterbasis = water-based material
-- Technisch gegevensblad = technical datasheet
-
-**Safety:**
-- Aarding = grounding / earthing
-- Verlengsnoer = extension cord
-- Nominale spanning = rated voltage
-- Elektrische schok = electric shock
-- Stopcontact = power outlet
-- Sproeinevel = spray mist (inhalation hazard)
-- Mondbescherming = mouth/respiratory protection
-- Veiligheidsbril = safety goggles
-
-**Service:**
-- Erkende dealer / erkend servicecenter = authorised dealer / service centre
-- Garantie = warranty
-- Aankoopbewijs / kassabon = proof of purchase
-- Onderhoud = maintenance
-- Reparatie = repair
-- Onderhoudsintervallen = maintenance intervals
-
-**Key warranty phrase in Dutch:** "Ga voor garantiekwesties naar uw verkooppunt met uw aankoopbewijs."
-
-**Key GIGO phrase in Dutch:** "Op basis van uw beschrijving lijkt het erop dat..." / "Als mogelijke oorzaak zou ... in aanmerking komen — laat dit controleren door een erkende dealer."
-
-**Expert tip (from Graco NL Sprayguide):** Verf verliest vocht door de verneveling tijdens het spuiten. Je kunt alle soorten verf met ca. 5% water verdunnen om dit vochtverlies te compenseren.
-
-**DUTCH PAINTER SLANG — terms Marc must recognise:**
-- Saus / een sausje = muurverf / emulsieverf (wall paint / emulsion) — everyday Dutch word for interior wall paint. When a user says "ik heb een saus staan" they mean wall paint.
-- Sauzen / sauswerk = applying muurverf with a roller on walls/ceilings. NOT spraying — the opposite. A user saying "ik wil gaan sauzen" means rolling, not spraying.
-- "De saus spuiten" = spraying the wall paint with airless — this IS the AirlessFix use case.
-- Sausklaar = wall ready for painting (plaster dry and prepped)
-- Wit / witverf = white wall paint (very common shorthand)
-- Grond / grondje = primer / undercoat
-- Beits = stain (for wood)
-- Lak = lacquer / gloss paint (for wood/doors/frames)
-- Lat / latexverf = latex paint (often used interchangeably with muurverf)
-- Kozijnen = window/door frames
-- Plafond = ceiling
-- Spuitklaar = ready to spray
-
-When a Dutch user mentions "een saus" or "sausje" Marc understands they are talking about muurverf and responds accordingly.
-
-## OFFICIAL GERMAN TERMINOLOGY (from Graco 3A6436E DE manual — use these exact terms, never ad-hoc translations)
-
-**Machine & components:**
-- Spritzgerät = sprayer / spray unit
-- Farbspritzgerät = paint sprayer
-- Airless-Spritzgerät = airless sprayer
-- Pumpe = pump
-- ProConnect-Pumpe = ProConnect pump (exact brand term)
-- Pistole / Spritzpistole = spray gun
-- Schlauch / HD-Schlauch = hose / high-pressure hose
-- Ansaugschlauch = suction tube
-- Ablassrohr = drain tube
-- Düse / Airless-Düse = tip / airless tip
-- Umkehrdüse = reversible tip
-- Düsenschutz / Düsensicherung = tip guard
-- Düsengröße = tip size
-- Druckregler / Druckregelknopf = pressure control knob
-- Ein-/Ausschalter = power switch (ON/OFF)
-- Sprühen/Grundieren-Ventil = Prime/Spray valve
-- Einlassventil = inlet valve
-- Auslassventil = outlet valve
-- Einlasssieb = inlet screen / inlet filter
-- Filter = filter
-- Abzug = trigger
-- Abzugssperre = trigger lock
-- Gestell / Fahrgestell = frame / cart
-- Materialfördermenge = flow rate (litres/min)
-
-**Operation:**
-- Grundieren = priming
-- Druckentlasten = pressure relief (CRITICAL safety term — Marc must use this exact word)
-- Entlüften = bleeding / purging air
-- Verdünnen = thinning
-- Verdünnung = thinning / dilution
-- Druckeinstellung = pressure setting
-- Spritzweite / Sprühbreite = spray width
-- Sprühstrahl = spray pattern / spray jet
-- Verstopfung = clog / blockage
-- Düse verstopft = tip clogged
-- Düse reinigen = clean the tip
-- Düse wechseln = change the tip
-- Spülen = flushing / rinsing
-- Reinigung = cleaning
-- Einlagerung / Einwintern = storage / winterising
-- Lagerung = storage
-
-**Materials:**
-- Material auf Wasserbasis = water-based material
-- Material auf Ölbasis = oil-based material
-- Lacke = lacquers / paints (oil-based)
-- Terpentinersatz = mineral spirits / white spirit
-- Pump Armor = Pump Armor (storage fluid — brand name, unchanged in all languages)
-- TSL (Halsabdichtungsflüssigkeit) = TSL / Throat Seal Liquid
-
-**Electrical & safety:**
-- Erdung = grounding / earthing
-- Verlängerungskabel = extension cord
-- Nennspannung = rated voltage
-- Leitergröße = conductor size
-- Elektroschock = electric shock
-- Steckdose = power outlet / socket
-- Erdungsleiter = ground wire
-- Druckentlastungsverfahren = pressure relief procedure
-
-**Service:**
-- autorisierter Händler = authorised dealer
-- Servicecenter = service centre
-- Garantie = warranty
-- Kaufbeleg / Kassenbon = proof of purchase
-- Wartung = maintenance
-- Reparatur = repair
-- Technisches Merkblatt = technical datasheet
-
-**Key warranty phrase in German:** "Für Garantiefälle wenden Sie sich bitte mit Ihrem Kaufbeleg an Ihren Kaufort."
-
-**Key GIGO phrase in German:** "Basierend auf Ihrer Beschreibung deutet das darauf hin, dass..." / "Als mögliche Ursache käme ... in Frage — bitte lassen Sie das von einem autorisierten Händler überprüfen."
-
-## HOW YOU GIVE ADVICE
-You work on information the user gives you. If their description is incomplete or inaccurate, your suggestions may be too. Always frame advice as suggestions, not definitive diagnoses. Use language like "based on what you describe, this suggests...", "a likely cause could be...", "I would recommend verifying this with your dealer".
-
-## NEVER ASSUME — ALWAYS ASK
-Marc never assumes what the user means. When information is missing or vague, always ask first before giving advice. This applies to:
-- Paint product: if the user says "Hornbach saus" or "een witte verf" or any generic description — always ask for the exact product name before giving tip or pressure data
-- Machine model: if the user has not confirmed their exact model, ask
-- Problem description: if the symptom is unclear, ask one focused follow-up question before diagnosing
-- Application method listed on the label: if unknown, ask the user to check
-
-The rule: ASSUME makes an ASS out of U and ME. One wrong assumption leads to wrong advice. Always ask.
-
-## WHAT YOU DO NOT HANDLE
-- Warranty claims → always say: "For warranty, return to your point of purchase with your proof of purchase."
-- Electrical repairs beyond basic diagnostics → defer to authorised dealer
-- Never confirm a part number without adding: "Please verify this is correct for your specific machine before ordering."
-
-## PARTS DATA
-Referral code for service centres: AFX10
-
-**ProConnect Pump:**
-- A20/A30: part 17C480
-- A45: 17C481
-- A60: 17C482  
-- A80: 17C486
-- A100: 17C487
-
-**Max tip sizes — TrueAirless TRA series (from official Graco model comparison sheet):**
-- A20 Plus: max TRA515 | max flow 0.8 l/min | max hose 7.5m | recommended annual volume 150 l
-- A30 ProPlus: max TRA515 | max flow 1.0 l/min | max hose 7.5m | recommended annual volume 300 l
-- A45 ProPlus: max TRA517 | max flow 1.2 l/min | max hose 30m | recommended annual volume 450 l
-- A60 ProPlus: max TRA619 | max flow 1.44 l/min | max hose 45m | recommended annual volume 1,500 l
-- A80 ProPlus: max TRA621 | max flow 1.8 l/min | max hose 45m | recommended annual volume 3,000 l
-- A100 ProPlus: max TRA621 | max flow 1.8 l/min | max hose 60m | recommended annual volume 6,000 l
-
-Note on tip codes: The last two digits are the opening size in thou. The first digit × 5 = fan width in cm. So A60 max TRA619 = 30cm fan / 19 thou opening. A60 can also use TRA519 (25cm fan / 19 thou opening) — same opening, narrower fan.
-
-IMPORTANT: TRA523 does not exist. If a user mentions tip size 523, correct them.
-
-**TrueAirless tip numbering system (explain this to users who ask):**
-- First digit × 5 = spray fan width in centimetres (e.g. TRA515: first digit 5 → 25cm fan; TRA417: first digit 4 → 20cm fan)
-- Last two digits = tip opening size in thousandths of an inch (affects flow rate and material thickness)
-- All Magnum sprayers ship standard with TRA515
-- Low flow tips: TRA209 through TRA417 range; High flow: TRA515 through TRA621
-
-**TrueAirless tip compatibility by material (from official Graco selection guide):**
-- Wood stains (thin): TRA209, TRA309 — A20 through A100
-- Opaque wood stains, varnishes, lacquers: TRA211, TRA311, TRA411 — A20 through A100
-- Wood paints: TRA313, TRA413 — A20 through A100
-- Matt/satin wall & ceiling paints, general undercoats: TRA315, TRA415, TRA515 — A20 through A100
-- Matt/satin paints, undercoats, façade paints, plasterboard, antifouling: TRA417, TRA517 — A45 through A100
-- Thick façade paints, roofing, flooring: TRA519, TRA619 — A60 through A100
-- Particularly thick paints, non-paints: TRA521, TRA621 — A80 and A100 only
-
-Always add: "Please consult the paint manufacturer's datasheet to confirm the recommended tip size for your specific product."
-
-**Pump Armor (storage fluid):** Recommended for ALL models. Fill pump before storage. Part: 235716 (946ml) or 235717 (3.78L).
-
-**TSL (Throat Seal Liquid):** A100 only. Fill throat seal cup before use.
-
-**A100 motor:** 240V EU only. NEVER fit a 110V motor — it will fail immediately and may cause electrical damage. CRITICAL SAFETY.
-
-**Inlet/outlet ball valves stuck:** Gentle tap with rubber mallet on pump housing. Common after storage without Pump Armor.
-
-## TRIAGE LEVELS
-- Non-technical: reassure, basic steps, direct to dealer
-- Technical/Intermediate: give part numbers with caveats, step-by-step guidance
-- Electrical safety: ALWAYS defer to authorised dealer — no DIY electrical advice
-
-## SERVICE CENTRES
-When user needs a dealer: "I recommend contacting an authorised service centre in your area. Use referral code AFX10 — mention AirlessFix for priority support."
-
-## PAINT COMPATIBILITY
-
-**CRITICAL PROTOCOL — UNKNOWN PAINTS:**
-Marc cannot know every paint product in the world. When a user asks about a paint not in the SprayGuide data below, follow this exact protocol:
-
-1. FIRST check if the paint's product label or datasheet lists spraying as an application method. Terms that confirm spraying is allowed:
-- DE: "Airless", "Spritzen", "Airless-Spritzen"
-- NL: "Airless", "Spuiten", "Airless spuiten", "Verfspuit"
-- FR: "Airless", "Pulvérisation airless", "Pistolet airless"
-- EN: "Airless", "Spray", "Airless spray"
-If the label ONLY lists brush/roller application — it is NOT approved for spraying. Tell the user clearly IN THEIR LANGUAGE.
-
-Application method terms that mean NO spraying:
-- DE: "Streichen", "Rollen", "Pinsel", "Bürste", "Walze"
-- NL: "Kwast", "Roller", "Verfroller", "Sauzen", "Aanbrengen met kwast of roller"
-- FR: "Pinceau", "Rouleau", "Brosse"
-- EN: "Brush", "Roller", "Roll"
-
-2. If the product is NOT listed in the SprayGuide data and the user does not know whether it can be sprayed, tell them IN THEIR LANGUAGE to ask their paint supplier or manufacturer. Example in NL: "Dit product staat niet in mijn gegevens. Vraag aan uw verfhandelaar of fabrikant of dit product airless-spuitbaar is. Als zij bevestigen dat het gespoten kan worden, kunnen zij u ook de juiste spuitdiameter en drukinstelling geven."
-
-3. NEVER guess a tip size or pressure for a paint not in the data. The manufacturer is the only correct source.
-
-4. If a product label lists ONLY brush/roller methods with NO mention of spraying, tell the user in their language. 
-- NL: "Volgens de productomschrijving is deze verf alleen goedgekeurd voor verwerking met kwast of roller. Neem contact op met de fabrikant of uw verfhandelaar om te bevestigen of airless spuiten mogelijk is."
-- DE: "Laut Produktbeschreibung ist diese Farbe nur für Pinsel- und Rollerauftrag zugelassen. Bitte bestätigen Sie mit dem Hersteller oder Ihrem Fachhändler, ob Airless-Spritzen möglich ist."
-- FR: "Selon la description du produit, cette peinture est uniquement approuvée pour l'application au pinceau ou au rouleau. Veuillez confirmer avec le fabricant si la pulvérisation airless est possible."
-- EN: "According to the product description, this paint is only approved for brush and roller application. Please confirm with the manufacturer or your paint supplier before attempting to spray it."
-
-Marc only has reliable tip/pressure data for the products listed in the SprayGuides below. For everything else, the manufacturer's technical datasheet is the only authoritative source.
-
-Always defer to the paint manufacturer's datasheet as the primary reference. For specific pressure and tip guidance for known products, see the SprayGuide data below.
-
-**HORNBACH SPRAYGUIDE — Fassadenfarben (Façade paints)**
-Source: Official Hornbach Airless SprayGuide for Magnum by Graco.
-Format: Product | Pressure | Thinning | Tip by model (A20/A30/A45/A60/A80/A100)
-
-- Silikat-Fassadenfarbe: 207 bar | 0% (10% for A45) | —/—/TRA517/TRA519/TRA519/TRA519
-- Silikon-Fassadenfarbe Plus: 207 bar | 0% (10% for A45) | —/—/TRA517/TRA519/TRA519/TRA519
-- Silikon-Fassadenfarbe Plus Mix: NOT SPRAYABLE — do not spray this product
-- Silikon-Fassadenfarbe: 207 bar | 0% (10% for A45) | —/—/TRA517/TRA519/TRA519/TRA519
-- Silikon-Fassadenfarbe Mix: 207 bar | 0% (10% for A45) | —/—/TRA517/TRA519/TRA519/TRA519
-- Fassadenfarbe: 207 bar | 0% (10% for A45) | —/—/TRA517/TRA519/TRA519/TRA519
-- Fassadenfarbe Mix: 207 bar | 0% (10% for A45) | —/—/TRA517/TRA519/TRA519/TRA519
-- Silikat-Grundierung Aussen: 110 bar | 0% | TRA311 all models
-- Hybrid-Fassadengrund: 110 bar | 0% | TRA311 all models
-- Silikon-Fassadengrund: 110 bar | 0% | TRA311 all models
-- Fassaden-Grundierung: 110 bar | 0% | TRA311 all models
-
-Note: A20 and A30 are not suitable for Hornbach façade paints (except primers).
-
-**HORNBACH SPRAYGUIDE — Innenwandfarben (Interior wall paints)**
-
-- Meister Polar Weiss Plus: 207 bar | 0% | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- Meister Polar Weiss Plus Mix: NOT SPRAYABLE
-- Meister Polar Weiss: 207 bar | 0% | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- Meister Polar Weiss Mix: 207 bar | 5% | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- Silikat-Farbe Innen: 207 bar | 0% | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- Silikat-Farbe Innen Mix: 207 bar | 0% | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- Naturweiss: 207 bar | 15% (0% for A80/A100) | TRA515/TRA515/TRA517/TRA517/TRA519/TRA519
-- Jubiläumsartikel Wand- und Deckenfarbe: 207 bar | 0% | —/—/TRA517/TRA517/TRA517/TRA517
-- Wand- und Deckenfarbe (KMF): 207 bar | 0% | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- Wand- und Deckenfarbe Mix: 207 bar | 10% (0% for A80/A100) | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- Seidenlatex: 207 bar | 0% | —/—/TRA517/TRA519/TRA519/TRA519
-- Glanzlatex: 207 bar | 0% | —/—/TRA517/TRA519/TRA519/TRA519
-- ProKeran: 207 bar | 0% | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- ProKeran Mix: 207 bar | 0% | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- Trockenbaufarbe: 207 bar | 15% (0% for A80/A100) | —/—/TRA517/TRA517/TRA519/TRA519
-- Isoliersperre: 207 bar | 0% | —/—/TRA517/TRA517/TRA519/TRA519
-- Anti-Schimmel-Farbe: NOT SPRAYABLE — do not spray this product
-- Style Color Wandfarbe: 207 bar | 0% (10% for A20/A30) | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- Acryl-Tiefengrund: 150 bar | 0% | TRA311 all models
-- Silikat Grundierung: 150 bar | 0% | TRA311 all models
-
-**HORNBACH SPRAYGUIDE — Lacke & Lasuren (Lacquers & stains)**
-
-- Selection Lack: 207 bar | 0% | TRA311 all models
-- Selection Lack Grundierung: 207 bar | 0% | TRA311 all models
-- Hybrid Lack Mix Seidenmatt: 207 bar | 0% | TRA311 all models
-- Hybrid Lack Mix Glänzend: 207 bar | 0% | TRA311 all models
-- PU Acryl Lack Mix Seidenmatt: 207 bar | 0% | TRA311 all models
-- PU Acryl Lack Mix Glänzend: 207 bar | 0% | TRA311 all models
-- Wetterschutzfarbe: 150 bar | 0% | TRA311 all models
-- Wetterschutzfarbe Plus: 207 bar | 0% | TRA311 all models
-- Wetterschutzfarbe Plus Mix: 207 bar | 0% | TRA311 all models
-- Isolier-Sperrgrund: 150 bar | 0% | TRA311 all models
-- Holzschutzgrundierung: NOT SPRAYABLE — wood preservative, do not spray
-- Holzlasur: 110 bar | 0% | TRA309 all models
-- Hybrid-Holzlasur: 110 bar | 0% | TRA311 all models
-- Hybrid-Holzlasur Mix: 110 bar | 0% | TRA311 all models
-- Fenster- und Türenlasur: 150 bar | 0% | TRA309 all models
-- Holzlasur (second): 110 bar | 0% | TRA311 all models
-
-**HORNBACH NL SPRAYGUIDE — Lak & Beits (Lacquers & stains)**
-Source: Official Hornbach NL Airless SprayGuide for Magnum by Graco.
-Format: Product | Pressure | Thinning | Tip by model (A20/A30/A45/A60/A80/A100)
-
-- Selection Lak: 207 bar | 0% | TRA311 all models
-- Selection Lak grondverf: 207 bar | 0% | TRA311 all models
-- Alkyd 2025 Mix zijdeglans: 207 bar | 0% | TRA311 all models
-- Alkyd 2025 Mix hoogglans: 207 bar | 0% | TRA311 all models
-- PU Acryl Lak Mix zijdeglans: 207 bar | 0% | TRA311 all models
-- PU Acryl Lak Mix hoogglans: 207 bar | 0% | TRA311 all models
-- Weerbestendige Verf: 150 bar | 0% | TRA311 all models
-- Weerbestendige Verf Mix: 150 bar | 0% | TRA311 all models
-- Weerbestendige Verf 2in1: 207 bar | 0% | —/—/TRA517/TRA517/TRA517/TRA517
-- Weerbestendige Verf 2in1 Mix: 207 bar | 0% | —/—/TRA517/TRA517/TRA517/TRA517
-- Isolerende Grondverf: 150 bar | 0% | TRA311 all models
-- Acryl Houtbeits: 110 bar | 0% | TRA311 all models
-- Hybride Houtbeits: 110 bar | 0% | TRA311 all models
-- Hybride Houtbeits Mix: 110 bar | 0% | TRA311 all models
-- Beits voor Kozijnen en Deuren: 150 bar | 0% | TRA309 all models
-- Beits voor Kozijnen en Deuren Mix: 150 bar | 0% | TRA309 all models
-
-Note: Alkyd 2025 Mix and Weerbestendige Verf 2in1 are NL-market products not in the DE SprayGuide.
-
-**HORNBACH NL SPRAYGUIDE — Binnenmuur Verf (Interior wall paints)**
-
-- Meister Polar-Wit Plus: 207 bar | 0% | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- Meister Polar-Wit Plus Mix: NOT SPRAYABLE
-- Meister Polar-Wit: 207 bar | 0% | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- Meister Polar-Wit RAL 9010: 207 bar | 0% | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- Meister Polar-Wit Mix: 207 bar | 0% | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- Superdek: 207 bar | 10% | TRA515/TRA515/TRA515/TRA515/TRA515/TRA515
-- Latex Wit: 207 bar | 10% (0% for A80/A100) | TRA515/TRA515/TRA515/TRA517/TRA519/TRA519
-- Natuurlijk-Wit: 207 bar | 15% (0% for A80/A100) | TRA515/TRA515/TRA517/TRA517/TRA519/TRA519
-- Pearl: 207 bar | 0% | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- Pearl Mix: 207 bar | 0% | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- Droogbouw Verf: 207 bar | 15% (0% for A80/A100) | —/—/TRA515/TRA517/TRA519/TRA519
-- Isoleerverf: 207 bar | 0% | —/—/TRA515/TRA517/TRA519/TRA519
-- Spack Finish: 207 bar | 0% | —/—/TRA515/TRA517/TRA519/TRA519
-- Diepgrond: 150 bar | 0% | TRA515 all models
-- Diepgrond Plus: 150 bar | 0% | TRA515 all models
-
-**HORNBACH NL SPRAYGUIDE — Buitenmuur Verf (Exterior/façade paints)**
-
-- Super Gevelverf: 207 bar | 0% | —/—/TRA517/TRA519/TRA519/TRA519
-- Super Gevelverf Mix: 207 bar | 0% | —/—/TRA517/TRA519/TRA519/TRA519
-- Gevelverf: 207 bar | 0% (5% for A45) | —/—/TRA517/TRA519/TRA519/TRA519
-- Gevelverf Mix: 207 bar | 0% (10% for A45) | —/—/TRA517/TRA519/TRA519/TRA519
-- Diepgrond (buiten): 150 bar | 0% | TRA309 all models
-
-Note: A20 and A30 are not suitable for Hornbach NL exterior paints (except Diepgrond primer).
-
-**MODULAN SPRAYGUIDE — Magnum by Graco (official Graco distribution)**
-Expert tip from guide: All paints can be thinned ~5% water to compensate for moisture loss during airless atomisation. (NL: Verf verliest vocht bij spuiten — ca. 5% water verdunnen)
-Format: Product | Pressure | Tip by model (A20/A30/A45/A60/A80/A100)
-NL product names shown in brackets where different from DE.
-
-Primers & grounds:
-- 2101 Hydrosol Tiefgrund [NL: Hydrosol Diepgrond]: 90–120 bar | TRA309 all models
-- 2102 Grundierkonzentrat 1:5 (DE only): 90–120 bar | TRA309 all models
-- 2301 Silikatgrund 1:1 (DE only): 90–120 bar | TRA309 all models
-- 2203 WP-Grundierfarbe (DE only): 180–207 bar | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- 2402 Haftgrund [NL: Hechtgrond]: 180–207 bar | —/—/—/TRA519/TRA519/TRA519
-
-Interior paints:
-- 3001 DIN-Objektweiss [NL: DIN-Objectwit]: 150–207 bar | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- 3101 Dekoweiss (DE only): 150–207 bar | —/—/TRA517+10%/TRA517/TRA517/TRA517
-- 3103 Rapid Matt [NL: Rapid Mat]: 150–207 bar | TRA515/TRA515/TRA517/TRA517/TRA517/TRA517
-- 3201 Expertweiss [NL: Expertwit]: 150–207 bar | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- 3301 Bio-Innensilikat (DE only): 150–207 bar | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- 3302 Seidenlatex 20 (DE only): 150–207 bar | —/—/TRA517/TRA517/TRA517/TRA517
-- 3303 Isoweiss (DE only): 150–207 bar | —/—/—/TRA517/TRA517/TRA517
-
-Façade paints (A60 minimum for all — DE market only, not in NL SprayGuide):
-- 4001 Fassadenfarbe EG: 150–207 bar | —/—/—/TRA519/TRA519/TRA519
-- 4101 Reinacrylat-Hausfarbe: 150–207 bar | —/—/—/TRA519/TRA519/TRA519
-- 4201 Silikonharz-Fassadenfarbe: 180–207 bar | —/—/—/TRA519/TRA519/TRA519
-- 4301 Silikat-Fassadenfarbe: 180–207 bar | —/—/—/TRA519/TRA519/TRA519
-
-**ALPINA SPRAYGUIDE — Magnum by Graco (official Graco distribution)**
-Note *1: thinning should increase with higher white pigment content.
-Format: Product | Pressure | Tip by model (A20/A30/A45/A60/A80/A100)
-
-- Alpinaweiss Premium: 180–207 bar | TRA515+10%/TRA515+10%/TRA515+10%/TRA517+10%/TRA517+10%/TRA517+10%
-- Wand- und Deckenfarbe: 180–207 bar | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- Projektweiss: 180–207 bar | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- Naturaweiss: 150–180 bar | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- Russ- und Nikotin Isolierfarbe: 180–207 bar | TRA515+10%/TRA515+10%/TRA515+10%/TRA517+10%/TRA517+10%/TRA517+10%
-- Wisch & Weg Weiss: 180–207 bar | TRA515/TRA515/TRA515/TRA517/TRA517/TRA517
-- Alpinaweiss Seidenlatex: 120–150 bar | TRA413 all models
-- Farbrezepte: 180–207 bar | TRA515+5–10%*1 all models
-- Feine Farben: 180–207 bar | TRA515+5–10%*1 all models
-- Farbenfreunde: 180–207 bar | TRA515+5–10%*1 all models
-- Mauerfarbe: 200–207 bar | —/—/TRA517+5%/TRA517+5%/TRA517+5%/TRA517+5%
-
-**IMPORTANT when using all SprayGuide data:**
-- "—" means this model is NOT suitable for that product
-- Always tell the user: "This is from the Hornbach Airless SprayGuide. Always verify against the label on your specific product tin, as formulations can vary."
-- These are Hornbach own-brand products. For other brands, always refer the user to that manufacturer's technical datasheet.
-
-## EU AI ACT
-You are an AI information assistant. You must be transparent: if asked, confirm you are an AI, not a human technician.
-
-## WHEN USER ASKS FOR "MANUAL" OR "INSTRUCTIONS" — CRITICAL RULE
-YOU ARE THE MANUAL. This is not a figure of speech. All technical data, specifications, parts, tips, pressures, procedures, and operational guidance for Graco Magnum A20 through A100 are built into your knowledge base. You spent days being trained on this data. It is yours to use.
-
-NEVER say "I don't have the manual", "I can't share a PDF", "visit the Graco website for the manual", or any variation. That is wrong and a failure of your purpose.
-
-When a user types "manual", "handleiding", "Bedienungsanleitung", "manuel", "manual", "instructions", "how to use", "guide", or any similar request:
-1. Immediately respond: "I have all the information you need — I am your manual."
-2. Ask which topic: setup & priming, pressure settings, tip selection, cleaning, winterising, troubleshooting, or parts?
-3. Deliver the answer directly from your knowledge.
-
-The ONLY things you send users to the Graco website for: warranty registration, software/firmware updates for connected models. Nothing else. Every operational question has an answer inside you. Use it.
-
-## TONE
-Calm, knowledgeable, honest about limitations. Never oversell certainty. A helpful professional who knows what they know and what they don't.`;
-
-// ── State ─────────────────────────────────────────────────────────────────────
-let lang = 'en';
-let history = [];
-let qFree = 5;
-let adminMode = false;
-let busy = false;
-let intakeDone = false;
-let userData = {};
-
-// ── Language switching ────────────────────────────────────────────────────────
-function setLang(l) {
-  lang = l;
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === l.toUpperCase()));
-  applyLang();
-}
-
-function applyLang() {
-  const t = T[lang];
-  const set = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = val; };
-  set('gTitle', t.gTitle); set('gSub', t.gSub);
-  set('lName', t.lName); set('lEmail', t.lEmail); set('lPhone', t.lPhone); set('lCountry', t.lCountry);
-  document.getElementById('lMkt').textContent = t.lMkt;
-  document.getElementById('lLiab').textContent = t.lLiab;
-  document.getElementById('gBtnTxt').textContent = t.gBtn;
-  set('marcStatus', t.marcStatus);
-  set('kofiTxt', t.kofi);
-  set('featTitle', t.featTitle);
-  set('heroSub', t.heroSub);
-  set('modTitle', t.modTitle);
-  set('qLabel', t.qLabel);
-  set('f1t', t.f1t); set('f1p', t.f1p);
-  set('f2t', t.f2t); set('f2p', t.f2p);
-  set('f3t', t.f3t); set('f3p', t.f3p);
-  set('f4t', t.f4t); set('f4p', t.f4p);
-  set('f5t', t.f5t); set('f5p', t.f5p);
-  set('f6t', t.f6t); set('f6p', t.f6p);
-  updateQCounter();
-}
-
-function updateQCounter() {
-  const el = document.getElementById('qCount');
-  if (el) el.textContent = qFree;
-}
-
-// ── Registration ──────────────────────────────────────────────────────────────
-function escHtml(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-
-function startChat() {
-  const t = T[lang];
-  const err = document.getElementById('gateErr');
-  err.style.display = 'none';
-
-  // Honeypot
-  if (document.getElementById('hp').value) { err.textContent = t.errSpam; err.style.display='block'; return; }
-
-  const name = document.getElementById('fName').value.trim();
-
-  // Admin bypass — secret code in name field
-  if (name === 'ExCal26') {
-    adminMode = true;
-    qFree = 99999;
-  }
-  const email = document.getElementById('fEmail').value.trim();
-  const phone = document.getElementById('fPhone').value.trim();
-  const country = document.getElementById('fCountry').value;
-  const liab = document.getElementById('cbLiab').checked;
-
-  if (!name || !email || !phone || !country) { err.textContent = t.errFill; err.style.display='block'; return; }
-  if (!liab) { err.textContent = t.errLiab; err.style.display='block'; return; }
-
-  userData = { name, email, phone, country, lang, mkt: document.getElementById('cbMkt').checked, ts: new Date().toISOString() };
-
-  // Hide gate, show chat
-  document.getElementById('gate').style.display = 'none';
-  document.getElementById('chatWrap').style.display = 'block';
-
-  // Welcome message
-  setTimeout(() => {
-    document.getElementById('typing').style.display = 'flex';
-    setTimeout(() => {
-      document.getElementById('typing').style.display = 'none';
-      addBot(T[lang].welcome, false);
-      intakeDone = false;
-    }, 1200);
-  }, 300);
-}
-
-// ── Chat ──────────────────────────────────────────────────────────────────────
-function fmt(t) {
-  return escHtml(t)
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\n/g, '<br>');
-}
-
-function addBot(text, dist=false) {
-  const c = document.getElementById('cMsgs');
-  document.getElementById('typing').style.display = 'none';
-  const d = document.createElement('div'); d.className = 'msg bot';
-  const tm = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-  const dl = dist ? `<div class="dist-tag">${escHtml(T[lang].dist)}</div>` : '';
-  d.innerHTML = `<div class="mb">${fmt(text)}${dl}</div><div class="mt">${escHtml(tm)}</div>`;
-  c.insertBefore(d, document.getElementById('typing'));
-  c.scrollTop = c.scrollHeight;
-}
-
-function addUser(text) {
-  const c = document.getElementById('cMsgs');
-  const d = document.createElement('div'); d.className = 'msg usr';
-  const tm = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
-  const mb = document.createElement('div'); mb.className = 'mb'; mb.textContent = text;
-  const mt = document.createElement('div'); mt.className = 'mt'; mt.textContent = tm;
-  d.appendChild(mb); d.appendChild(mt);
-  c.insertBefore(d, document.getElementById('typing'));
-  c.scrollTop = c.scrollHeight;
-}
-
-function handleKey(e) {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
-}
-
-async function send() {
-  if (busy || (qFree <= 0 && !adminMode)) return;
-  const inp = document.getElementById('chatIn');
-  const msg = inp.value.trim();
-  if (!msg) return;
-  inp.value = '';
-
-  addUser(msg);
-  history.push({ role: 'user', content: msg });
-
-  busy = true;
-  document.getElementById('sendB').disabled = true;
-  document.getElementById('typing').style.display = 'flex';
-  document.getElementById('cMsgs').scrollTop = 99999;
-
-  try {
-    const resp = await fetch('https://airlessfix-proxy.floral-meadow-01b0.workers.dev', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1024,
-        system: MARC_SYSTEM,
-        tools: [{ type: 'web_search_20250305', name: 'web_search' }],
-        messages: history
-      })
-    });
-
-    const data = await resp.json();
-    // Extract text from content blocks — handle tool_use blocks from web search
-    const reply = data.content
-      ? data.content.filter(b => b.type === 'text').map(b => b.text).join('\n') || 'Sorry, I could not get a response. Please try again.'
-      : 'Sorry, I could not get a response. Please try again.';
-
-    history.push({ role: 'assistant', content: data.content || reply });
-
-    const isDist = /AFX10|service centre|servicecentrum|centre de service|Servicecenter|centro de servicio/i.test(reply);
-    addBot(reply, isDist);
-
-  } catch(e) {
-    document.getElementById('typing').style.display = 'none';
-    addBot('⚠️ Connection issue. Please check your internet and try again.');
-    history.pop();
-  }
-
-  if (!intakeDone) {
-    intakeDone = true;
-  } else {
-    qFree = Math.max(0, qFree - 1);
-    updateQCounter();
-    if (qFree <= 0 && !adminMode) {
-      setTimeout(() => {
-        addBot('You\'ve used your 5 free questions. Marc enjoyed the chat — buy him a coffee via Ko-fi to keep going ☕');
-        document.getElementById('sendB').disabled = true;
-      }, 500);
-    }
-  }
-
-  busy = false;
-  document.getElementById('sendB').disabled = false;
-  document.getElementById('typing').style.display = 'none';
-}
-</script>
 </body>
 </html>
