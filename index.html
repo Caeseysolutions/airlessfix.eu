@@ -103,6 +103,18 @@ header{display:flex;align-items:center;justify-content:space-between;padding:18p
 .blog-card p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px}
 .blog-card a{font-size:12px;color:var(--accent);font-weight:600}
 
+/* LEFT KOFI WIDGET */
+#kofi-widget{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:150;display:flex;flex-direction:column;align-items:flex-start}
+#kofi-tab{background:linear-gradient(135deg,#ff5e5b,#ff8c00);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:11px;writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);padding:16px 8px;border-radius:0 8px 8px 0;cursor:pointer;letter-spacing:.05em;box-shadow:2px 0 12px rgba(255,94,91,.3);transition:.2s}
+#kofi-tab:hover{padding-left:12px;box-shadow:4px 0 20px rgba(255,94,91,.5)}
+#kofi-panel{display:none;background:var(--surface);border:1px solid var(--border);border-left:none;border-radius:0 12px 12px 0;padding:20px 16px;width:220px;box-shadow:4px 0 20px rgba(0,0,0,.4)}
+#kofi-panel.open{display:block}
+#kofi-panel h4{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;margin-bottom:6px;color:var(--text)}
+#kofi-panel p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+#kofi-panel a{display:block;background:#ff5e5b;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;padding:10px 14px;border-radius:8px;text-decoration:none;text-align:center;transition:.2s}
+#kofi-panel a:hover{background:#e04e4b;text-decoration:none}
+@media(max-width:600px){#kofi-widget{display:none}}
+
 /* FOOTER */
 footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:var(--muted);font-size:12px;line-height:1.8}
 footer a{color:var(--muted)}
@@ -304,6 +316,15 @@ footer a:hover{color:var(--accent)}
   </div>
 </section>
 
+<!-- KOFI SECTION -->
+<section style="padding:0 32px 48px;max-width:600px;margin:0 auto;text-align:center">
+  <div style="background:var(--surface);border:1px solid rgba(255,94,91,.3);border-radius:16px;padding:24px 28px">
+    <p style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin-bottom:8px">Marc is free ☕</p>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:18px;line-height:1.6">If Marc helped you, a coffee keeps the lights on. Ko-fi delivers the A100 PDF to your inbox automatically.</p>
+    <a href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener" style="display:inline-block;background:#ff5e5b;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;padding:12px 28px;border-radius:8px;text-decoration:none">Grab Marc a coffee ☕</a>
+  </div>
+</section>
+
 <!-- BLOG -->
 <section class="blog-section">
   <h2 class="section-title" id="blog-title">Guides &amp; Tips</h2>
@@ -387,6 +408,16 @@ footer a:hover{color:var(--accent)}
 <div id="chat-bubble">
   <div id="chat-peek"></div>
   <button id="chat-btn" onclick="toggleChat()" aria-label="Chat with Marc">🔧</button>
+</div>
+
+<!-- LEFT KOFI WIDGET -->
+<div id="kofi-widget">
+  <div id="kofi-tab" onclick="toggleKofiPanel()">Support Marc ☕</div>
+  <div id="kofi-panel">
+    <h4 id="kw-title">Marc runs on coffee ☕</h4>
+    <p id="kw-body">Free sprayer support for everyone. If Marc helped you, a coffee keeps him running 24/7.</p>
+    <a href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener" id="kw-btn">Grab Marc a coffee →</a>
+  </div>
 </div>
 
 <!-- CHAT PANEL -->
@@ -878,6 +909,13 @@ function applyLang(){
   set('rg-liab',t.rgLiab);set('rg-btn',t.rgBtn);
   const peek=document.getElementById('chat-peek');
   if(peek)peek.textContent=t.peek;
+  // Ko-fi widget translations
+  const kwTitles={en:'Marc runs on coffee',nl:'Marc draait op koffie',fr:'Marc tourne au café',de:'Marc läuft auf Kaffee',es:'Marc funciona con café'};
+  const kwBodies={en:'Free sprayer help for everyone. If Marc sorted you out, a coffee keeps him going 24/7.',nl:'Gratis hulp voor iedereen. Als Marc je geholpen heeft, houdt een koffie hem 24/7 online.',fr:"Support gratuit pour tous. Si Marc t'a aidé, un café le garde en ligne 24h/7j.",de:'Kostenlose Hilfe für alle. Wenn Marc dir geholfen hat, hält ein Kaffee ihn am Laufen.',es:'Ayuda gratuita para todos. Si Marc te ayudó, un café lo mantiene disponible 24/7.'};
+  const kwBtns={en:'Grab Marc a coffee →',nl:'Koffie voor Marc →',fr:'Un café pour Marc →',de:'Kaffee für Marc →',es:'Café para Marc →'};
+  const kwt=document.getElementById('kw-title');if(kwt)kwt.textContent=kwTitles[l]||kwTitles.en;
+  const kwb=document.getElementById('kw-body');if(kwb)kwb.textContent=kwBodies[l]||kwBodies.en;
+  const kwbtn=document.getElementById('kw-btn');if(kwbtn)kwbtn.textContent=kwBtns[l]||kwBtns.en;
   const bubble=document.getElementById('marc-bubble-text');
   if(bubble)bubble.innerHTML=t.bubbleText||`<strong>Got a question?</strong><br>Ask Marc directly`;
   updateKofi();
@@ -987,9 +1025,11 @@ function sendThankYouEmail(data){
   // Fire and forget — send registration data to Apps Script
   const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz1xQMA2N_tYgGj6219O6Vtb8EBCAZJvWBjDvo0k7cOTnY6FV3btjeL6WuOn8tZht9oFA/exec';
   if(APPS_SCRIPT_URL.includes('PASTE')) return;
+  // Use no-cors — Apps Script requires this from browser
   fetch(APPS_SCRIPT_URL,{
     method:'POST',
-    headers:{'Content-Type':'application/json'},
+    mode:'no-cors',
+    headers:{'Content-Type':'text/plain'},
     body:JSON.stringify(data)
   }).catch(()=>{});
 }
@@ -1136,16 +1176,12 @@ async function send(){
     const isPartner=/AFX10|repair partner|reparatiepartner|Reparaturpartner|partenaire|taller/i.test(reply);
     addBot(reply,isPartner);
 
-    // Count technical questions
-    const techKeywords=/pressure|druk|tip|pomp|pump|motor|leak|lek|filter|part|onderdeel|teil|pièce|pieza|troubleshoot|storing|fehler|problème|problema|manual|handleiding|handbuch|manuel/i;
-    if(techKeywords.test(msg)){
-      techCount++;
-      if(techCount>1){ // First exchange free
-        qFree=Math.max(0,qFree-1);
-        updateQCounter();
-      }
+    // Count every message after first as a question
+    techCount++;
+    if(techCount>1){ // First message free
+      qFree=Math.max(0,qFree-1);
+      updateQCounter();
     }
-
     if(qFree<=0){
       kofiNudgeCount++;
       updateKofi();
@@ -1161,6 +1197,15 @@ async function send(){
   document.getElementById('send-btn').disabled=false;
   setTimeout(()=>scrollToBottom(),100);
 }
+
+// ── KOFI PANEL ───────────────────────────────────────────────────────────────
+function toggleKofiPanel(){
+  const panel = document.getElementById('kofi-panel');
+  panel.classList.toggle('open');
+}
+
+// Add to applyLang — translate widget
+const _origApplyLang = applyLang;
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 applyLang();
