@@ -977,7 +977,7 @@ function submitReg(){
 // ── THANK YOU EMAIL via Apps Script ───────────────────────────────────────────
 function sendThankYouEmail(data){
   // Fire and forget — send registration data to Apps Script
-  const APPS_SCRIPT_URL = 'PASTE_REGISTRATION_APPS_SCRIPT_URL_HERE';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz1xQMA2N_tYgGj6219O6Vtb8EBCAZJvWBjDvo0k7cOTnY6FV3btjeL6WuOn8tZht9oFA/exec';
   if(APPS_SCRIPT_URL.includes('PASTE')) return;
   fetch(APPS_SCRIPT_URL,{
     method:'POST',
