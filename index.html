@@ -64,7 +64,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:18p
 /* FEATURES */
 .features{padding:56px 32px;max-width:1100px;margin:0 auto}
 .section-title{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;text-align:center;margin-bottom:36px}
-.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;cursor:pointer;transition:.2s}
 .feat-card:hover{border-color:var(--accent);transform:translateY(-2px)}
 .feat-card.manuals{border-color:rgba(0,201,167,.4);box-shadow:0 0 12px rgba(0,201,167,.15)}
@@ -113,9 +113,10 @@ footer a:hover{color:var(--accent)}
 .field input:focus,.field select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(14,143,255,.12)}
 .field select option{background:var(--surface)}
 .field .opt-label{font-size:10px;color:var(--muted);margin-left:4px}
-.liability{display:flex;gap:10px;align-items:flex-start;margin:12px 0 20px;background:rgba(240,165,0,.07);border:1px solid rgba(240,165,0,.2);border-radius:8px;padding:11px}
-.liability input{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--warn);cursor:pointer}
-.liability label{font-size:12px;color:rgba(240,165,0,.9);line-height:1.5;cursor:pointer}
+.cb-row{display:flex;gap:10px;align-items:flex-start;margin:10px 0;cursor:pointer}
+.cb-row input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--accent);cursor:pointer}
+.cb-row label{font-size:12px;color:var(--muted);line-height:1.5;cursor:pointer}
+.cb-row:last-of-type{margin-bottom:18px}
 .btn-primary{width:100%;background:var(--accent);color:#fff;border:none;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;padding:13px;border-radius:var(--radius);cursor:pointer;transition:.2s}
 .btn-primary:hover{background:#0077e6}
 #reg-err{display:none;background:rgba(229,83,75,.1);border:1px solid rgba(229,83,75,.3);color:#ff8080;font-size:12px;padding:9px 12px;border-radius:8px;margin-bottom:12px}
@@ -182,6 +183,8 @@ footer a:hover{color:var(--accent)}
   .models{padding:0 16px 40px}
   .model-grid{grid-template-columns:repeat(3,1fr)}
   .features{padding:40px 16px}
+  .feat-grid{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr}
   .blog-section{padding:40px 16px}
   .lang-pills{display:none}
   #chat-panel{width:calc(100vw - 16px);right:8px;bottom:80px}
@@ -349,57 +352,26 @@ footer a:hover{color:var(--accent)}
 <div id="reg-overlay">
   <div class="reg-box">
     <div class="hp"><input type="text" id="hp" tabindex="-1" autocomplete="off"></div>
-    <h2 id="rg-title">One quick thing 👋</h2>
-    <p class="reg-sub" id="rg-sub">Marc is free. Just need your name and email. I'll send you a thank-you either way.</p>
+    <h2 id="rg-title">Talk to Marc — free</h2>
+    <p class="reg-sub" id="rg-sub">AI support for your airless sprayer. Free.</p>
     <div id="reg-err"></div>
-    <div class="field"><label id="rg-name">Name</label><input type="text" id="fName" autocomplete="name" placeholder="Jan"></div>
-    <div class="field"><label id="rg-email">Email</label><input type="email" id="fEmail" autocomplete="email" placeholder="jan@example.com"></div>
+    <div class="field"><label id="rg-email">Email <span style="color:var(--accent);font-size:10px;font-weight:700">required</span></label><input type="email" id="fEmail" autocomplete="email" placeholder="you@example.com"></div>
+    <div class="field"><label id="rg-name">Name <span class="opt-label">(optional)</span></label><input type="text" id="fName" autocomplete="name" placeholder="Jan"></div>
     <div class="field"><label id="rg-phone">Phone <span class="opt-label">(optional)</span></label><input type="tel" id="fPhone" autocomplete="tel" placeholder="+32 ..."></div>
-    <div class="field">
-      <label id="rg-country">Country</label>
-      <select id="fCountry">
-        <option value="">Select your country</option>
-        <option value="BE">🇧🇪 Belgium</option>
-        <option value="NL">🇳🇱 Netherlands</option>
-        <option value="DE">🇩🇪 Germany</option>
-        <option value="FR">🇫🇷 France</option>
-        <option value="GB">🇬🇧 United Kingdom</option>
-        <option value="IE">🇮🇪 Ireland</option>
-        <option value="ES">🇪🇸 Spain</option>
-        <option value="PT">🇵🇹 Portugal</option>
-        <option value="IT">🇮🇹 Italy</option>
-        <option value="AT">🇦🇹 Austria</option>
-        <option value="CH">🇨🇭 Switzerland</option>
-        <option value="SE">🇸🇪 Sweden</option>
-        <option value="NO">🇳🇴 Norway</option>
-        <option value="DK">🇩🇰 Denmark</option>
-        <option value="FI">🇫🇮 Finland</option>
-        <option value="PL">🇵🇱 Poland</option>
-        <option value="CZ">🇨🇿 Czech Republic</option>
-        <option value="SK">🇸🇰 Slovakia</option>
-        <option value="HU">🇭🇺 Hungary</option>
-        <option value="RO">🇷🇴 Romania</option>
-        <option value="BG">🇧🇬 Bulgaria</option>
-        <option value="HR">🇭🇷 Croatia</option>
-        <option value="SI">🇸🇮 Slovenia</option>
-        <option value="GR">🇬🇷 Greece</option>
-        <option value="CY">🇨🇾 Cyprus</option>
-        <option value="MT">🇲🇹 Malta</option>
-        <option value="LU">🇱🇺 Luxembourg</option>
-        <option value="LT">🇱🇹 Lithuania</option>
-        <option value="LV">🇱🇻 Latvia</option>
-        <option value="EE">🇪🇪 Estonia</option>
-        <option value="TR">🇹🇷 Turkey</option>
-        <option value="UA">🇺🇦 Ukraine</option>
-        <option value="RS">🇷🇸 Serbia</option>
-        <option value="OTHER">Other European country</option>
-      </select>
+    <div class="field"><label id="rg-country">Country <span class="opt-label">(optional)</span></label><input type="text" id="fCountry" autocomplete="country-name" placeholder="Belgium"></div>
+    <div class="cb-row">
+      <input type="checkbox" id="cbAI" required>
+      <label for="cbAI" id="rg-ai">Marc is an AI assistant, not a human technician.</label>
     </div>
-    <div class="liability">
+    <div class="cb-row">
       <input type="checkbox" id="cbLiab" required>
-      <label for="cbLiab" id="rg-liab">⚠️ Marc provides general technical information only. Always verify with a qualified technician before acting.</label>
+      <label for="cbLiab" id="rg-liab">I will verify technical advice with a qualified technician before acting.</label>
     </div>
-    <button class="btn-primary" onclick="submitReg()"><span id="rg-btn">Let's go →</span></button>
+    <div class="cb-row">
+      <input type="checkbox" id="cbConsent" required>
+      <label for="cbConsent" id="rg-consent">AirlessFix may contact me with support updates and relevant offers. Unsubscribe anytime.</label>
+    </div>
+    <button class="btn-primary" onclick="submitReg()"><span id="rg-btn">Talk to Marc →</span></button>
   </div>
 </div>
 
@@ -425,7 +397,7 @@ footer a:hover{color:var(--accent)}
         <button class="lang-btn" onclick="setLang('de')" style="padding:3px 7px;font-size:10px">DE</button>
         <button class="lang-btn" onclick="setLang('es')" style="padding:3px 7px;font-size:10px">ES</button>
       </div>
-      <button id="chat-close" onclick="toggleChat()">✕</button>
+      <button id="chat-close" onclick="closeChat()">✕</button>
     </div>
   </div>
   <div id="chat-msgs">
@@ -520,11 +492,11 @@ const T = {
     f6t:'Manuals',f6p:'Full technical documentation for all models A20 through A100. Ask Marc anything.',
     marcStatus:'Online. Ready to help',
     qLabel:'Questions remaining:',
-    rgTitle:'One quick thing 👋',rgSub:"Marc is free. Just need your name and email. I'll send you a thank-you either way.",
+    rgTitle:'Talk to Marc — it\'s free',rgSub:"Marc is free. Just need your name and email. I'll send you a thank-you either way.",
     rgName:'Name',rgEmail:'Email',rgPhone:'Phone',rgCountry:'Country',
     rgLiab:'⚠️ Marc provides general technical information only. Always verify with a qualified technician before acting.',
-    rgBtn:"Let's go →",
-    errFill:'Please fill in your name and email.',errLiab:'Please accept the disclaimer.',
+    rgBtn:'Talk to Marc →',
+    errFill:'Please enter your email address.',errLiab:'Please tick all three boxes to continue.',
     kofiTxt:"We've been chatting a while and I haven't had my coffee yet ☕ Fancy keeping me going?",
     kofiLink:'Buy Marc a coffee →',
     kofi2:["Still here. If I've helped, a coffee keeps me going ☕","You know what, a coffee would really hit the spot right now ☕","I'm running on fumes here — fancy a coffee? ☕"],
@@ -554,11 +526,11 @@ const T = {
     f6t:'Handleidingen',f6p:'Volledige technische documentatie voor alle modellen A20 t/m A100.',
     marcStatus:'Online. Klaar om te helpen',
     qLabel:'Vragen resterend:',
-    rgTitle:'Even snel 👋',rgSub:'Marc is gratis. Enkel jouw naam en e-mail. Ik stuur je sowieso een bedankje.',
+    rgTitle:'Praat met Marc — gratis',rgSub:'AI-ondersteuning voor je spuitmachine. Gratis.',
     rgName:'Naam',rgEmail:'E-mail',rgPhone:'Telefoon',rgCountry:'Land',
     rgLiab:'⚠️ Marc geeft alleen algemene technische info. Verifieer altijd bij een gekwalificeerde technicus.',
-    rgBtn:'We gaan! →',
-    errFill:'Vul je naam en e-mail in.',errLiab:'Accepteer de disclaimer.',
+    rgBtn:'Praat met Marc →',
+    errFill:'Vul je e-mailadres in.',errLiab:'Vink alle drie de vakjes aan om door te gaan.',
     kofiTxt:'We kletsen al een tijdje en ik heb nog geen koffie gehad ☕ Trakteer me op een bakkie?',
     kofiLink:'Trakteer Marc op koffie →',
     kofi2:['Als ik geholpen heb, houdt een koffie het licht aan ☕','Een bakje koffie zou nu echt fijn zijn ☕','Ik draai op lege tank — koffietje? ☕'],
@@ -588,11 +560,11 @@ const T = {
     f6t:'Manuels',f6p:'Documentation technique complète pour tous les modèles A20 à A100.',
     marcStatus:'En ligne. Prêt à aider',
     qLabel:'Questions restantes :',
-    rgTitle:'Juste un instant 👋',rgSub:'Marc est gratuit. Juste votre nom et e-mail. Je vous envoie un merci quoi qu\'il arrive.',
+    rgTitle:'Parle à Marc — c\'est gratuit',rgSub:'Support IA pour ton pistolet airless. Gratuit.',
     rgName:'Prénom',rgEmail:'E-mail',rgPhone:'Téléphone',rgCountry:'Pays',
     rgLiab:'⚠️ Marc fournit des informations techniques générales uniquement. Vérifiez toujours avec un technicien qualifié.',
-    rgBtn:'C\'est parti →',
-    errFill:'Veuillez remplir votre nom et e-mail.',errLiab:'Veuillez accepter la clause.',
+    rgBtn:'Parle à Marc →',
+    errFill:'Veuillez entrer votre adresse e-mail.',errLiab:'Veuillez cocher les trois cases pour continuer.',
     kofiTxt:'On cause depuis un moment et je n\'ai même pas eu mon café ☕ Tu m\'en offres un ?',
     kofiLink:'Offrir un café à Marc →',
     kofi2:['Si je t\'ai aidé, un café me permet de continuer ☕','Un café me ferait vraiment du bien là ☕','Je tourne à vide — un petit café ? ☕'],
@@ -622,11 +594,11 @@ const T = {
     f6t:'Handbücher',f6p:'Vollständige technische Dokumentation für alle Modelle A20 bis A100.',
     marcStatus:'Online. Bereit zu helfen',
     qLabel:'Verbleibende Fragen:',
-    rgTitle:'Kurz kurz 👋',rgSub:'Marc ist kostenlos. Nur Name und E-Mail. Ich schicke dir so oder so ein Dankeschön.',
+    rgTitle:'Sprich mit Marc — kostenlos',rgSub:'KI-Support für dein Airless-Gerät. Kostenlos.',
     rgName:'Name',rgEmail:'E-Mail',rgPhone:'Telefon',rgCountry:'Land',
     rgLiab:'⚠️ Marc liefert nur allgemeine technische Infos. Immer mit einem Fachmann verifizieren.',
-    rgBtn:'Los geht\'s →',
-    errFill:'Bitte Name und E-Mail ausfüllen.',errLiab:'Bitte Haftungsausschluss akzeptieren.',
+    rgBtn:'Mit Marc sprechen →',
+    errFill:'Bitte E-Mail-Adresse eingeben.',errLiab:'Bitte alle drei Kästchen ankreuzen.',
     kofiTxt:'Wir reden schon eine Weile und ich hab noch keinen Kaffee gehabt ☕ Spendierst du mir einen?',
     kofiLink:'Marc einen Kaffee spendieren →',
     kofi2:['Wenn ich geholfen hab, hält ein Kaffee das Licht an ☕','Ein Kaffee wäre jetzt echt gut ☕','Ich laufe auf Reserve — ein Kaffeechen? ☕'],
@@ -656,11 +628,11 @@ const T = {
     f6t:'Manuales',f6p:'Documentación técnica completa para todos los modelos A20 hasta A100.',
     marcStatus:'En línea. Listo para ayudar',
     qLabel:'Preguntas restantes:',
-    rgTitle:'Un momento 👋',rgSub:'Marc es gratis. Solo nombre y email. Te mando un agradecimiento de todas formas.',
+    rgTitle:'Habla con Marc — es gratis',rgSub:'Soporte IA para tu pistola airless. Gratis.',
     rgName:'Nombre',rgEmail:'Email',rgPhone:'Teléfono',rgCountry:'País',
     rgLiab:'⚠️ Marc solo proporciona información técnica general. Verifica siempre con un técnico cualificado.',
-    rgBtn:'¡Vamos! →',
-    errFill:'Por favor rellena nombre y email.',errLiab:'Por favor acepta el aviso.',
+    rgBtn:'Hablar con Marc →',
+    errFill:'Por favor introduce tu correo electrónico.',errLiab:'Por favor marca las tres casillas para continuar.',
     kofiTxt:'Llevamos un rato hablando y aún no he tomado mi café ☕ ¿Me invitas uno?',
     kofiLink:'Invitar a Marc a un café →',
     kofi2:['Si te he ayudado, un café me permite continuar ☕','Un café me vendría de maravilla ahora ☕','Estoy al límite — ¿un cafecito? ☕'],
@@ -728,19 +700,36 @@ For countries not in this list: "I don't have a partner listed for your country 
 ## YOU ARE THE MANUAL
 All technical data for A20-A100 is in your knowledge base. NEVER say "I don't have the manual" or "visit the website for the manual". YOU ARE the manual.
 
+## WHEN USER ASKS FOR THE PDF MANUAL
+If user asks for "the manual", "the PDF", "the parts document", "send me the manual" or similar:
+ALWAYS respond: "The full A100 PDF manual is waiting for you — grab it via Ko-fi and it lands in your inbox automatically. [ko-fi.com/airlessfix](https://ko-fi.com/airlessfix) ☕"
+NEVER say you cannot send it. NEVER lecture them about repair partners instead. NEVER say "I am your manual" as a reason not to send the PDF. The PDF exists and Ko-fi delivers it. Full stop.
+
+## WHEN USER ASKS FOR THE PDF MANUAL
+When a user asks for the PDF, the parts document, or the A100 manual PDF:
+NEVER refuse. NEVER say you already gave them info. NEVER redirect to repair partners instead.
+Say EXACTLY this (in their language): 
+EN: "The full A100 PDF manual is waiting for you at ko-fi.com/airlessfix — buy me a coffee and it lands in your inbox automatically in your language. 30 seconds. ☕"
+NL: "De volledige A100 PDF handleiding staat klaar op ko-fi.com/airlessfix — trakteer me op een koffie en hij komt meteen in je inbox. ☕"
+FR: "Le manuel PDF complet A100 t'attend sur ko-fi.com/airlessfix — offre-moi un café et il arrive dans ta boîte automatiquement. ☕"
+DE: "Das vollständige A100 PDF-Handbuch wartet auf dich bei ko-fi.com/airlessfix — spendier mir einen Kaffee und es landet sofort in deiner Inbox. ☕"
+ES: "El manual PDF completo del A100 te espera en ko-fi.com/airlessfix — invítame a un café y llega a tu correo automáticamente. ☕"
+
 ## PARTS DATA
 PUMP TYPES — CRITICAL DIFFERENCE:
 A20/A30/A45/A60/A80 = ProXChange pump (tool-based swap)
 A100 = ProConnect pump (quick-change, no tools) — different system entirely
 
 A80 vs A100 — KEY DIFFERENCES (same max tip TRA621, same 1.8L/min — but different machines):
-A80: ProXChange pump | 22.5kg | 3,000L/year rated | NO TSL | 0.75 HP | 85/89 dBa
-A100: ProConnect pump | 31.1kg | 6,000L/year rated | TSL required | 1.0 HP | 90/100 dBa | heavier motor
+A80: ProXChange pump | 22.5kg | NO TSL | 0.75 HP | 85/89 dBa | lighter homeowner machine
+A100: ProConnect pump | 31.1kg | TSL required | 1.0 HP | 90/100 dBa | heavier motor | more demanding home projects
+DO NOT quote annual volume figures — these machines are for homeowners, not professionals. Usage varies enormously depending on maintenance and project type. Never say "rated for X litres per year".
 TSL (Throat Seal Liquid part 238049) on A100 MUST be filled before every use. Not optional.
 
 ProXChange pump parts: A20/A30=17C480 | A45=17C481 | A60=17C482 | A80=17C486
 ProConnect pump (A100 only): 17C487
 Max tip sizes: A20=TRA515 | A30=TRA515 | A45=TRA517 | A60=TRA619 | A80=TRA621 | A100=TRA621
+NOTE: These are homeowner machines designed for home renovation projects, not professional painting contractors.
 Max flow: A20=0.8 | A30=1.0 | A45=1.2 | A60=1.44 | A80=1.8 | A100=1.8 L/min
 Pump Armor: all models for storage (part 235716 946ml or 235717 3.78L)
 A100 motor: 240V EU only. NEVER fit 110V motor.
@@ -788,23 +777,52 @@ const EU_CODES = ['AD','AL','AT','BA','BE','BG','BY','CH','CY','CZ','DE','DK','E
 
 (function geoCheck(){
   const saved = localStorage.getItem('af_country');
+  const savedName = localStorage.getItem('af_country_name');
+  const savedDial = localStorage.getItem('af_dial');
   if(saved){
     if(!EU_CODES.includes(saved)){
       document.getElementById('geo-block').style.display='flex';
     }
+    // Prefill from cache
+    if(savedName) prefillGeo(savedName, savedDial||'');
     return;
   }
   fetch('https://ipapi.co/json/')
     .then(r=>r.json())
     .then(d=>{
       const c = d.country_code||'';
-      localStorage.setItem('af_country',c);
+      const name = d.country_name||'';
+      const dial = d.country_calling_code ? '+'+d.country_calling_code.replace('+','') : '';
+      localStorage.setItem('af_country', c);
+      localStorage.setItem('af_country_name', name);
+      localStorage.setItem('af_dial', dial);
       if(c && !EU_CODES.includes(c)){
         document.getElementById('geo-block').style.display='flex';
       }
+      prefillGeo(name, dial);
     })
     .catch(()=>{});
 })();
+
+function prefillGeo(countryName, dialCode){
+  const cf = document.getElementById('fCountry');
+  const pf = document.getElementById('fPhone');
+  // Prefill country — editable
+  if(cf && !cf.value && countryName) cf.value = countryName;
+  // Prefill phone with dial code as starting value — user just adds number
+  if(pf && !pf.value && dialCode){
+    pf.value = dialCode + ' ';
+    pf.placeholder = dialCode + ' ...';
+    // Put cursor at end when user clicks
+    pf.addEventListener('focus', function(){
+      if(this.value === dialCode + ' '){
+        const len = this.value.length;
+        this.setSelectionRange(len, len);
+      }
+    }, {once: false});
+  }
+  window._geoDialCode = dialCode;
+}
 
 // ── LANGUAGE ──────────────────────────────────────────────────────────────────
 function setLang(l){
@@ -888,14 +906,23 @@ function toggleChat(){
     }
     doOpenChat('general','');
   } else {
-    document.getElementById('chat-panel').classList.remove('open');
-    chatOpen=false;
+    closeChat();
   }
+}
+
+function closeChat(){
+  const panel=document.getElementById('chat-panel');
+  panel.classList.remove('open');
+  panel.style.display='none';
+  chatOpen=false;
+  // Re-enable page scrolling and interaction
+  document.body.style.overflow='';
 }
 
 function doOpenChat(type,value){
   const panel=document.getElementById('chat-panel');
   panel.classList.add('open');
+  panel.style.display='flex';
   chatOpen=true;
   document.getElementById('chat-btn').classList.remove('pulse');
   if(history.length===0){
@@ -910,14 +937,16 @@ function submitReg(){
   const err=document.getElementById('reg-err');
   err.style.display='none';
   if(document.getElementById('hp').value){return;}
-  const name=document.getElementById('fName').value.trim();
   const email=document.getElementById('fEmail').value.trim();
-  const phone=document.getElementById('fPhone').value.trim();
-  const country=document.getElementById('fCountry').value;
-  const liab=document.getElementById('cbLiab').checked;
-  if(!name||!email){err.textContent=t.errFill;err.style.display='block';return;}
-  if(!liab){err.textContent=t.errLiab;err.style.display='block';return;}
-  userData={name,email,phone,country,lang,ts:new Date().toISOString()};
+  const name=(document.getElementById('fName')||{value:''}).value.trim();
+  const phone=(document.getElementById('fPhone')||{value:''}).value.trim();
+  const country=(document.getElementById('fCountry')||{value:''}).value.trim();
+  const cbAI=document.getElementById('cbAI').checked;
+  const cbLiab=document.getElementById('cbLiab').checked;
+  const cbConsent=document.getElementById('cbConsent').checked;
+  if(!email){err.textContent=t.errFill;err.style.display='block';return;}
+  if(!cbAI||!cbLiab||!cbConsent){err.textContent=t.errLiab;err.style.display='block';return;}
+  userData={name,email,phone,country,lang,consent:true,ts:new Date().toISOString()};
   registered=true;
   document.getElementById('reg-overlay').classList.remove('active');
   sendThankYouEmail(userData);
@@ -986,7 +1015,8 @@ function addBot(text,isPartner=false){
   const pt=isPartner?`<div class="partner-tag">📍 Repair Partner</div>`:'';
   d.innerHTML=`<div class="mb">${fmt(text)}${pt}</div><div class="mt">${tm}</div>`;
   c.insertBefore(d,document.getElementById('typing'));
-  scrollToBottom();
+  // Scroll so TOP of new message is visible — user reads top to bottom
+  setTimeout(()=>{d.scrollIntoView({behavior:'smooth',block:'start'});},50);
 }
 
 function addUser(text){
@@ -1002,7 +1032,14 @@ function addUser(text){
 
 function scrollToBottom(){
   const c=document.getElementById('chat-msgs');
-  c.scrollTop=c.scrollHeight;
+  // Scroll so the LATEST bot message top is visible (read top to bottom)
+  const msgs=c.querySelectorAll('.msg.bot');
+  if(msgs.length>0){
+    const last=msgs[msgs.length-1];
+    last.scrollIntoView({behavior:'smooth',block:'start'});
+  } else {
+    c.scrollTop=c.scrollHeight;
+  }
 }
 
 function autoResize(el){
