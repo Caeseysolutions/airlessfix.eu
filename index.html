@@ -1215,6 +1215,8 @@ updateQCounter();
 (function detectLang(){
   const bl=(navigator.language||'en').toLowerCase().substring(0,2);
   const map={nl:'nl',fr:'fr',de:'de',es:'es'};
+  // French overseas territories — force French
+  const frTerritories=['GP','MQ','GF','RE','YT','PM','BL','MF','PF','NC','WF'];
   if(map[bl]) setLang(map[bl]);
 })();
 </script>
