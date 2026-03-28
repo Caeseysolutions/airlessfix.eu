@@ -104,7 +104,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:18p
 .blog-card a{font-size:12px;color:var(--accent);font-weight:600}
 
 /* LEFT KOFI WIDGET */
-#kofi-widget{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:150;display:flex;flex-direction:column;align-items:flex-start}
+#kofi-widget{position:fixed;left:0;bottom:24px;z-index:150;display:flex;flex-direction:column;align-items:flex-start}
 #kofi-tab{background:linear-gradient(135deg,#ff5e5b,#ff8c00);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:11px;writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);padding:16px 8px;border-radius:0 8px 8px 0;cursor:pointer;letter-spacing:.05em;box-shadow:2px 0 12px rgba(255,94,91,.3);transition:.2s}
 #kofi-tab:hover{padding-left:12px;box-shadow:4px 0 20px rgba(255,94,91,.5)}
 #kofi-panel{display:none;background:var(--surface);border:1px solid var(--border);border-left:none;border-radius:0 12px 12px 0;padding:20px 16px;width:220px;box-shadow:4px 0 20px rgba(0,0,0,.4)}
@@ -286,7 +286,7 @@ footer a:hover{color:var(--accent)}
     <div class="feat-card" onclick="openChat('topic','parts')">
       <div class="feat-icon">🔧</div>
       <h3 id="f1t">Parts identification</h3>
-      <p id="f1p">Correct part numbers for your model. ProXChange & ProConnect pumps, tip guard, filters, hoses and more.</p>
+      <p id="f1p">Correct part numbers for your model. ProXChange and ProConnect pumps, tip guard, filters, hoses and more.</p>
     </div>
     <div class="feat-card" onclick="openChat('topic','troubleshooting')">
       <div class="feat-icon">⚡</div>
@@ -463,13 +463,13 @@ const PARTNERS = {
     {name:'M.P.A.',city:'Lummen',phone:'+32 13 53 26 00'},
     {name:'Verschuere',city:'Harelbeke',phone:'+32 56 71 21 45'},
     {name:'A.M.I.',city:'Braine-le-Château',phone:'+32 2 366 22 34'},
-    {name:'V&D Techniek',city:'Halen',phone:'+32 475 27 95 47'},
+    {name:'V en D Techniek',city:'Halen',phone:'+32 475 27 95 47'},
     {name:'BCA',city:'Ternat',phone:'+32 2 581 04 04'}
   ],
   NL:[
     {name:'Schoonewil Techniek',city:'Alkmaar',phone:''},
     {name:'Rossenaar Techn. Adv.',city:'Purmerend',phone:''},
-    {name:'Keur & Care',city:'Ankeveen',phone:''},
+    {name:'Keur en Care',city:'Ankeveen',phone:''},
     {name:'Oostveen Machine Techniek',city:'Vleuten',phone:''},
     {name:'Spray Support',city:'Naaldwijk',phone:''},
     {name:'Romijn Spray Equipment',city:'Almkerk',phone:''},
@@ -523,7 +523,7 @@ const T = {
     hSub:'Parts &amp; Troubleshooting &amp; Repair Partners &amp; Manuals 24/7',
     fTitle:'What Marc can help with',
     blogTitle:'Guides & Tips',
-    f1t:'Parts identification',f1p:'Correct part numbers for your model. ProXChange & ProConnect pumps, tip guard, filters, hoses and more.',
+    f1t:'Parts identification',f1p:'Correct part numbers for your model. ProXChange and ProConnect pumps, tip guard, filters, hoses and more.',
     f2t:'Troubleshooting',f2p:'Pressure loss, no-spray, motor trips, leaks. Marc guides you step by step.',
     f3t:'Storage & winterising',f3p:'Pump Armor procedure, storage tips, how to avoid costly pump seizure over winter.',
     f4t:'Repair Partners',f4p:'Marc connects you with authorised repair partners in your country. Mention AirlessFix for priority.',
@@ -557,7 +557,7 @@ const T = {
     hSub:'Onderdelen &amp; Probleemoplossing &amp; Reparatiepartners &amp; Handleidingen &amp; 24/7',
     fTitle:'Waarmee Marc kan helpen',
     blogTitle:'Handleidingen & Tips',
-    f1t:'Onderdelen',f1p:'Correcte onderdeelnummers voor jouw model. ProXChange & ProConnect pompen, tipbeveiliging, filters, slangen.',
+    f1t:'Onderdelen',f1p:'Correcte onderdeelnummers voor jouw model. ProXChange en ProConnect pompen, tipbeveiliging, filters, slangen.',
     f2t:'Probleemoplossing',f2p:'Drukval, niet spuiten, motorstoring, lekken. Marc begeleidt je stap voor stap.',
     f3t:'Opslag & winterisering',f3p:'Pump Armor procedure, opslagtips, hoe je kostbare pompbeschadiging voorkomt.',
     f4t:'Reparatiepartners',f4p:'Marc verbindt je met erkende reparatiepartners in jouw land. Noem AirlessFix voor prioriteit.',
@@ -591,7 +591,7 @@ const T = {
     hSub:'Pièces &amp; Dépannage &amp; Partenaires réparation &amp; Manuels &amp; 24h/7j',
     fTitle:'Ce que Marc peut faire',
     blogTitle:'Guides & Conseils',
-    f1t:'Pièces',f1p:'Numéros de pièces corrects pour votre modèle. Pompes ProXChange & ProConnect, protection buse, filtres, tuyaux.',
+    f1t:'Pièces',f1p:'Numéros de pièces corrects pour votre modèle. Pompes ProXChange et ProConnect, protection buse, filtres, tuyaux.',
     f2t:'Dépannage',f2p:'Perte de pression, pas de pulvérisation, déclenchement moteur, fuites. Marc guide étape par étape.',
     f3t:'Stockage & hivernage',f3p:'Procédure Pump Armor, conseils de stockage, comment éviter une saisie de pompe en hiver.',
     f4t:'Partenaires réparation',f4p:'Marc vous met en contact avec des partenaires réparation agréés. Mentionnez AirlessFix pour la priorité.',
@@ -625,7 +625,7 @@ const T = {
     hSub:'Teile &amp; Fehlersuche &amp; Reparaturpartner &amp; Handbücher &amp; 24/7',
     fTitle:'Womit Marc helfen kann',
     blogTitle:'Anleitungen & Tipps',
-    f1t:'Teileidentifikation',f1p:'Korrekte Teilenummern für dein Modell. ProXChange & ProConnect-Pumpen, Düsenschutz, Filter, Schläuche.',
+    f1t:'Teileidentifikation',f1p:'Korrekte Teilenummern für dein Modell. ProXChange und ProConnect-Pumpen, Düsenschutz, Filter, Schläuche.',
     f2t:'Fehlerdiagnose',f2p:'Druckverlust, kein Sprühen, Motorauslösung, Undichtigkeiten. Marc führt dich Schritt für Schritt.',
     f3t:'Lagerung & Einwinterung',f3p:'Pump Armor-Verfahren, Lagerungstipps, wie du Pumpenschäden im Winter vermeidest.',
     f4t:'Reparaturpartner',f4p:'Marc verbindet dich mit autorisierten Reparaturpartnern in deinem Land. AirlessFix erwähnen für Priorität.',
@@ -659,7 +659,7 @@ const T = {
     hSub:'Piezas &amp; Diagnóstico &amp; Talleres &amp; Manuales &amp; 24/7',
     fTitle:'En qué puede ayudar Marc',
     blogTitle:'Guías y Consejos',
-    f1t:'Identificación de piezas',f1p:'Números de pieza correctos para tu modelo. Bombas ProXChange & ProConnect, protector de boquilla, filtros.',
+    f1t:'Identificación de piezas',f1p:'Números de pieza correctos para tu modelo. Bombas ProXChange y ProConnect, protector de boquilla, filtros.',
     f2t:'Diagnóstico',f2p:'Pérdida de presión, sin pulverización, disparo del motor, fugas. Marc te guía paso a paso.',
     f3t:'Almacenamiento e invernada',f3p:'Procedimiento Pump Armor, consejos de almacenamiento, cómo evitar daños en la bomba.',
     f4t:'Talleres',f4p:'Marc te conecta con talleres autorizados en tu país. Menciona AirlessFix para prioridad.',
