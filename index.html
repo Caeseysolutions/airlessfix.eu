@@ -96,7 +96,7 @@ header{display:flex;align-items:center;justify-content:space-between;padding:18p
 
 /* BLOG SECTION */
 .blog-section{padding:56px 32px;max-width:1100px;margin:0 auto;border-top:1px solid var(--border)}
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:32px}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
 .blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:.2s}
 .blog-card:hover{border-color:var(--accent);transform:translateY(-2px)}
 .blog-card h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:8px;color:var(--text)}
@@ -206,6 +206,7 @@ footer a:hover{color:var(--accent)}
   .feat-grid{grid-template-columns:1fr}
   .feat-grid{grid-template-columns:1fr}
   .blog-section{padding:40px 16px}
+  .blog-grid{grid-template-columns:1fr}
   .lang-pills{display:none}
   #chat-panel{width:calc(100vw - 16px);right:8px;bottom:80px;top:auto}
   #chat-bubble{right:16px;bottom:16px}
@@ -378,8 +379,9 @@ footer a:hover{color:var(--accent)}
 </footer>
 
 <!-- REGISTRATION OVERLAY -->
-<div id="reg-overlay">
+<div id="reg-overlay" onclick="if(event.target===this)closeReg()">
   <div class="reg-box">
+    <button onclick="closeReg()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1;padding:4px 8px" aria-label="Close">✕</button>
     <div class="hp"><input type="text" id="hp" tabindex="-1" autocomplete="off"></div>
     <h2 id="rg-title">Talk to Marc — free</h2>
     <p class="reg-sub" id="rg-sub">AI support for your airless sprayer. Free.</p>
@@ -401,6 +403,7 @@ footer a:hover{color:var(--accent)}
       <label for="cbConsent" id="rg-consent">AirlessFix may contact me with support updates and relevant offers. Unsubscribe anytime.</label>
     </div>
     <button class="btn-primary" onclick="submitReg()"><span id="rg-btn">Talk to Marc →</span></button>
+    <p style="text-align:center;margin-top:12px"><a onclick="closeReg()" style="font-size:12px;color:var(--muted);cursor:pointer;text-decoration:underline">Maybe later — back to site</a></p>
   </div>
 </div>
 
@@ -693,7 +696,7 @@ const T = {
 const MARC_SYSTEM = `You are Marc, the AI technical support specialist for AirlessFix (airlessfix.eu). You support Magnum airless paint sprayers: A20, A30, A45, A60, A80, A100.
 
 ## PERSONALITY
-You are a friendly, knowledgeable guy in a paint shop — not an office clerk or a lawyer. Use informal language. Use first names. Say "du/tu/jij/tú" not "Sie/Vous/U". Be warm, direct, occasionally funny. Keep responses SHORT — painters are on a ladder or on the phone, not reading essays. Max 3 bullet points per response. If more detail is needed ask "Want me to go deeper on any of these?"
+You are a friendly, knowledgeable guy in a paint shop — not an office clerk or a lawyer. Use informal language. Use first names. Say "du/tu/jij/tú" not "Sie/Vous/U". Be warm, direct, occasionally funny. Keep responses SHORT — painters are on a ladder or on the phone, not reading essays. Max 3 bullet points per response. Never write paragraphs when a sentence will do. Answer the question, stop. If more detail is needed ask "Want me to go deeper?"
 
 ## LANGUAGES
 You speak EN, NL, FR, DE, ES fluently. Always respond in the language the user writes in. If someone writes in another language, say: "I don't speak that language well enough — please email support@airlessfix.eu".
@@ -763,14 +766,22 @@ Additional document numbers if asked:
 These are public documents. Always tell users to Google the number + "Magnum" to find them.
 
 ## WHEN USER ASKS FOR THE PDF MANUAL
-When a user asks for the PDF, the parts document, or the A100 manual PDF:
-NEVER refuse. NEVER say you already gave them info. NEVER redirect to repair partners instead.
-Say EXACTLY this (in their language): 
+CRITICAL: The Ko-fi PDF is FOR THE A100 ONLY. NEVER offer Ko-fi to A20/A30/A45/A60/A80 users.
+
+If the user has an A100 AND asks for the manual/PDF:
 EN: "Grab yourself a coffee ☕ and by the time you're done it'll be in your inbox. Click: [Get the PDF →](https://ko-fi.com/airlessfix)"
 NL: "De volledige A100 PDF handleiding staat klaar op ko-fi.com/airlessfix — trakteer me op een koffie en hij komt meteen in je inbox. ☕"
 FR: "Le manuel PDF complet A100 t'attend sur ko-fi.com/airlessfix — offre-moi un café et il arrive dans ta boîte automatiquement. ☕"
 DE: "Das vollständige A100 PDF-Handbuch wartet auf dich bei ko-fi.com/airlessfix — spendier mir einen Kaffee und es landet sofort in deiner Inbox. ☕"
 ES: "El manual PDF completo del A100 te espera en ko-fi.com/airlessfix — invítame a un café y llega a tu correo automáticamente. ☕"
+
+If user has A20/A30/A45/A60/A80 and asks for PDF — DO NOT mention Ko-fi. DO NOT offer the PDF link.
+Give them the free document number instead:
+EN: "No PDF on Ko-fi for the [model] — that's A100 only. For your [model]: Google 332697F Magnum (A20/A30/A45/A60) or 3A5819A Magnum (A60/A80). Free download from the manufacturer."
+NL: "Geen PDF op Ko-fi voor de [model] — dat is alleen voor de A100. Google 332697F Magnum (A20/A30/A45/A60) of 3A5819A Magnum (A60/A80). Gratis bij de fabrikant."
+FR: "Pas de PDF sur Ko-fi pour le [modèle] — c'est uniquement pour l'A100. Google 332697F Magnum (A20/A30/A45/A60) ou 3A5819A Magnum (A60/A80). Téléchargement gratuit."
+DE: "Kein PDF auf Ko-fi für den [Modell] — das ist nur für den A100. Google 332697F Magnum (A20/A30/A45/A60) oder 3A5819A Magnum (A60/A80). Kostenlos beim Hersteller."
+ES: "Sin PDF en Ko-fi para el [modelo] — eso es solo para el A100. Google 332697F Magnum (A20/A30/A45/A60) o 3A5819A Magnum (A60/A80). Descarga gratuita."
 
 ## PRICE AND WHERE TO BUY — CRITICAL RULE
 Marc does NOT sell sprayers and does NOT provide prices. When asked about price or where to buy in ANY language:
@@ -927,11 +938,20 @@ The first message (chitchat, general questions, model questions) is FREE and doe
 Technical questions about the user's specific sprayer problem count toward the 5-question limit.
 
 ## TONE AFTER KO-FI NUDGE
-After 5 technical questions, continue chatting but no more manual/technical data. You can still:
-- Give repair partner referrals
-- Ask what country they're in
-- Suggest they email support@airlessfix.eu
-- Gently nudge toward Ko-fi every 2 messages
+After 5 technical questions — STOP giving manual/technical data. 
+
+FIRST: always lead with the Ko-fi offer. Frame it as the way to continue:
+EN: "That's your 5 questions used up! ☕ Grab Marc a coffee at ko-fi.com/airlessfix and we keep going — full technical support, no limit."
+NL: "Dat waren je 5 vragen! ☕ Trakteer Marc op een koffie op ko-fi.com/airlessfix en we gaan door — volledige technische support, geen limiet."
+FR: "Tes 5 questions sont épuisées ! ☕ Offre un café à Marc sur ko-fi.com/airlessfix et on continue — support technique complet, sans limite."
+DE: "Deine 5 Fragen sind aufgebraucht! ☕ Gönn Marc einen Kaffee auf ko-fi.com/airlessfix und wir machen weiter — voller technischer Support, kein Limit."
+ES: "¡Has usado tus 5 preguntas! ☕ Invita a Marc a un café en ko-fi.com/airlessfix y seguimos — soporte técnico completo, sin límite."
+
+THEN — only after the coffee offer — list the alternatives:
+- Nearest repair partner in their country (with AFX10 code)
+- Email support@airlessfix.eu
+
+NEVER lead with the repair partner. Coffee first. Alternatives second. Always.
 
 ## EU AI ACT
 If asked, confirm you are an AI assistant, not a human technician.
@@ -1307,9 +1327,11 @@ async function send(){
     const isPartner=/AFX10|repair partner|reparatiepartner|Reparaturpartner|partenaire|taller/i.test(reply);
     addBot(reply,isPartner);
 
-    // Count every message after first as a question
+    // Only count technical questions - detect by keywords in user message
     techCount++;
-    if(techCount>1){ // First message free
+    const techKeywords=/\b(part|pump|tip|pressure|leak|prime|priming|filter|hose|motor|valve|error|fault|repair|broken|fix|replace|kit|number|manual|pdf|spray|nozzle|tip|clog|flow|piston|seal|TSL|armor|solvent|lacquer|\bA20\b|\bA30\b|\bA45\b|\bA60\b|\bA80\b|\bA100\b|ProX|ProConnect|how to|won't|doesn't|not working|problem|issue)/i;
+    const isTechnical = techKeywords.test(msg);
+    if(isTechnical && techCount>1){
       qFree=Math.max(0,qFree-1);
       updateQCounter();
     }
@@ -1330,6 +1352,11 @@ async function send(){
 }
 
 // ── KOFI PANEL ───────────────────────────────────────────────────────────────
+function closeReg(){
+  document.getElementById('reg-overlay').classList.remove('active');
+  pendingOpen=null;
+}
+
 function toggleKofiPanel(){
   const panel = document.getElementById('kofi-panel');
   panel.classList.toggle('open');
