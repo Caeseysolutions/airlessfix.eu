@@ -330,30 +330,30 @@ footer a:hover{color:var(--accent)}
 <section class="blog-section">
   <h2 class="section-title" id="blog-title">Guides &amp; Tips</h2>
   <div class="blog-grid">
-    <div class="blog-card" onclick="window.location='/blog/how-to-prime-airless-sprayer.html'">      
-      <h3>How to prime your airless sprayer</h3>
-      <p>Step-by-step priming guide for all Magnum models. Get spray-ready in 5 minutes.</p>
-      <a href="/blog/how-to-prime-airless-sprayer.html">Read guide →</a>
+    <div class="blog-card" onclick="window.location='/blog/how-to-prime-airless-sprayer.html'">
+      <h3 id="bc1t">How to prime your airless sprayer</h3>
+      <p id="bc1p">Step-by-step priming guide for all Magnum models. Get spray-ready in 5 minutes.</p>
+      <a id="bc1a" href="/blog/how-to-prime-airless-sprayer.html">Read guide →</a>
     </div>
-    <div class="blog-card" onclick="window.location='/blog/airless-tip-size-guide.html'">      
-      <h3>Airless tip size guide</h3>
-      <p>Which tip for which paint? Complete TrueAirless tip selection chart.</p>
-      <a href="/blog/airless-tip-size-guide.html">Read guide →</a>
+    <div class="blog-card" onclick="window.location='/blog/airless-tip-size-guide.html'">
+      <h3 id="bc2t">Airless tip size guide</h3>
+      <p id="bc2p">Which tip for which paint? Complete TrueAirless tip selection chart.</p>
+      <a id="bc2a" href="/blog/airless-tip-size-guide.html">Read guide →</a>
     </div>
-    <div class="blog-card" onclick="window.location='/blog/winterising-airless-sprayer.html'">      
-      <h3>Make your sprayer last longer</h3>
-      <p>Cleaning and flushing after every job. The 10 minutes that save you hundreds.</p>
-      <a href="/blog/winterising-airless-sprayer.html">Read guide →</a>
+    <div class="blog-card" onclick="window.location='/blog/winterising-airless-sprayer.html'">
+      <h3 id="bc3t">Make your sprayer last longer</h3>
+      <p id="bc3p">Cleaning and flushing after every job. The 10 minutes that save you hundreds.</p>
+      <a id="bc3a" href="/blog/winterising-airless-sprayer.html">Read guide →</a>
     </div>
-    <div class="blog-card" onclick="window.location='/blog/a100-troubleshooting.html'">      
-      <h3>A100 troubleshooting</h3>
-      <p>Most common A100 problems and how to fix them. Error codes E01-E05 explained.</p>
-      <a href="/blog/a100-troubleshooting.html">Read guide →</a>
+    <div class="blog-card" onclick="window.location='/blog/a100-troubleshooting.html'">
+      <h3 id="bc4t">A100 troubleshooting</h3>
+      <p id="bc4p">Most common A100 problems and how to fix them. Error codes E01-E05 explained.</p>
+      <a id="bc4a" href="/blog/a100-troubleshooting.html">Read guide →</a>
     </div>
-    <div class="blog-card" onclick="window.location='/blog/airless-sprayer-safety.html'">      
-      <h3>Airless sprayer safety</h3>
-      <p>High-pressure injection hazard, PPE requirements, pressure relief procedure.</p>
-      <a href="/blog/airless-sprayer-safety.html">Read guide →</a>
+    <div class="blog-card" onclick="window.location='/blog/airless-sprayer-safety.html'">
+      <h3 id="bc5t">Airless sprayer safety</h3>
+      <p id="bc5p">High-pressure injection hazard, PPE requirements, pressure relief procedure.</p>
+      <a id="bc5a" href="/blog/airless-sprayer-safety.html">Read guide →</a>
     </div>
     <div class="blog-card" style="border-color:rgba(0,201,167,.4);box-shadow:0 0 12px rgba(0,201,167,.12);cursor:pointer" onclick="window.location='/blog/a100-parts-manual.html'">
       <h3 style="color:var(--accent2)">A100 Parts Manual</h3>
@@ -553,6 +553,22 @@ const T = {
     welcomeManuals:(n)=>`Hey ${n}! 👋 Which model and what do you need from the manual?`,
     welcomeLanguages:(n)=>`Hey ${n}! 👋 I speak EN, NL, FR, DE and ES. What language works for you?`,
     welcomeA100Parts:(n)=>`Hey ${n}! 👋 A100 parts manual — love it. Grab yourself a coffee ☕ and by the time you're done it'll be in your inbox. Confirm your email and click: [Get the PDF →](https://ko-fi.com/airlessfix)`,
+    ,
+    bc1t:'How to prime your airless sprayer',
+    bc1p:'Step-by-step priming guide for all Magnum models. Get spray-ready in 5 minutes.',
+    bc1a:'Read guide →',
+    bc2t:'Airless tip size guide',
+    bc2p:'Which tip for which paint? Complete TrueAirless tip selection chart.',
+    bc2a:'Read guide →',
+    bc3t:'Make your sprayer last longer',
+    bc3p:'Cleaning and flushing after every job. The 10 minutes that save you hundreds.',
+    bc3a:'Read guide →',
+    bc4t:'A100 troubleshooting',
+    bc4p:'Most common A100 problems and how to fix them. Error codes E01-E05 explained.',
+    bc4a:'Read guide →',
+    bc5t:'Airless sprayer safety',
+    bc5p:'High-pressure injection hazard, PPE requirements, pressure relief procedure.',
+    bc5a:'Read guide →',
     unsupported:'I don\'t speak that language well enough to help properly. Please email support@airlessfix.eu — I\'ll help you there.',
   },
   nl:{
@@ -587,6 +603,22 @@ const T = {
     welcomeManuals:(n)=>`Hey ${n}! 👋 Welk model en wat zoek je in de handleiding?`,
     welcomeLanguages:(n)=>`Hey ${n}! 👋 Ik spreek EN, NL, FR, DE en ES. Welke taal werkt voor jou?`,
     welcomeA100Parts:(n)=>`Hey ${n}! 👋 A100 onderdelenhandleiding — goeie keuze! Pak een koffie ☕ en tegen de tijd dat je die op hebt zit hij in je inbox. Bevestig je e-mail en klik: [PDF ophalen →](https://ko-fi.com/airlessfix)`,
+    ,
+    bc1t:'Je spuitmachine ontluchten',
+    bc1p:'Stap-voor-stap handleiding voor alle Magnum modellen. Spuitklaar in 5 minuten.',
+    bc1a:'Lees gids →',
+    bc2t:'Spuitdop maatgids',
+    bc2p:'Welke dop voor welke verf? Compleet TrueAirless dopselectie overzicht.',
+    bc2a:'Lees gids →',
+    bc3t:'Maak je spuitmachine langer mee',
+    bc3p:'Reinigen en spoelen na elke klus. De 10 minuten die je honderden besparen.',
+    bc3a:'Lees gids →',
+    bc4t:'A100 probleemoplossing',
+    bc4p:'Meest voorkomende A100 problemen en hoe je ze oplost. Foutcodes E01-E05 uitgelegd.',
+    bc4a:'Lees gids →',
+    bc5t:'Airless spuitmachine veiligheid',
+    bc5p:'Hogedruk injectierisico, PPE vereisten, drukontlastingsprocedure.',
+    bc5a:'Lees gids →',
     unsupported:'Die taal spreek ik niet goed genoeg. Stuur een e-mail naar support@airlessfix.eu — ik help je daar verder.',
   },
   fr:{
@@ -621,6 +653,22 @@ const T = {
     welcomeManuals:(n)=>`Salut ${n} ! 👋 Quel modèle et que cherches-tu dans le manuel ?`,
     welcomeLanguages:(n)=>`Salut ${n} ! 👋 Je parle EN, NL, FR, DE et ES. Quelle langue tu préfères ?`,
     welcomeA100Parts:(n)=>`Salut ${n} ! 👋 Le manuel pièces A100 — excellent choix ! Prends un café ☕ et il sera dans ta boîte avant que tu aies fini. Confirme ton e-mail et clique: [Obtenir le PDF →](https://ko-fi.com/airlessfix)`,
+    ,
+    bc1t:'Amorcer votre pistolet airless',
+    bc1p:'Guide d'amorçage étape par étape pour tous les modèles Magnum. Prêt à pulvériser en 5 minutes.',
+    bc1a:'Lire le guide →',
+    bc2t:'Guide de sélection des buses',
+    bc2p:'Quelle buse pour quelle peinture? Tableau complet de sélection TrueAirless.',
+    bc2a:'Lire le guide →',
+    bc3t:'Prolonger la durée de vie de votre pistolet',
+    bc3p:'Nettoyage et rinçage après chaque travail. Les 10 minutes qui vous font économiser des centaines.',
+    bc3a:'Lire le guide →',
+    bc4t:'Dépannage A100',
+    bc4p:'Problèmes A100 les plus courants et comment les résoudre. Codes d'erreur E01-E05 expliqués.',
+    bc4a:'Lire le guide →',
+    bc5t:'Sécurité du pistolet airless',
+    bc5p:'Risque d'injection haute pression, équipements de protection, procédure de décharge.',
+    bc5a:'Lire le guide →',
     unsupported:'Je ne parle pas assez bien cette langue. Envoyez un e-mail à support@airlessfix.eu — je vous aiderai là-bas.',
   },
   de:{
@@ -655,6 +703,22 @@ const T = {
     welcomeManuals:(n)=>`Hey ${n}! 👋 Welches Modell und was suchst du im Handbuch?`,
     welcomeLanguages:(n)=>`Hey ${n}! 👋 Ich spreche EN, NL, FR, DE und ES. Welche Sprache passt dir?`,
     welcomeA100Parts:(n)=>`Hey ${n}! 👋 A100 Ersatzteilhandbuch — gute Wahl! Gönn dir einen Kaffee ☕ und bis du fertig bist liegt es in deiner Inbox. Bestätige deine E-Mail und klick: [PDF holen →](https://ko-fi.com/airlessfix)`,
+    ,
+    bc1t:'Airless-Gerät entlüften',
+    bc1p:'Schritt-für-Schritt Entlüftungsanleitung für alle Magnum Modelle. In 5 Minuten sprühbereit.',
+    bc1a:'Anleitung lesen →',
+    bc2t:'Düsenauswahl-Leitfaden',
+    bc2p:'Welche Düse für welche Farbe? Vollständige TrueAirless Düsenauswahltabelle.',
+    bc2a:'Anleitung lesen →',
+    bc3t:'Gerät länger haltbar machen',
+    bc3p:'Reinigen und Spülen nach jedem Einsatz. Die 10 Minuten, die Ihnen Hunderte sparen.',
+    bc3a:'Anleitung lesen →',
+    bc4t:'A100 Fehlerdiagnose',
+    bc4p:'Häufigste A100 Probleme und deren Lösungen. Fehlercodes E01-E05 erklärt.',
+    bc4a:'Anleitung lesen →',
+    bc5t:'Sicherheit beim Airless-Sprühen',
+    bc5p:'Hochdruckinjektionsgefahr, Schutzausrüstung, Druckentlastungsverfahren.',
+    bc5a:'Anleitung lesen →',
     unsupported:'Diese Sprache spreche ich nicht gut genug. Bitte schreib an support@airlessfix.eu — ich helfe dir dort.',
   },
   es:{
@@ -688,6 +752,22 @@ const T = {
     welcomePartners:(n)=>`¡Hola ${n}! 👋 ¿Buscas un taller? ¿En qué país estás?`,
     welcomeManuals:(n)=>`¡Hola ${n}! 👋 ¿Qué modelo y qué buscas en el manual?`,
     welcomeLanguages:(n)=>`¡Hola ${n}! 👋 Hablo EN, NL, FR, DE y ES. ¿Qué idioma prefieres?`,
+    ,
+    bc1t:'Cómo cebar tu pistola airless',
+    bc1p:'Guía de cebado paso a paso para todos los modelos Magnum. Listo para pulverizar en 5 minutos.',
+    bc1a:'Leer guía →',
+    bc2t:'Guía de selección de boquillas',
+    bc2p:'¿Qué boquilla para qué pintura? Tabla completa de selección TrueAirless.',
+    bc2a:'Leer guía →',
+    bc3t:'Alarga la vida de tu pistola',
+    bc3p:'Limpieza y purga después de cada trabajo. Los 10 minutos que te ahorran cientos.',
+    bc3a:'Leer guía →',
+    bc4t:'Solución de problemas A100',
+    bc4p:'Problemas más comunes del A100 y cómo solucionarlos. Códigos de error E01-E05 explicados.',
+    bc4a:'Leer guía →',
+    bc5t:'Seguridad de la pistola airless',
+    bc5p:'Riesgo de inyección de alta presión, requisitos de EPP, procedimiento de alivio de presión.',
+    bc5a:'Leer guía →',
     unsupported:'No hablo ese idioma lo suficientemente bien. Por favor escribe a support@airlessfix.eu — te ayudaré allí.',
   }
 };
@@ -839,94 +919,24 @@ Pump filter location:
 - A20/A30/A45: gun handle filter ONLY
 - A60/A80/A100: gun handle filter PLUS pump filter — clean BOTH after every use
 
-## SOLVENT SPRAYING — THE HARD TRUTH (source: official manuals 332697ENF, 3A5819ENA, 3A6433ENE)
+## SOLVENT SPRAYING — KEEP IT SIMPLE
 
-FUNDAMENTAL RULE — state this clearly before anything else:
-These machines are designed and built for water-based architectural paints and coatings. That is what they are engineered for. Everything beyond water-based is conditional — it requires the user to fully understand the risks, read and understand the Safety Data Sheet (SDS), potentially modify the machine, and strictly follow all safety procedures. The manuals have been through legal, safety, and engineering review. The marketing website has not. Marc follows the manuals.
+These machines are designed for water-based paints. That is the safe, correct answer for any DIY user.
 
-The default answer to any solvent question is: read the SDS, understand the risks, make the necessary adjustments to your machine, consult a professional. Only then — if all conditions are met — can you proceed.
+MARC'S DEFAULT ANSWER for any solvent question, in any language:
+EN: "These machines are designed for water-based paints. For anything else — read the manual for your specific model carefully before doing anything. The manual has the safety instructions. If you're not sure, ask a professional or contact a repair partner."
+NL: "Deze machines zijn ontworpen voor watergedragen verven. Voor al het andere — lees eerst de handleiding van jouw model zorgvuldig. De handleiding heeft de veiligheidsinstructies. Twijfel je? Raadpleeg een professional of neem contact op met een reparatiepartner."
+FR: "Ces machines sont conçues pour les peintures à base d'eau. Pour tout autre produit — lis d'abord attentivement le manuel de ton modèle. Le manuel contient les instructions de sécurité. Si tu n'es pas sûr, consulte un professionnel ou un partenaire de réparation."
+DE: "Diese Geräte sind für wasserbasierte Farben ausgelegt. Für alles andere — lies zuerst sorgfältig das Handbuch deines Modells. Das Handbuch enthält die Sicherheitshinweise. Im Zweifel: Fachmann oder Reparaturpartner kontaktieren."
+ES: "Estas máquinas están diseñadas para pinturas al agua. Para cualquier otra cosa — lee primero el manual de tu modelo con atención. El manual tiene las instrucciones de seguridad. Si no estás seguro, consulta a un profesional o a un taller."
 
-SAFETY WARNING — deliver this FIRST before any technical answer, every time solvents come up:
-EN: "Before using any solvent with this machine — STOP. Read and fully understand the product Safety Data Sheet (SDS). Consult a professional before proceeding. Solvents are dangerous if not handled correctly: fire, explosion, toxic fumes, and serious injury. Make sure you understand what you are working with before you start."
-NL: "Voordat je een solvent gebruikt — STOP. Lees het veiligheidsinformatieblad (SDS) volledig. Raadpleeg een professional. Solventen zijn gevaarlijk: brand, explosie, giftige dampen, ernstig letsel."
-FR: "Avant d'utiliser un solvant — STOP. Lisez la fiche de données de sécurité (FDS). Consultez un professionnel. Les solvants sont dangereux: incendie, explosion, vapeurs toxiques."
-DE: "Vor dem Einsatz von Lösungsmitteln — STOP. Sicherheitsdatenblatt (SDB) vollständig lesen. Fachmann konsultieren. Lösungsmittel sind gefährlich: Brand, Explosion, giftige Dämpfe."
-ES: "Antes de usar solventes — PARA. Lee la ficha de datos de seguridad (FDS). Consulta a un profesional. Los solventes son peligrosos: incendio, explosión, vapores tóxicos."
-
-SAFETY RULES — always include (from official Graco manuals):
-- Well-ventilated area only — keep good supply of fresh air moving through
-- No open flames, smoking, sparks, motors, or electrical equipment in spray area
-- Keep sprayer at least 6m (20 feet) from explosive vapours
-- Ground ALL equipment — metal pail on grounded surface (concrete), ground wire clamped to pail connected to true earth ground (water pipe). Hold metal part of gun to side of grounded metal pail when triggering
-- Do not use pail liners unless anti-static or conductive
-- Wear PPE — solvent-rated respirator, protective clothing, eyewear, gloves
-- Never spray flammable/combustible liquids in a confined space
-- Fire extinguisher must be present and working on-site
-- Read all SDS and container labels. Follow paint and solvent manufacturer's safety instructions
-- Sprayer generates sparks — treat this seriously
-
-NEVER USE ON ANY MODEL — all models (official Graco manuals):
-- 1,1,1-trichloroethane, methylene chloride, or any halogenated hydrocarbon solvents
-- Chlorine bleach
-- Any fluid incompatible with aluminum — causes chemical reaction and equipment rupture
-- Any fluid not confirmed compatible with your specific model
-
-MODEL-BY-MODEL RULES (from official Graco manuals 332697ENF and 3A6433ENE):
-
-**A20, A30, A45 — HARD BLOCK. No exceptions.**
-Water-based and soft oil-based (COMBUSTIBLE label, mineral spirit cleanup, flash point >100°F/38°C) ONLY.
-PROHIBITED — these will damage seals and create serious fire/explosion risk:
-Acetone, xylene, toluene, naphtha, MEK, lacquer thinner, denatured alcohol, turpentine, petrol, or ANY material with flash point below 100°F (38°C).
-Official manual text: "Do not use materials having flash points lower than 100°F (38°C). This includes, but is not limited to, acetone, xylene, toluene, or naphtha."
-Solvent-based lacquer: NOT compatible. CANNOT be used. No exceptions.
-
-**A60 ProPlus and A80 ProPlus — CONDITIONAL. Both covered by same manual (3A5819ENA).**
-Both models can spray hot solvents and solvent-based lacquer ONLY IF the lacquer conversion kit is installed.
-Without the kit: same restrictions as A20/A30/A45 — no lacquer, no hot solvents.
-The kit replaces: suction tube, prime/spray valve, and pump O-rings — standard seals melt/swell with lacquer and lacquer thinners.
-After installing kit: Static Grounding Instructions MUST be followed (full grounding procedure — see safety rules above).
-Conversion kit part numbers: A60 ProPlus cart = 17J873 | check parts list for A80 equivalent.
-Official manual text (3A5819ENA): "To spray lacquers and other solvent-based flammable materials with the A60 Pro Plus, you must purchase a lacquer conversion kit and follow Static Grounding Instructions."
-Marc must ALWAYS ask: "Do you have the lacquer conversion kit installed on your [model]?" before giving any green light.
-If no kit: treat as A20/A30/A45 — no lacquer, no hot solvents.
-
-SDS RULE — applies to A60 and A80 (and all models):
-Before spraying ANY material the user must: read all Safety Data Sheets (SDSs) AND container labels, and follow the paint and solvent manufacturer's safety instructions. This is mandatory — not optional.
-
-**A100 ProPlus — YES, native capability.**
-Same as A80. Can spray hot solvents and lacquer natively.
-Label must say FLAMMABLE. Safety warning and Static Grounding Instructions always required.
-Flush with mineral spirits after lacquer/oil-based use. Follow all safety rules above.
-
-RESPONSES BY LANGUAGE:
-
-For A20/A30/A45 asking about lacquer/hot solvents — after safety warning:
-EN: "Solvent-based lacquer is not compatible with the [model] — full stop. Flash point must be above 100°F/38°C. For lacquer you need an A60 with the conversion kit, or an A80/A100. Consult a professional about your specific project."
-NL: "Solventlak is niet geschikt voor de [model]. Vlampunt moet boven 100°F/38°C liggen. Voor lak heb je een A60 met conversiekit of een A80/A100 nodig. Raadpleeg een professional."
-FR: "La laque solvantée n'est pas compatible avec le [modèle]. Point d'éclair doit être supérieur à 38°C. Pour la laque il faut un A60 avec kit de conversion, ou un A80/A100. Consultez un professionnel."
-DE: "Lösungsmittellack ist nicht kompatibel mit dem [Modell]. Flammpunkt muss über 38°C liegen. Für Lack braucht man einen A60 mit Umbausatz oder einen A80/A100. Fachmann konsultieren."
-ES: "La laca de solvente no es compatible con el [modelo]. El punto de inflamación debe ser superior a 38°C. Para laca necesitas un A60 con kit de conversión, o un A80/A100. Consulta a un profesional."
-
-For A60 asking about lacquer — after safety warning:
-EN: "The A60 can spray lacquer BUT only with the lacquer conversion kit 256212 installed. Without it — same rules as A20/A30/A45, no lacquer. The kit replaces the suction tube, valve, and O-rings. You also need to follow Static Grounding Instructions. Has the kit been installed on your A60?"
-NL: "De A60 kan lak spuiten MAAR alleen met de lak-conversiekit 256212 geïnstalleerd. Zonder kit — zelfde regels als A20/A30/A45, geen lak. Kit vervangt zuigbuis, ventiel en O-ringen. Is de kit geïnstalleerd op jouw A60?"
-FR: "L'A60 peut pulvériser de la laque MAIS uniquement avec le kit de conversion 256212 installé. Sans kit — mêmes règles que l'A20/A30/A45, pas de laque. Est-ce que le kit est installé sur ton A60?"
-DE: "Der A60 kann Lack spritzen, ABER nur mit dem Lacq-Umbausatz 256212 installiert. Ohne Kit — gleiche Regeln wie A20/A30/A45, kein Lack. Ist der Umbausatz auf deinem A60 installiert?"
-ES: "El A60 puede pulverizar laca PERO solo con el kit de conversión 256212 instalado. Sin kit — mismas reglas que A20/A30/A45, sin laca. ¿Está el kit instalado en tu A60?"
-
-For A60/A80 asking about lacquer — same answer, same manual (3A5819ENA) — after safety warning:
-EN: "The [model] can spray lacquer BUT only with the lacquer conversion kit installed. Without it — no lacquer, same rules as A20/A30/A45. The kit replaces suction tube, valve, and O-rings. You must also follow Static Grounding Instructions and read the SDS for your specific product. Has the conversion kit been installed on your [model]?"
-NL: "De [model] kan lak spuiten MAAR alleen met de lak-conversiekit geïnstalleerd. Zonder kit — geen lak, zelfde regels als A20/A30/A45. Kit vervangt zuigbuis, ventiel en O-ringen. Aardingsinstructies verplicht. Lees de SDS van jouw specifiek product. Is de conversiekit geïnstalleerd?"
-FR: "Le [modèle] peut pulvériser de la laque MAIS uniquement avec le kit de conversion installé. Sans kit — pas de laque, mêmes règles que l'A20/A30/A45. Lisez la FDS de votre produit spécifique. Est-ce que le kit est installé?"
-DE: "Der [Modell] kann Lack spritzen ABER nur mit dem Lacq-Umbausatz installiert. Ohne Kit — kein Lack, gleiche Regeln wie A20/A30/A45. Sicherheitsdatenblatt lesen. Ist der Umbausatz installiert?"
-ES: "El [modelo] puede pulverizar laca PERO solo con el kit de conversión instalado. Sin kit — sin laca, mismas reglas que A20/A30/A45. Lee la FDS de tu producto específico. ¿Está el kit de conversión instalado?"
-
-For A100 asking about lacquer — after safety warning:
-EN: "Yes, the A100 can handle lacquer and hot solvents — no conversion kit needed. Label must say FLAMMABLE. Read the SDS for your specific product. Follow Static Grounding Instructions: metal pail on grounded surface, ground wire to earth. Flush with mineral spirits after use. Consult a professional if this is your first time with solvents."
-NL: "Ja, de A100 kan lak en hete solventen aan — geen conversiekit nodig. Etiket moet BRANDBAAR vermelden. Lees de SDS van jouw product. Volg aardingsinstructies. Spoel na met terpentine. Raadpleeg een professional."
-FR: "Oui, l'A100 gère laque et solvants chauds — pas de kit nécessaire. Étiquette doit indiquer INFLAMMABLE. Lisez la FDS. Suivre instructions de mise à la terre. Rincer avec essence minérale. Consultez un professionnel."
-DE: "Ja, der A100 kann Lack und heiße Lösungsmittel — kein Umbausatz nötig. ENTZÜNDLICH auf Etikett. SDB lesen. Erdungsanweisungen befolgen. Mit Terpentin ausspülen. Fachmann konsultieren."
-ES: "Sí, el A100 maneja laca y solventes calientes — sin kit. Etiqueta INFLAMABLE. Lee la FDS. Instrucciones de puesta a tierra. Enjuagar con aguarrás. Consultar profesional."
+IF USER KEEPS PUSHING for more detail — only then give the model-specific rule, nothing more:
+- A20/A30/A45: water-based only. For anything stronger, you need a different machine.
+- A60/A80: your machine can handle lacquers but it requires a lacquer conversion kit to be installed first. This is not a DIY job — go to your nearest repair partner and ask them to install the Magnum lacquer conversion kit. Safety first.
+- A100: your machine can handle lacquers. Read your manual carefully and consult a professional before proceeding.
+ALWAYS add: "Read the full manual and SDS for your product before proceeding. Consult a professional."
+NEVER give part numbers for conversion kits — the EU versions differ from US. The repair partner has the correct parts.
+NEVER explain flash points, chemical names, or grounding procedures unprompted. That is for the manual and a professional — not a chatbot.
 
 Max tip sizes: A20=TRA515 | A30=TRA515 | A45=TRA517 | A60=TRA619 | A80=TRA621 | A100=TRA621
 Max flow: A20=0.8 | A30=1.0 | A45=1.2 | A60=1.5 | A80=1.8 | A100=1.8 L/min
@@ -1114,6 +1124,11 @@ function applyLang(){
   set('f4t',t.f4t);set('f4p',t.f4p);
   set('f5t',t.f5t);set('f5p',t.f5p);
   set('f6t',t.f6t);set('f6p',t.f6p);
+  set('bc1t',t.bc1t);set('bc1p',t.bc1p);set('bc1a',t.bc1a);
+  set('bc2t',t.bc2t);set('bc2p',t.bc2p);set('bc2a',t.bc2a);
+  set('bc3t',t.bc3t);set('bc3p',t.bc3p);set('bc3a',t.bc3a);
+  set('bc4t',t.bc4t);set('bc4p',t.bc4p);set('bc4a',t.bc4a);
+  set('bc5t',t.bc5t);set('bc5p',t.bc5p);set('bc5a',t.bc5a);
   set('marc-status',t.marcStatus);
   set('q-label',t.qLabel);
   set('rg-title',t.rgTitle);set('rg-sub',t.rgSub);
