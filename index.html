@@ -183,7 +183,7 @@ footer a:hover{color:var(--accent)}
 </head>
 <body>
 
-<div id="geo-block" style="display:none;position:fixed;inset:0;z-index:9999;background:var(--bg);align-items:center;justify-content:center;text-align:center;padding:40px">
+<div id="geo-block" style="display:none;position:fixed;inset:0;z-index:9999;background:var(--bg);align-items:center;justify-content:center;text-align:center;padding:40px" onclick="document.getElementById('geo-block').style.display='none'">
   <div>
     <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:12px">Airless<span style="color:#efa400">Fix</span></div>
     <p id="geo-msg" style="color:var(--muted);font-size:15px">AirlessFix is currently available in Europe only.<br>Coming to your region soon.</p>
@@ -521,16 +521,29 @@ const EU_CODES=['AD','AL','AT','BA','BE','BG','BY','CH','CY','CZ','DE','DK','EE'
   const savedName=localStorage.getItem('af_country_name');
   const savedDial=localStorage.getItem('af_dial');
   if(saved){
-    if(!EU_CODES.includes(saved))document.getElementById('geo-block').style.display='flex';
+    // Only block if we have a definitive non-EU code — fail open otherwise
+    if(saved&&saved.length===2&&!EU_CODES.includes(saved)){
+      document.getElementById('geo-block').style.display='flex';
+    }
     if(savedName)prefillGeo(savedName,savedDial||'');
     return;
   }
-  fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
-    const c=d.country_code||'',name=d.country_name||'',dial=d.country_calling_code?'+'+d.country_calling_code.replace('+',''):'';
-    localStorage.setItem('af_country',c);localStorage.setItem('af_country_name',name);localStorage.setItem('af_dial',dial);
-    if(c&&!EU_CODES.includes(c))document.getElementById('geo-block').style.display='flex';
-    prefillGeo(name,dial);
-  }).catch(()=>{});
+  fetch('https://ipapi.co/json/')
+    .then(r=>r.json())
+    .then(d=>{
+      const c=d.country_code||'',name=d.country_name||'',dial=d.country_calling_code?'+'+d.country_calling_code.replace('+',''):'';
+      if(c&&c.length===2){
+        localStorage.setItem('af_country',c);
+        localStorage.setItem('af_country_name',name);
+        localStorage.setItem('af_dial',dial);
+        if(!EU_CODES.includes(c))document.getElementById('geo-block').style.display='flex';
+      }
+      prefillGeo(name,dial);
+    })
+    .catch(()=>{
+      // Fail open — if geo check fails, allow access
+      prefillGeo('','');
+    });
 })();
 
 function prefillGeo(countryName,dialCode){
