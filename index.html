@@ -262,7 +262,7 @@ footer a:hover{color:var(--accent)}
   <p>Independent technical support platform &nbsp;·&nbsp; airlessfix.eu</p>
   <p>Not affiliated with the manufacturer. All model names used for identification only.</p>
   <div style="margin-top:8px">
-    <a href="mailto:support@airlessfix.eu">support@airlessfix.eu</a>
+    <a href="/cdn-cgi/l/email-protection#fa898f8a8a95888eba9b9388969f89899c9382d49f8f"><span class="__cf_email__" data-cfemail="81f2f4f1f1eef3f5c1e0e8f3ede4f2f2e7e8f9afe4f4">[email&#160;protected]</span></a>
     &nbsp;·&nbsp;<a href="/privacy.html">Privacy Policy</a>
     &nbsp;·&nbsp;<a href="/blog/airless-sprayer-safety.html">Safety</a>
   </div>
@@ -326,7 +326,7 @@ footer a:hover{color:var(--accent)}
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const PARTNERS={BE:[{name:'SFIC',city:'Hasselt',phone:'+32 2 526 03 57'},{name:'M.P.A.',city:'Lummen',phone:'+32 13 53 26 00'},{name:'Verschuere',city:'Harelbeke',phone:'+32 56 71 21 45'},{name:'A.M.I.',city:'Braine-le-Château',phone:'+32 2 366 22 34'},{name:'V&D Techniek',city:'Halen',phone:'+32 475 27 95 47'},{name:'BCA',city:'Ternat',phone:'+32 2 581 04 04'}],NL:[{name:'Schoonewil Techniek',city:'Alkmaar',phone:''},{name:'Rossenaar Techn. Adv.',city:'Purmerend',phone:''},{name:'Keur & Care',city:'Ankeveen',phone:''},{name:'Oostveen Machine Techniek',city:'Vleuten',phone:''},{name:'Spray Support',city:'Naaldwijk',phone:''},{name:'Romijn Spray Equipment',city:'Almkerk',phone:''},{name:'PaintIT',city:'Ede',phone:''},{name:'AVR Techniek',city:'Schijndel',phone:'+31 6 53649283'},{name:'S.T.S. Syrado',city:'Heerlen',phone:''},{name:'Van den Belt Spuitapparatuur',city:'Hengelo',phone:''},{name:'A.G.N.N.',city:'Emmen',phone:''}],DE:[{name:'Van Treel',city:'Ohmden',phone:'+49 7023 7457780'},{name:'HK Airlesspartner',city:'Vollmersbach',phone:'+49 175 9506811'}],FR:[{name:'Ermapro',city:'Paris',phone:'+33 1 48 99 93 08'},{name:'Ermapro',city:'Le Havre',phone:'+33 2 35 26 53 71'}],AT:[{name:'Airless-Technik GmbH',city:'Asten',phone:'+43 664 3412820'}],CH:[{name:'Pemateco',city:'Bern',phone:'+41 31 992 00 56'}],GB:[{name:'Hi-Tec Spray',city:'Maidstone',phone:'+44 1622 356590'},{name:'Hi-Tec Spray',city:'Swanley',phone:'+44 1322 912505'}],SE:[{name:'Anti-Corrosion',city:'Sundbyberg',phone:'+46 8 629 07 00'},{name:'Anti-Corrosion',city:'Gothenburg',phone:'+46 31 779 73 30'},{name:'Anti-Corrosion',city:'Malmö',phone:'+46 40 18 70 22'},{name:'Anti-Corrosion',city:'Härnösand',phone:'+46 611 214 63'}],ES:[{name:'Spray Airless',city:'Madrid',phone:'661 638 282'},{name:'Nicolas Alvarez Rubio SL',city:'Valencia',phone:'653 800 742'},{name:'Pinturas Vipesa',city:'Málaga',phone:'617 242 606'},{name:'Gran Color',city:'Canarias',phone:'609 273 512'},{name:'Mastic SL',city:'Mallorca',phone:'619 290 727'},{name:'Francisco Garcia',city:'Barcelona',phone:'652 232 300'}],PT:[{name:'Mac 2 Fix',city:'Alcabideche',phone:'+351 967 167 101'}]};
 
 const T={
@@ -748,7 +748,7 @@ async function send(){
     techCount++;
     const techKeywords=/\b(part|pump|tip|pressure|leak|prime|priming|filter|hose|motor|valve|error|fault|repair|broken|fix|replace|kit|number|manual|pdf|spray|nozzle|clog|flow|piston|seal|TSL|armor|solvent|lacquer|\bA20\b|\bA30\b|\bA45\b|\bA60\b|\bA80\b|\bA100\b|ProX|ProConnect|how to|won't|doesn't|not working|problem|issue)/i;
     const isTechnical=techKeywords.test(msg);
-    if(isTechnical&&techCount>1){qFree=Math.max(0,qFree-1);updateQCounter();}
+    if(isTechnical&&techCount>=1){qFree=Math.max(0,qFree-1);updateQCounter();}
     if(qFree<=0){kofiNudgeCount++;updateKofi();}
   }catch(e){
     document.getElementById('typing').style.display='none';
@@ -762,15 +762,4 @@ async function send(){
 
 function closeReg(){document.getElementById('reg-overlay').classList.remove('active');pendingOpen=null;}
 function toggleKofiPanel(){document.getElementById('kofi-panel').classList.toggle('open');}
-const _origApplyLang=applyLang;
-
-applyLang();
-updateQCounter();
-(function detectLang(){
-  const bl=(navigator.language||'en').toLowerCase().substring(0,2);
-  const map={nl:'nl',fr:'fr',de:'de',es:'es'};
-  setLang(map[bl]||'en');
-})();
-</script>
-</body>
-</html>
+const _origApp
