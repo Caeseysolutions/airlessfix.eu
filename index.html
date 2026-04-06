@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AirlessFix — Marc is on site</title>
-<meta name="description" content="Free AI repair support for airless paint sprayers. Marc is coming soon to airlessfix.eu">
+<title>AirlessFix — Marc est sur le chantier</title>
+<meta name="description" content="Support IA gratuit pour pistolets airless. Marc arrive bientôt sur airlessfix.eu">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --gold: #E8A020;
@@ -14,8 +14,7 @@
     --white: #ffffff;
     --mid: #888;
   }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin:0; padding:0; box-sizing:border-box; }
 
   body {
     background: var(--bg);
@@ -27,220 +26,164 @@
     overflow-x: hidden;
   }
 
-  /* ── CONSTRUCTION TAPE TOP ── */
+  /* ── CONSTRUCTION TAPE ── */
   .tape {
-    width: 100%;
-    height: 18px;
+    width:100%; height:22px; flex-shrink:0;
     background: repeating-linear-gradient(
       -45deg,
-      var(--gold) 0px,
-      var(--gold) 20px,
-      #1a1a1a 20px,
-      #1a1a1a 40px
+      var(--gold) 0px, var(--gold) 24px,
+      #111 24px, #111 48px
     );
-    flex-shrink: 0;
   }
 
   /* ── NAV ── */
   nav {
-    padding: 24px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.2s forwards;
+    padding: 18px 36px;
+    display: flex; align-items:center; justify-content:space-between;
+    position: relative; z-index: 20;
+    opacity:0; animation: fadeUp 0.5s ease 0.1s forwards;
   }
-
-  .brand {
-    font-family: 'Barlow', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    letter-spacing: 0.02em;
-  }
+  .brand { font-weight:700; font-size:22px; letter-spacing:0.01em; }
   .brand span { color: var(--gold); }
+  .nav-url { font-size:13px; color:var(--mid); font-family:'Barlow',sans-serif; }
 
-  .nav-url {
-    font-family: 'Barlow', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    color: var(--mid);
-    letter-spacing: 0.05em;
-  }
-
-  /* ── HERO ── */
+  /* ── HERO with real photo background ── */
   .hero {
     flex: 1;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px 40px 40px;
-    text-align: center;
-    position: relative;
+    padding: 20px 20px 30px;
+    min-height: 500px;
+    overflow: hidden;
   }
 
-  /* Scaffold background illustration */
-  .scaffold {
+  /* Real photo background */
+  .hero-bg {
     position: absolute;
     inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    opacity: 0.06;
+    background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.35) saturate(0.8);
+    z-index: 0;
   }
 
-  .scaffold svg {
+  /* Dark gradient overlay so text pops */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(13,13,13,0.5) 0%,
+      rgba(13,13,13,0.2) 40%,
+      rgba(13,13,13,0.7) 80%,
+      rgba(13,13,13,0.95) 100%
+    );
+    z-index: 1;
+  }
+
+  /* Content sits above bg */
+  .content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     width: 100%;
-    height: 100%;
   }
 
-  /* Hard hat icon */
   .hardhat {
-    font-size: 52px;
-    margin-bottom: 16px;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.4s forwards;
+    font-size: 54px;
+    margin-bottom: 6px;
+    opacity:0; animation: fadeUp 0.6s ease 0.4s forwards;
+    filter: drop-shadow(0 2px 12px rgba(0,0,0,0.8));
   }
 
-  /* MARC */
   .marc {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(100px, 22vw, 200px);
-    line-height: 0.9;
-    letter-spacing: 0.02em;
-    opacity: 0;
-    animation: fadeUp 0.7s ease 0.5s forwards;
+    font-size: clamp(90px, 20vw, 200px);
+    line-height: 0.86;
+    opacity:0; animation: fadeUp 0.7s ease 0.5s forwards;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.9), 0 0 60px rgba(0,0,0,0.6);
   }
   .marc .c { color: var(--gold); }
 
-  /* Status badge */
   .status {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(232,160,32,0.1);
-    border: 1px solid rgba(232,160,32,0.3);
-    padding: 8px 20px;
-    margin: 20px 0 32px;
-    font-family: 'Barlow', sans-serif;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,0,0,0.8);
+    border: 1px solid var(--gold);
+    padding: 7px 18px;
+    margin: 16px 0 20px;
+    font-weight: 700; font-size: 12px;
+    letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--gold);
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.7s forwards;
+    opacity:0; animation: fadeUp 0.6s ease 0.7s forwards;
   }
-
   .dot {
-    width: 8px;
-    height: 8px;
-    background: var(--gold);
-    border-radius: 50%;
+    width:7px; height:7px;
+    background: var(--gold); border-radius:50%;
     animation: blink 1.4s ease-in-out infinite;
   }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.1;} }
 
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.2; }
-  }
-
-  /* Messages */
+  /* ── MESSAGES ── */
   .messages {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.9s forwards;
+    opacity:0; animation: fadeUp 0.6s ease 0.9s forwards;
+    background: rgba(0,0,0,0.78);
+    padding: 22px 30px;
+    border-left: 3px solid var(--gold);
+    text-align: left;
+    max-width: 640px; width: 100%;
+    backdrop-filter: blur(4px);
   }
-
-  .msg-en {
-    font-size: clamp(18px, 3.5vw, 26px);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.5;
+  .lang-block { margin-bottom: 13px; }
+  .lang-block:last-child { margin-bottom: 0; }
+  .setup {
+    font-size: clamp(15px, 2.3vw, 20px);
+    font-weight: 300; color: rgba(255,255,255,0.72); line-height:1.4;
   }
-
-  .msg-en strong {
-    font-weight: 700;
+  .punch {
+    font-size: clamp(17px, 2.8vw, 24px);
+    font-weight: 700; color: var(--white); line-height:1.4;
   }
-
-  .divider {
-    width: 40px;
-    height: 1px;
-    background: rgba(232,160,32,0.3);
-    margin: 10px auto;
-  }
-
-  .msg-other {
-    font-size: clamp(15px, 2.8vw, 21px);
-    font-weight: 300;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.6;
-  }
-
-  .msg-other strong {
-    font-weight: 700;
-    color: rgba(255,255,255,0.9);
-  }
+  .divider { height:1px; background:rgba(232,160,32,0.2); margin:11px 0; }
 
   /* ── BOTTOM ── */
   .bottom {
-    padding: 28px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 1.1s forwards;
+    padding: 18px 36px;
+    display: flex; flex-direction:column; align-items:center; gap:10px;
+    position: relative; z-index:10;
+    opacity:0; animation: fadeUp 0.6s ease 1.1s forwards;
   }
-
-  .models {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-  }
-
+  .models { display:flex; flex-wrap:wrap; gap:6px; justify-content:center; }
   .model-tag {
-    font-family: 'Barlow', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--mid);
-    border: 1px solid #2a2a2a;
-    padding: 4px 12px;
+    font-size:11px; font-weight:700; letter-spacing:0.1em;
+    color:var(--mid); border:1px solid #2a2a2a; padding:3px 10px;
   }
+  .footer-text { font-size:12px; font-weight:300; color:#444; }
 
-  .footer-text {
-    font-size: 13px;
-    font-weight: 300;
-    color: #444;
-    letter-spacing: 0.05em;
-  }
-
-  /* ── TAPE BOTTOM ── */
   .tape-bottom {
-    width: 100%;
-    height: 18px;
+    width:100%; height:22px; flex-shrink:0;
     background: repeating-linear-gradient(
       -45deg,
-      var(--gold) 0px,
-      var(--gold) 20px,
-      #1a1a1a 20px,
-      #1a1a1a 40px
+      var(--gold) 0px, var(--gold) 24px,
+      #111 24px, #111 48px
     );
-    flex-shrink: 0;
   }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from { opacity:0; transform:translateY(14px); }
+    to   { opacity:1; transform:translateY(0); }
   }
 
-  @media (max-width: 480px) {
-    nav { padding: 16px 20px; }
-    .hero { padding: 16px 20px 30px; }
-    .bottom { padding: 20px; }
+  @media (max-width:480px) {
+    nav { padding:14px 16px; }
+    .messages { padding:16px 18px; }
+    .bottom { padding:14px 16px; }
   }
 </style>
 </head>
@@ -253,75 +196,54 @@
   <div class="nav-url">airlessfix.eu</div>
 </nav>
 
-<main class="hero">
+<div class="hero">
 
-  <!-- Scaffold SVG background -->
-  <div class="scaffold">
-    <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <!-- Vertical poles -->
-      <rect x="80" y="0" width="8" height="700" fill="#E8A020"/>
-      <rect x="280" y="0" width="8" height="700" fill="#E8A020"/>
-      <rect x="480" y="0" width="8" height="700" fill="#E8A020"/>
-      <rect x="680" y="0" width="8" height="700" fill="#E8A020"/>
-      <rect x="880" y="0" width="8" height="700" fill="#E8A020"/>
-      <rect x="1080" y="0" width="8" height="700" fill="#E8A020"/>
-      <!-- Horizontal rails -->
-      <rect x="0" y="120" width="1200" height="6" fill="#E8A020"/>
-      <rect x="0" y="280" width="1200" height="6" fill="#E8A020"/>
-      <rect x="0" y="440" width="1200" height="6" fill="#E8A020"/>
-      <rect x="0" y="600" width="1200" height="6" fill="#E8A020"/>
-      <!-- Diagonal braces -->
-      <line x1="80" y1="120" x2="280" y2="280" stroke="#E8A020" stroke-width="4"/>
-      <line x1="280" y1="120" x2="480" y2="280" stroke="#E8A020" stroke-width="4"/>
-      <line x1="480" y1="120" x2="680" y2="280" stroke="#E8A020" stroke-width="4"/>
-      <line x1="680" y1="120" x2="880" y2="280" stroke="#E8A020" stroke-width="4"/>
-      <line x1="880" y1="120" x2="1080" y2="280" stroke="#E8A020" stroke-width="4"/>
-      <line x1="80" y1="280" x2="280" y2="440" stroke="#E8A020" stroke-width="4"/>
-      <line x1="280" y1="280" x2="480" y2="440" stroke="#E8A020" stroke-width="4"/>
-      <line x1="480" y1="280" x2="680" y2="440" stroke="#E8A020" stroke-width="4"/>
-      <line x1="680" y1="280" x2="880" y2="440" stroke="#E8A020" stroke-width="4"/>
-      <line x1="880" y1="280" x2="1080" y2="440" stroke="#E8A020" stroke-width="4"/>
-    </svg>
-  </div>
+  <!-- REAL PHOTO: scaffold/construction site from Unsplash (free, no attribution needed) -->
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
 
-  <div class="hardhat">🪖</div>
+  <div class="content">
 
-  <div class="marc">MAR<span class="c">C</span></div>
+    <div class="hardhat">🪖</div>
 
-  <div class="status">
-    <div class="dot"></div>
-    Currently on site
-  </div>
+    <div class="marc">MAR<span class="c">C</span></div>
 
-  <div class="messages">
-    <div class="msg-en">
-      Marc is getting some painting experience.<br>
-      <strong>He'll be back 'on site' soon.</strong>
+    <div class="status">
+      <div class="dot"></div>
+      Currently on site
     </div>
 
-    <div class="divider"></div>
+    <div class="messages">
 
-    <div class="msg-other">
-      Marc se fait la main.<br>
-      <strong>Il sera bientôt sur le site.</strong>
-    </div>
+      <div class="lang-block">
+        <div class="setup">Marc apprend les ficelles du métier.</div>
+        <div class="punch">Il sera bientôt sur le site.</div>
+      </div>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="msg-other">
-      Marc sammelt Lackiererfahrung.<br>
-      <strong>Er ist bald wieder 'auf der Baustelle'.</strong>
-    </div>
+      <div class="lang-block">
+        <div class="setup">Marc leert de kneepjes van het vak.</div>
+        <div class="punch">Hij is snel terug op de site.</div>
+      </div>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="msg-other">
-      Marc doet ervaring op.<br>
-      <strong>Hij is snel terug op de site.</strong>
+      <div class="lang-block">
+        <div class="setup">Marc lernt die Tricks des Handwerks.</div>
+        <div class="punch">Er ist bald wieder 'auf der Baustelle'.</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="lang-block">
+        <div class="setup">Marc is learning the tricks of the trade.</div>
+        <div class="punch">He'll be back 'on site' soon.</div>
+      </div>
+
     </div>
   </div>
-
-</main>
+</div>
 
 <div class="bottom">
   <div class="models">
