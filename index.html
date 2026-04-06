@@ -3,799 +3,339 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AirlessFix — Free AI Support for Airless Paint Sprayers</title>
-<meta name="description" content="Free multilingual AI support for airless paint sprayers. Parts, troubleshooting, repair partners, manuals. Ask Marc — EN, NL, FR, DE, ES. 24/7.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://airlessfix.eu/">
-<meta property="og:title" content="AirlessFix — Free AI Support for Airless Paint Sprayers">
-<meta property="og:description" content="Free multilingual AI support for airless paint sprayers. Parts, troubleshooting, repair partners. 24/7.">
-<meta property="og:url" content="https://airlessfix.eu/">
-<meta property="og:type" content="website">
-<link rel="sitemap" type="application/xml" href="/sitemap.xml">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"AirlessFix","url":"https://airlessfix.eu","description":"Free multilingual AI technical support for airless paint sprayers","potentialAction":{"@type":"SearchAction","target":"https://airlessfix.eu/?q={search_term_string}","query-input":"required name=search_term_string"}}
-</script>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C3KKDC0RF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-7C3KKDC0RF');
-</script>
+<title>AirlessFix — Marc is on site</title>
+<meta name="description" content="Free AI repair support for airless paint sprayers. Marc is coming soon to airlessfix.eu">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0a0f1a;--surface:#111827;--surface2:#1a2235;--border:#1e3048;
-  --accent:#0e8fff;--accent2:#00c9a7;--orange:#efa400;
-  --text:#e8edf5;--muted:#7a8fa8;--warn:#f0a500;--danger:#e5534b;
-  --radius:12px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(10,15,26,.97);backdrop-filter:blur(12px)}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px;cursor:pointer}
-.logo span{color:var(--orange)}
-.lang-pills{display:flex;gap:6px}
-.lang-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:600;padding:5px 10px;border-radius:20px;cursor:pointer;transition:.2s}
-.lang-btn.active,.lang-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
-.hero{padding:72px 32px 48px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(14,143,255,.1) 0%,transparent 70%);pointer-events:none}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(30px,5vw,60px);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:12px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero-sub{font-size:16px;color:var(--muted);margin-bottom:40px}
-.models{padding:0 32px 56px;max-width:1100px;margin:0 auto}
-.model-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-.model-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 10px;text-align:center;cursor:pointer;transition:.2s;position:relative;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.model-card:hover{border-color:var(--orange);transform:translateY(-2px);background:var(--surface2)}
-.model-card::after{content:'Ask Marc →';position:absolute;bottom:6px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--orange);opacity:0;transition:.2s;white-space:nowrap}
-.model-card:hover::after{opacity:1}
-.model-name{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--orange);margin-bottom:6px}
-.model-spec{font-size:11px;line-height:1.85}
-.model-spec .tip{color:#ffffff;font-weight:700;font-size:12px;display:block}
-.model-spec .lmin{color:var(--accent2);font-weight:600;display:block}
-.model-spec .hp{color:#7a8fa8;font-size:10px;display:block}
-.model-card.a100{border-color:rgba(14,143,255,.5);box-shadow:0 0 14px rgba(14,143,255,.2)}
-.model-card.a100 .model-name{color:var(--accent)}
-.model-card.a100:hover{border-color:var(--accent);box-shadow:0 0 24px rgba(14,143,255,.5)}
-.features{padding:56px 32px;max-width:1100px;margin:0 auto}
-.section-title{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;text-align:center;margin-bottom:36px}
-.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;cursor:pointer;transition:.2s;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.feat-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.feat-card.manuals{border-color:rgba(0,201,167,.4);box-shadow:0 0 12px rgba(0,201,167,.15)}
-.feat-card.manuals:hover{border-color:var(--accent2);box-shadow:0 0 20px rgba(0,201,167,.3)}
-.feat-card.a100-parts{border-color:rgba(0,201,167,.6);box-shadow:0 0 16px rgba(0,201,167,.2);background:var(--surface2)}
-.feat-card.a100-parts:hover{border-color:var(--accent2);box-shadow:0 0 28px rgba(0,201,167,.4);transform:translateY(-3px)}
-.feat-icon{font-size:26px;margin-bottom:12px}
-.feat-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px}
-.feat-card p{font-size:13px;color:var(--muted);line-height:1.6}
-.feat-card.a100-parts h3{color:var(--accent2)}
-.marc-bubble-bar{padding:0 32px 40px;max-width:1100px;margin:0 auto;display:flex;justify-content:center}
-.marc-bubble{background:rgba(14,143,255,.1);border:1px solid rgba(14,143,255,.3);border-radius:20px 20px 20px 4px;padding:14px 22px;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:10px;max-width:420px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.marc-bubble:hover{background:rgba(14,143,255,.2);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px rgba(14,143,255,.2)}
-.marc-bubble-icon{font-size:22px;flex-shrink:0}
-.marc-bubble-text{font-size:14px;color:var(--text);line-height:1.5}
-.marc-bubble-text strong{color:var(--accent)}
-.marc-bubble-arrow{font-size:12px;color:var(--accent);flex-shrink:0}
-.blog-section{padding:56px 32px;max-width:1100px;margin:0 auto;border-top:1px solid var(--border)}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
-.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:.2s}
-.blog-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.blog-card h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:8px;color:var(--text)}
-.blog-card p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px}
-.blog-card a{font-size:12px;color:var(--accent);font-weight:600}
-#kofi-widget{position:fixed;left:0;bottom:24px;z-index:150;display:flex;flex-direction:column;align-items:flex-start}
-#kofi-tab{background:linear-gradient(135deg,#ff5e5b,#ff8c00);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;padding:12px 20px;border-radius:0 12px 12px 0;cursor:pointer;letter-spacing:.03em;box-shadow:3px 3px 16px rgba(255,94,91,.4);transition:.2s;white-space:nowrap}
-#kofi-tab:hover{padding-left:28px;box-shadow:6px 3px 24px rgba(255,94,91,.6);transform:translateX(4px)}
-#kofi-panel{display:none;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 16px;width:240px;box-shadow:0 -4px 24px rgba(0,0,0,.5);margin-bottom:10px}
-#kofi-panel.open{display:block}
-#kofi-panel h4{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;margin-bottom:6px;color:var(--text)}
-#kofi-panel p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:14px}
-#kofi-panel a{display:block;background:#ff5e5b;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;padding:10px 14px;border-radius:8px;text-decoration:none;text-align:center;transition:.2s}
-#kofi-panel a:hover{background:#e04e4b;text-decoration:none}
-@media(max-width:600px){#kofi-widget{display:none}}
-footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:var(--muted);font-size:12px;line-height:1.8}
-footer a{color:var(--muted)}
-footer a:hover{color:var(--accent)}
-.ai-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(14,143,255,.08);border:1px solid rgba(14,143,255,.2);color:var(--accent);font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;margin-top:10px}
-#reg-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(5,8,15,.95);align-items:center;justify-content:center;padding:20px;-webkit-overflow-scrolling:touch}
-#reg-overlay.active{display:flex}
-.reg-box{background:var(--surface);border:1px solid var(--border);border-radius:20px;width:100%;max-width:420px;padding:36px 32px;position:relative}
-.reg-box h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:6px}
-.reg-box .reg-sub{color:var(--muted);font-size:13px;margin-bottom:24px;line-height:1.5}
-.field{margin-bottom:14px}
-.field label{display:block;font-size:11px;font-weight:600;color:var(--muted);margin-bottom:5px;letter-spacing:.4px;text-transform:uppercase}
-.field input,.field select{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:14px;padding:11px 14px;border-radius:10px;outline:none;transition:.2s;font-family:'Inter',sans-serif}
-.field input:focus,.field select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(14,143,255,.12)}
-.field .opt-label{font-size:10px;color:var(--muted);margin-left:4px}
-.cb-row{display:flex;gap:10px;align-items:flex-start;margin:10px 0;cursor:pointer}
-.cb-row input[type=checkbox]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--accent);cursor:pointer}
-.cb-row label{font-size:12px;color:var(--muted);line-height:1.5;cursor:pointer}
-.cb-row:last-of-type{margin-bottom:18px}
-.btn-primary{width:100%;background:var(--accent);color:#fff;border:none;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;padding:13px;border-radius:var(--radius);cursor:pointer;transition:.2s}
-.btn-primary:hover{background:#0077e6}
-#reg-err{display:none;background:rgba(229,83,75,.1);border:1px solid rgba(229,83,75,.3);color:#ff8080;font-size:12px;padding:9px 12px;border-radius:8px;margin-bottom:12px}
-.hp{position:absolute;left:-9999px;opacity:0;pointer-events:none}
-#chat-bubble{position:fixed;bottom:24px;right:24px;z-index:200;cursor:pointer;transition:.3s}
-#chat-btn{width:56px;height:56px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 20px rgba(14,143,255,.4);transition:.3s;border:none;cursor:pointer;animation:pulse 2s infinite;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-#chat-btn:hover{transform:scale(1.1)}
-@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(14,143,255,.4)}50%{box-shadow:0 4px 30px rgba(14,143,255,.8)}}
-#chat-peek{position:absolute;bottom:66px;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px 12px 0 12px;padding:10px 14px;font-size:13px;color:var(--text);max-width:260px;white-space:normal;display:none;box-shadow:0 4px 20px rgba(0,0,0,.4)}
-#chat-peek.show{display:block}
-#chat-panel{position:fixed;bottom:90px;right:24px;width:360px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 120px);background:var(--surface);border:1px solid var(--border);border-radius:16px;display:none;flex-direction:column;z-index:200;box-shadow:0 8px 40px rgba(0,0,0,.6);overflow:hidden}
-#chat-panel.open{display:flex}
-.chat-head{background:var(--surface2);border-bottom:1px solid var(--border);padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}
-.marc-av{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;flex-shrink:0}
-.chat-head-info{flex:1}
-.chat-head-info h3{font-family:'Syne',sans-serif;font-weight:700;font-size:14px}
-.chat-head-info span{font-size:11px;color:var(--accent2);display:flex;align-items:center;gap:4px}
-.chat-head-info span::before{content:'';width:6px;height:6px;background:var(--accent2);border-radius:50%;display:inline-block}
-#chat-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px;line-height:1}
-#chat-close:hover{color:var(--text)}
-#chat-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;min-height:0}
-#chat-msgs::-webkit-scrollbar{width:3px}
-#chat-msgs::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
-.msg{display:flex;flex-direction:column;max-width:85%}
-.msg.bot{align-self:flex-start}
-.msg.usr{align-self:flex-end}
-.mb{padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.6}
-.msg.bot .mb{background:var(--surface2);border:1px solid var(--border);border-bottom-left-radius:3px}
-.msg.usr .mb{background:var(--accent);color:#fff;border-bottom-right-radius:3px}
-.mt{font-size:10px;color:var(--muted);margin-top:3px;padding:0 3px}
-.msg.usr .mt{text-align:right}
-.partner-tag{margin-top:6px;background:rgba(0,201,167,.1);border:1px solid rgba(0,201,167,.25);color:var(--accent2);font-size:10px;font-weight:700;padding:3px 8px;border-radius:8px;display:inline-block}
-#typing{display:none;align-self:flex-start;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:14px;border-bottom-left-radius:3px}
-#typing span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--muted);margin:0 2px;animation:dot 1.2s infinite}
-#typing span:nth-child(2){animation-delay:.2s}
-#typing span:nth-child(3){animation-delay:.4s}
-@keyframes dot{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
-.q-bar{padding:8px 16px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:var(--surface)}
-.q-bar strong{color:var(--warn)}
-.kofi-bar{padding:10px 16px;border-top:1px solid var(--border);background:var(--surface2);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-shrink:0;flex-wrap:wrap}
-.kofi-bar p{font-size:12px;color:var(--muted);line-height:1.4;flex:1}
-.kofi-bar a{background:#ff5e5b;color:#fff;font-size:12px;font-weight:700;padding:6px 12px;border-radius:6px;text-decoration:none;white-space:nowrap;flex-shrink:0}
-.kofi-bar a:hover{background:#e04e4b;text-decoration:none}
-.input-row{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--border);flex-shrink:0;background:var(--surface)}
-#chat-in{flex:1;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:14px;padding:10px 14px;border-radius:10px;outline:none;font-family:'Inter',sans-serif;resize:none;transition:.2s;max-height:80px}
-#chat-in:focus{border-color:var(--accent)}
-#send-btn{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;font-size:16px;transition:.2s;flex-shrink:0}
-#send-btn:hover{background:#0077e6}
-#send-btn:disabled{opacity:.4;cursor:not-allowed}
-@media(max-width:600px){
-  header{padding:14px 16px}
-  .hero{padding:48px 16px 32px}
-  .models{padding:0 16px 40px}
-  .model-grid{grid-template-columns:repeat(3,1fr)}
-  .features{padding:40px 16px}
-  .feat-grid{grid-template-columns:1fr}
-  .blog-section{padding:40px 16px}
-  .blog-grid{grid-template-columns:1fr}
-  .lang-pills{display:none}
-  #chat-panel{width:calc(100vw - 16px);right:8px;bottom:80px;top:8px;height:auto;max-height:calc(100vh - 96px)}
-  #chat-bubble{right:16px;bottom:16px}
-}
+  :root {
+    --gold: #E8A020;
+    --bg: #0d0d0d;
+    --white: #ffffff;
+    --mid: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  /* ── CONSTRUCTION TAPE TOP ── */
+  .tape {
+    width: 100%;
+    height: 18px;
+    background: repeating-linear-gradient(
+      -45deg,
+      var(--gold) 0px,
+      var(--gold) 20px,
+      #1a1a1a 20px,
+      #1a1a1a 40px
+    );
+    flex-shrink: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.2s forwards;
+  }
+
+  .brand {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+  }
+  .brand span { color: var(--gold); }
+
+  .nav-url {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--mid);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px 40px;
+    text-align: center;
+    position: relative;
+  }
+
+  /* Scaffold background illustration */
+  .scaffold {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.06;
+  }
+
+  .scaffold svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Hard hat icon */
+  .hardhat {
+    font-size: 52px;
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.4s forwards;
+  }
+
+  /* MARC */
+  .marc {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(100px, 22vw, 200px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    animation: fadeUp 0.7s ease 0.5s forwards;
+  }
+  .marc .c { color: var(--gold); }
+
+  /* Status badge */
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(232,160,32,0.1);
+    border: 1px solid rgba(232,160,32,0.3);
+    padding: 8px 20px;
+    margin: 20px 0 32px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.7s forwards;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: blink 1.4s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+
+  /* Messages */
+  .messages {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 0.9s forwards;
+  }
+
+  .msg-en {
+    font-size: clamp(18px, 3.5vw, 26px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.5;
+  }
+
+  .msg-en strong {
+    font-weight: 700;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(232,160,32,0.3);
+    margin: 10px auto;
+  }
+
+  .msg-other {
+    font-size: clamp(15px, 2.8vw, 21px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+  }
+
+  .msg-other strong {
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ── BOTTOM ── */
+  .bottom {
+    padding: 28px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 1.1s forwards;
+  }
+
+  .models {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .model-tag {
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--mid);
+    border: 1px solid #2a2a2a;
+    padding: 4px 12px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+    font-weight: 300;
+    color: #444;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── TAPE BOTTOM ── */
+  .tape-bottom {
+    width: 100%;
+    height: 18px;
+    background: repeating-linear-gradient(
+      -45deg,
+      var(--gold) 0px,
+      var(--gold) 20px,
+      #1a1a1a 20px,
+      #1a1a1a 40px
+    );
+    flex-shrink: 0;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 16px 20px; }
+    .hero { padding: 16px 20px 30px; }
+    .bottom { padding: 20px; }
+  }
 </style>
 </head>
 <body>
 
-<div id="geo-block" style="display:none;position:fixed;inset:0;z-index:50;background:var(--bg);align-items:center;justify-content:center;text-align:center;padding:40px">
-  <div>
-    <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:12px">Airless<span style="color:#efa400">Fix</span></div>
-    <p id="geo-msg" style="color:var(--muted);font-size:15px">AirlessFix is currently available in Europe only.<br>Coming to your region soon.</p>
+<div class="tape"></div>
+
+<nav>
+  <div class="brand">Airless<span>Fix</span></div>
+  <div class="nav-url">airlessfix.eu</div>
+</nav>
+
+<main class="hero">
+
+  <!-- Scaffold SVG background -->
+  <div class="scaffold">
+    <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <!-- Vertical poles -->
+      <rect x="80" y="0" width="8" height="700" fill="#E8A020"/>
+      <rect x="280" y="0" width="8" height="700" fill="#E8A020"/>
+      <rect x="480" y="0" width="8" height="700" fill="#E8A020"/>
+      <rect x="680" y="0" width="8" height="700" fill="#E8A020"/>
+      <rect x="880" y="0" width="8" height="700" fill="#E8A020"/>
+      <rect x="1080" y="0" width="8" height="700" fill="#E8A020"/>
+      <!-- Horizontal rails -->
+      <rect x="0" y="120" width="1200" height="6" fill="#E8A020"/>
+      <rect x="0" y="280" width="1200" height="6" fill="#E8A020"/>
+      <rect x="0" y="440" width="1200" height="6" fill="#E8A020"/>
+      <rect x="0" y="600" width="1200" height="6" fill="#E8A020"/>
+      <!-- Diagonal braces -->
+      <line x1="80" y1="120" x2="280" y2="280" stroke="#E8A020" stroke-width="4"/>
+      <line x1="280" y1="120" x2="480" y2="280" stroke="#E8A020" stroke-width="4"/>
+      <line x1="480" y1="120" x2="680" y2="280" stroke="#E8A020" stroke-width="4"/>
+      <line x1="680" y1="120" x2="880" y2="280" stroke="#E8A020" stroke-width="4"/>
+      <line x1="880" y1="120" x2="1080" y2="280" stroke="#E8A020" stroke-width="4"/>
+      <line x1="80" y1="280" x2="280" y2="440" stroke="#E8A020" stroke-width="4"/>
+      <line x1="280" y1="280" x2="480" y2="440" stroke="#E8A020" stroke-width="4"/>
+      <line x1="480" y1="280" x2="680" y2="440" stroke="#E8A020" stroke-width="4"/>
+      <line x1="680" y1="280" x2="880" y2="440" stroke="#E8A020" stroke-width="4"/>
+      <line x1="880" y1="280" x2="1080" y2="440" stroke="#E8A020" stroke-width="4"/>
+    </svg>
   </div>
-</div>
 
-<header>
-  <div class="logo" onclick="window.scrollTo(0,0)">Airless<span>Fix</span></div>
-  <div class="lang-pills">
-    <button class="lang-btn active" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('nl')">NL</button>
-    <button class="lang-btn" onclick="setLang('fr')">FR</button>
-    <button class="lang-btn" onclick="setLang('de')">DE</button>
-    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  <div class="hardhat">🪖</div>
+
+  <div class="marc">MAR<span class="c">C</span></div>
+
+  <div class="status">
+    <div class="dot"></div>
+    Currently on site
   </div>
-</header>
 
-<section class="hero">
-  <h1 id="h-title">Free AI support for<br><em>airless paint sprayers.</em></h1>
-  <p class="hero-sub" id="h-sub">Parts &amp; Troubleshooting &amp; Repair Partners &amp; Manuals 24/7</p>
-</section>
+  <div class="messages">
+    <div class="msg-en">
+      Marc is getting some painting experience.<br>
+      <strong>He'll be back 'on site' soon.</strong>
+    </div>
 
-<div class="models">
-  <div class="model-grid">
-    <div class="model-card" onclick="openChat('model','A20')"><div class="model-name">A20</div><div class="model-spec"><span class="tip">max TRA515</span><span class="lmin">0.8 L/min</span><span class="hp">0.27 HP</span></div></div>
-    <div class="model-card" onclick="openChat('model','A30')"><div class="model-name">A30</div><div class="model-spec"><span class="tip">max TRA515</span><span class="lmin">1.0 L/min</span><span class="hp">0.375 HP</span></div></div>
-    <div class="model-card" onclick="openChat('model','A45')"><div class="model-name">A45</div><div class="model-spec"><span class="tip">max TRA517</span><span class="lmin">1.2 L/min</span><span class="hp">0.5 HP</span></div></div>
-    <div class="model-card" onclick="openChat('model','A60')"><div class="model-name">A60</div><div class="model-spec"><span class="tip">max TRA619</span><span class="lmin">1.5 L/min</span><span class="hp">0.625 HP</span></div></div>
-    <div class="model-card" onclick="openChat('model','A80')"><div class="model-name">A80</div><div class="model-spec"><span class="tip">max TRA621</span><span class="lmin">1.8 L/min</span><span class="hp">0.75 HP · ProXChange</span></div></div>
-    <div class="model-card a100" onclick="openChat('model','A100')"><div class="model-name">A100</div><div class="model-spec"><span class="tip">max TRA621</span><span class="lmin">1.8 L/min</span><span class="hp">1.0 HP · TSL · ProConnect</span></div></div>
-  </div>
-</div>
+    <div class="divider"></div>
 
-<div class="marc-bubble-bar">
-  <div class="marc-bubble" onclick="openChat('general','')">
-    <span class="marc-bubble-icon">🔧</span>
-    <span class="marc-bubble-text" id="marc-bubble-text"><strong>Got a question?</strong><br>Ask Marc directly</span>
-    <span class="marc-bubble-arrow">→</span>
-  </div>
-</div>
+    <div class="msg-other">
+      Marc se fait la main.<br>
+      <strong>Il sera bientôt sur le site.</strong>
+    </div>
 
-<section class="features">
-  <h2 class="section-title" id="f-title">What Marc can help with</h2>
-  <div class="feat-grid">
-    <div class="feat-card" onclick="openChat('topic','parts')"><div class="feat-icon">🔧</div><h3 id="f1t">Parts identification</h3><p id="f1p">Correct part numbers for your model. ProConnect pump, tip guard, filters, hoses and more.</p></div>
-    <div class="feat-card" onclick="openChat('topic','troubleshooting')"><div class="feat-icon">⚡</div><h3 id="f2t">Troubleshooting</h3><p id="f2p">Pressure loss, no-spray, motor trips, leaks. Marc guides you step by step.</p></div>
-    <div class="feat-card" onclick="openChat('topic','storage')"><div class="feat-icon">❄️</div><h3 id="f3t">Storage &amp; winterising</h3><p id="f3p">Pump Armor procedure, storage tips, how to avoid costly pump seizure over winter.</p></div>
-    <div class="feat-card" onclick="openChat('topic','partners')"><div class="feat-icon">📍</div><h3 id="f4t">Repair Partners</h3><p id="f4p">Marc connects you with authorised repair partners in your country. Mention AirlessFix for priority.</p></div>
-    <div class="feat-card a100-parts" onclick="openChat('topic','a100parts')"><div class="feat-icon">📋</div><h3 id="f5t">A100 Parts Manual</h3><p id="f5p">Full spare parts list, diagrams and part numbers for the A100. Ask Marc. Coffee first ☕</p></div>
-    <div class="feat-card manuals" onclick="openChat('topic','manuals')"><div class="feat-icon">📄</div><h3 id="f6t">Manuals</h3><p id="f6p">Full technical documentation for all models A20 through A100. Ask Marc anything.</p></div>
-  </div>
-</section>
+    <div class="divider"></div>
 
-<section style="padding:0 32px 48px;max-width:600px;margin:0 auto;text-align:center">
-  <div style="background:var(--surface);border:1px solid rgba(255,94,91,.3);border-radius:16px;padding:24px 28px">
-    <p style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin-bottom:8px">Marc is free ☕</p>
-    <p style="font-size:14px;color:var(--muted);margin-bottom:18px;line-height:1.6">If Marc helped you, a coffee keeps the lights on. Ko-fi delivers the A100 PDF to your inbox automatically.</p>
-    <a href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener" style="display:inline-block;background:#ff5e5b;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;padding:12px 28px;border-radius:8px;text-decoration:none">Grab Marc a coffee ☕</a>
-  </div>
-</section>
+    <div class="msg-other">
+      Marc sammelt Lackiererfahrung.<br>
+      <strong>Er ist bald wieder 'auf der Baustelle'.</strong>
+    </div>
 
-<section class="blog-section">
-  <h2 class="section-title" id="blog-title">Guides &amp; Tips</h2>
-  <div class="blog-grid">
-    <div class="blog-card" onclick="window.location='/blog/how-to-prime-airless-sprayer.html'"><h3 id="bc1t">How to prime your airless sprayer</h3><p id="bc1p">Step-by-step priming guide for all Magnum models. Get spray-ready in 5 minutes.</p><a id="bc1a" href="/blog/how-to-prime-airless-sprayer.html">Read guide →</a></div>
-    <div class="blog-card" onclick="window.location='/blog/airless-tip-size-guide.html'"><h3 id="bc2t">Airless tip size guide</h3><p id="bc2p">Which tip for which paint? Complete TrueAirless tip selection chart.</p><a id="bc2a" href="/blog/airless-tip-size-guide.html">Read guide →</a></div>
-    <div class="blog-card" onclick="window.location='/blog/winterising-airless-sprayer.html'"><h3 id="bc3t">Make your sprayer last longer</h3><p id="bc3p">Cleaning and flushing after every job. The 10 minutes that save you hundreds.</p><a id="bc3a" href="/blog/winterising-airless-sprayer.html">Read guide →</a></div>
-    <div class="blog-card" onclick="window.location='/blog/a100-troubleshooting.html'"><h3 id="bc4t">A100 troubleshooting</h3><p id="bc4p">Most common A100 problems and how to fix them. Error codes E01-E05 explained.</p><a id="bc4a" href="/blog/a100-troubleshooting.html">Read guide →</a></div>
-    <div class="blog-card" onclick="window.location='/blog/airless-sprayer-safety.html'"><h3 id="bc5t">Airless sprayer safety</h3><p id="bc5p">High-pressure injection hazard, PPE requirements, pressure relief procedure.</p><a id="bc5a" href="/blog/airless-sprayer-safety.html">Read guide →</a></div>
-    <div class="blog-card" style="border-color:rgba(0,201,167,.4);box-shadow:0 0 12px rgba(0,201,167,.12);cursor:pointer" onclick="window.location='/blog/a100-parts-manual.html'"><h3 style="color:var(--accent2)">A100 Parts Manual</h3><p>Complete Magnum A100 spare parts reference. All diagrams, part numbers, service notes. Free via Marc.</p><a href="/blog/a100-parts-manual.html" style="color:var(--accent2)">View parts list →</a></div>
-  </div>
-</section>
+    <div class="divider"></div>
 
-<footer>
-  <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;margin-bottom:8px">Airless<span style="color:#efa400">Fix</span></div>
-  <p>Independent technical support platform &nbsp;·&nbsp; airlessfix.eu</p>
-  <p>Not affiliated with the manufacturer. All model names used for identification only.</p>
-  <div style="margin-top:8px">
-    <a href="/cdn-cgi/l/email-protection#fa898f8a8a95888eba9b9388969f89899c9382d49f8f"><span class="__cf_email__" data-cfemail="81f2f4f1f1eef3f5c1e0e8f3ede4f2f2e7e8f9afe4f4">[email&#160;protected]</span></a>
-    &nbsp;·&nbsp;<a href="/privacy.html">Privacy Policy</a>
-    &nbsp;·&nbsp;<a href="/blog/airless-sprayer-safety.html">Safety</a>
-  </div>
-  <div class="ai-badge">🤖 AI-assisted · EU AI Act Art. 52 · Not a human technician</div>
-</footer>
-
-<div id="reg-overlay" onclick="if(event.target===this)closeReg()">
-  <div class="reg-box">
-    <button onclick="closeReg()" style="position:absolute;top:14px;right:16px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1;padding:4px 8px" aria-label="Close">✕</button>
-    <div class="hp"><input type="text" id="hp" tabindex="-1" autocomplete="off"></div>
-    <h2 id="rg-title">Talk to Marc — free</h2>
-    <p class="reg-sub" id="rg-sub">AI support for your airless sprayer. Free.</p>
-    <div id="reg-err"></div>
-    <div class="field"><label id="rg-email">Email <span style="color:var(--accent);font-size:10px;font-weight:700">required</span></label><input type="email" id="fEmail" autocomplete="email" placeholder="you@example.com"></div>
-    <div class="field"><label id="rg-name">Name <span class="opt-label">(optional)</span></label><input type="text" id="fName" autocomplete="name" placeholder="Jan"></div>
-    <div class="field"><label id="rg-phone">Phone <span class="opt-label">(optional)</span></label><input type="tel" id="fPhone" autocomplete="tel" placeholder="+32 ..."></div>
-    <div class="field"><label id="rg-country">Country <span class="opt-label">(optional)</span></label><input type="text" id="fCountry" autocomplete="country-name" placeholder="Belgium"></div>
-    <div class="cb-row"><input type="checkbox" id="cbAI" required><label for="cbAI" id="rg-ai">Marc is an AI assistant, not a human technician.</label></div>
-    <div class="cb-row"><input type="checkbox" id="cbLiab" required><label for="cbLiab" id="rg-liab">I will verify technical advice with a qualified technician before acting.</label></div>
-    <div class="cb-row"><input type="checkbox" id="cbConsent" required><label for="cbConsent" id="rg-consent">AirlessFix may contact me with support updates and relevant offers. Unsubscribe anytime.</label></div>
-    <button class="btn-primary" onclick="submitReg()"><span id="rg-btn">Talk to Marc →</span></button>
-    <p style="text-align:center;margin-top:12px"><a onclick="closeReg()" style="font-size:12px;color:var(--muted);cursor:pointer;text-decoration:underline">Maybe later — back to site</a></p>
-  </div>
-</div>
-
-<div id="chat-bubble">
-  <div id="chat-peek"></div>
-  <button id="chat-btn" onclick="toggleChat()" ontouchstart="toggleChat()" aria-label="Chat with Marc">🔧</button>
-</div>
-
-<div id="kofi-widget">
-  <div id="kofi-tab" onclick="toggleKofiPanel()">Support Marc ☕</div>
-  <div id="kofi-panel">
-    <h4 id="kw-title">Marc runs on coffee ☕</h4>
-    <p id="kw-body">Free sprayer support for everyone. If Marc helped you, a coffee keeps him running 24/7.</p>
-    <a href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener" id="kw-btn">Grab Marc a coffee →</a>
-  </div>
-</div>
-
-<div id="chat-panel">
-  <div class="chat-head">
-    <div class="marc-av">M</div>
-    <div class="chat-head-info"><h3>Marc</h3><span id="marc-status">Online. Ready to help</span></div>
-    <div style="display:flex;gap:6px;margin-left:auto">
-      <div class="lang-pills" style="scale:.85;transform-origin:right">
-        <button class="lang-btn active" onclick="setLang('en')" style="padding:3px 7px;font-size:10px">EN</button>
-        <button class="lang-btn" onclick="setLang('nl')" style="padding:3px 7px;font-size:10px">NL</button>
-        <button class="lang-btn" onclick="setLang('fr')" style="padding:3px 7px;font-size:10px">FR</button>
-        <button class="lang-btn" onclick="setLang('de')" style="padding:3px 7px;font-size:10px">DE</button>
-        <button class="lang-btn" onclick="setLang('es')" style="padding:3px 7px;font-size:10px">ES</button>
-      </div>
-      <button id="chat-close" onclick="closeChat()">✕</button>
+    <div class="msg-other">
+      Marc doet ervaring op.<br>
+      <strong>Hij is snel terug op de site.</strong>
     </div>
   </div>
-  <div id="chat-msgs"><div id="typing"><span></span><span></span><span></span></div></div>
-  <div class="q-bar"><span id="q-label">Questions remaining:</span> <strong id="q-count">5</strong></div>
-  <div class="kofi-bar" id="kofi-bar" style="display:none"><p id="kofi-txt"></p><a href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener" id="kofi-link">☕</a></div>
-  <div class="input-row">
-    <textarea id="chat-in" rows="1" placeholder="Ask Marc..." onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
-    <button id="send-btn" onclick="send()">➤</button>
+
+</main>
+
+<div class="bottom">
+  <div class="models">
+    <span class="model-tag">A20</span>
+    <span class="model-tag">A30</span>
+    <span class="model-tag">A45</span>
+    <span class="model-tag">A60</span>
+    <span class="model-tag">A80</span>
+    <span class="model-tag">A100</span>
   </div>
+  <div class="footer-text">Free AI repair support · EN · NL · FR · DE · ES</div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const PARTNERS={BE:[{name:'SFIC',city:'Hasselt',phone:'+32 2 526 03 57'},{name:'M.P.A.',city:'Lummen',phone:'+32 13 53 26 00'},{name:'Verschuere',city:'Harelbeke',phone:'+32 56 71 21 45'},{name:'A.M.I.',city:'Braine-le-Château',phone:'+32 2 366 22 34'},{name:'V&D Techniek',city:'Halen',phone:'+32 475 27 95 47'},{name:'BCA',city:'Ternat',phone:'+32 2 581 04 04'}],NL:[{name:'Schoonewil Techniek',city:'Alkmaar',phone:''},{name:'Rossenaar Techn. Adv.',city:'Purmerend',phone:''},{name:'Keur & Care',city:'Ankeveen',phone:''},{name:'Oostveen Machine Techniek',city:'Vleuten',phone:''},{name:'Spray Support',city:'Naaldwijk',phone:''},{name:'Romijn Spray Equipment',city:'Almkerk',phone:''},{name:'PaintIT',city:'Ede',phone:''},{name:'AVR Techniek',city:'Schijndel',phone:'+31 6 53649283'},{name:'S.T.S. Syrado',city:'Heerlen',phone:''},{name:'Van den Belt Spuitapparatuur',city:'Hengelo',phone:''},{name:'A.G.N.N.',city:'Emmen',phone:''}],DE:[{name:'Van Treel',city:'Ohmden',phone:'+49 7023 7457780'},{name:'HK Airlesspartner',city:'Vollmersbach',phone:'+49 175 9506811'}],FR:[{name:'Ermapro',city:'Paris',phone:'+33 1 48 99 93 08'},{name:'Ermapro',city:'Le Havre',phone:'+33 2 35 26 53 71'}],AT:[{name:'Airless-Technik GmbH',city:'Asten',phone:'+43 664 3412820'}],CH:[{name:'Pemateco',city:'Bern',phone:'+41 31 992 00 56'}],GB:[{name:'Hi-Tec Spray',city:'Maidstone',phone:'+44 1622 356590'},{name:'Hi-Tec Spray',city:'Swanley',phone:'+44 1322 912505'}],SE:[{name:'Anti-Corrosion',city:'Sundbyberg',phone:'+46 8 629 07 00'},{name:'Anti-Corrosion',city:'Gothenburg',phone:'+46 31 779 73 30'},{name:'Anti-Corrosion',city:'Malmö',phone:'+46 40 18 70 22'},{name:'Anti-Corrosion',city:'Härnösand',phone:'+46 611 214 63'}],ES:[{name:'Spray Airless',city:'Madrid',phone:'661 638 282'},{name:'Nicolas Alvarez Rubio SL',city:'Valencia',phone:'653 800 742'},{name:'Pinturas Vipesa',city:'Málaga',phone:'617 242 606'},{name:'Gran Color',city:'Canarias',phone:'609 273 512'},{name:'Mastic SL',city:'Mallorca',phone:'619 290 727'},{name:'Francisco Garcia',city:'Barcelona',phone:'652 232 300'}],PT:[{name:'Mac 2 Fix',city:'Alcabideche',phone:'+351 967 167 101'}]};
+<div class="tape-bottom"></div>
 
-const T={
-  en:{
-    hTitle:'Free AI support for<br><em>airless paint sprayers.</em>',
-    hSub:'Parts &amp; Troubleshooting &amp; Repair Partners &amp; Manuals 24/7',
-    fTitle:'What Marc can help with',blogTitle:'Guides & Tips',
-    f1t:'Parts identification',f1p:'Correct part numbers for your model. ProConnect pump, tip guard, filters, hoses and more.',
-    f2t:'Troubleshooting',f2p:'Pressure loss, no-spray, motor trips, leaks. Marc guides you step by step.',
-    f3t:'Storage & winterising',f3p:'Pump Armor procedure, storage tips, how to avoid costly pump seizure over winter.',
-    f4t:'Repair Partners',f4p:'Marc connects you with authorised repair partners in your country. Mention AirlessFix for priority.',
-    f5t:'A100 Parts Manual',f5p:'Full spare parts list and diagrams for the A100. Ask Marc. Coffee first ☕',
-    f6t:'Manuals',f6p:'Full technical documentation for all models A20 through A100. Ask Marc anything.',
-    marcStatus:'Online. Ready to help',qLabel:'Questions remaining:',
-    rgTitle:"Talk to Marc — it's free",rgSub:"Marc is free. Just need your name and email.",
-    rgName:'Name',rgEmail:'Email',rgPhone:'Phone',rgCountry:'Country',
-    rgLiab:'⚠️ Marc provides general technical information only. Always verify with a qualified technician before acting.',
-    rgBtn:'Talk to Marc →',errFill:'Please enter your email address.',errLiab:'Please tick all three boxes to continue.',
-    kofiTxt:"We've been at this a while and I could really use a coffee ☕ Grab one for me and we keep going?",
-    kofiLink:'Grab Marc a coffee →',
-    kofi2:["Still here ☕ A coffee would really hit the spot right now","Grab yourself one too — and one for me while you're at it ☕","Running low on fuel over here ☕"],
-    peek:"Sprayer giving you grief? Tell me what's happening.",
-    bubbleText:'<strong>Got a question?</strong><br>Ask Marc directly',
-    welcome:(n,m)=>`Hey ${n}! 👋 I'm Marc. What's your ${m} doing?`,
-    welcomeGeneral:(n)=>`Hey ${n}! 👋 I'm Marc. What's going on with your sprayer?`,
-    welcomeParts:(n)=>`Hey ${n}! 👋 Parts question? Tell me your model and what you need.`,
-    welcomeTrouble:(n)=>`Hey ${n}! 👋 What's your sprayer doing? Or not doing?`,
-    welcomeStorage:(n)=>`Hey ${n}! 👋 Storing or winterising? Tell me your model.`,
-    welcomePartners:(n)=>`Hey ${n}! 👋 Looking for a repair partner? Which country are you in?`,
-    welcomeManuals:(n)=>`Hey ${n}! 👋 Which model and what do you need from the manual?`,
-    welcomeLanguages:(n)=>`Hey ${n}! 👋 I speak EN, NL, FR, DE and ES. What language works for you?`,
-    welcomeA100Parts:(n)=>`Hey ${n}! 👋 A100 parts manual — love it. Grab yourself a coffee ☕ and by the time you're done it'll be in your inbox. Click: [Get the PDF →](https://ko-fi.com/airlessfix)`,
-    bc1t:'How to prime your airless sprayer',bc1p:'Step-by-step priming guide for all Magnum models. Get spray-ready in 5 minutes.',bc1a:'Read guide →',
-    bc2t:'Airless tip size guide',bc2p:'Which tip for which paint? Complete TrueAirless tip selection chart.',bc2a:'Read guide →',
-    bc3t:'Make your sprayer last longer',bc3p:'Cleaning and flushing after every job. The 10 minutes that save you hundreds.',bc3a:'Read guide →',
-    bc4t:'A100 troubleshooting',bc4p:'Most common A100 problems and how to fix them. Error codes E01-E05 explained.',bc4a:'Read guide →',
-    bc5t:'Airless sprayer safety',bc5p:'High-pressure injection hazard, PPE requirements, pressure relief procedure.',bc5a:'Read guide →',
-    unsupported:"I don't speak that language well enough. Please email support@airlessfix.eu — I'll help you there.",
-  },
-  nl:{
-    hTitle:'Gratis AI-support voor<br><em>airless spuitmachines.</em>',
-    hSub:'Onderdelen &amp; Probleemoplossing &amp; Reparatiepartners &amp; Handleidingen &amp; 24/7',
-    fTitle:'Waarmee Marc kan helpen',blogTitle:'Handleidingen & Tips',
-    f1t:'Onderdelen',f1p:'Correcte onderdeelnummers voor jouw model. ProConnect pomp, tipbeveiliging, filters, slangen.',
-    f2t:'Probleemoplossing',f2p:'Drukval, niet spuiten, motorstoring, lekken. Marc begeleidt je stap voor stap.',
-    f3t:'Opslag & winterisering',f3p:'Pump Armor procedure, opslagtips, hoe je kostbare pompbeschadiging voorkomt.',
-    f4t:'Reparatiepartners',f4p:'Marc verbindt je met erkende reparatiepartners in jouw land. Noem AirlessFix voor prioriteit.',
-    f5t:'A100 Onderdelenhandleiding',f5p:"Volledig onderdelenlijst en schema's voor de A100. Vraag Marc. Koffie eerst ☕",
-    f6t:'Handleidingen',f6p:'Volledige technische documentatie voor alle modellen A20 t/m A100.',
-    marcStatus:'Online. Klaar om te helpen',qLabel:'Vragen resterend:',
-    rgTitle:'Praat met Marc — gratis',rgSub:'AI-ondersteuning voor je spuitmachine. Gratis.',
-    rgName:'Naam',rgEmail:'E-mail',rgPhone:'Telefoon',rgCountry:'Land',
-    rgLiab:'⚠️ Marc geeft alleen algemene technische info. Verifieer altijd bij een gekwalificeerde technicus.',
-    rgBtn:'Praat met Marc →',errFill:'Vul je e-mailadres in.',errLiab:'Vink alle drie de vakjes aan om door te gaan.',
-    kofiTxt:'We zijn al even bezig en ik heb echt een koffie nodig ☕ Pak er eentje voor mij ook?',
-    kofiLink:'Koffie voor Marc →',
-    kofi2:['Een koffietje zou nu echt fijn zijn ☕','Pak er ook eentje voor jezelf — en eentje voor mij ☕','Bijna leeg hier ☕'],
-    peek:'Problemen met je spuitmachine? Vertel maar.',
-    bubbleText:'<strong>Vraag?</strong><br>Vraag Marc direct. Zonder scrollen.',
-    welcome:(n,m)=>`Hey ${n}! 👋 Ik ben Marc. Wat doet jouw ${m}?`,
-    welcomeGeneral:(n)=>`Hey ${n}! 👋 Ik ben Marc. Wat is er aan de hand met je spuitmachine?`,
-    welcomeParts:(n)=>`Hey ${n}! 👋 Onderdelen nodig? Geef me je model en wat je zoekt.`,
-    welcomeTrouble:(n)=>`Hey ${n}! 👋 Wat doet je spuitmachine? Of juist niet?`,
-    welcomeStorage:(n)=>`Hey ${n}! 👋 Opslaan of winteriseren? Geef me je model.`,
-    welcomePartners:(n)=>`Hey ${n}! 👋 Op zoek naar een reparatiepartner? In welk land zit je?`,
-    welcomeManuals:(n)=>`Hey ${n}! 👋 Welk model en wat zoek je in de handleiding?`,
-    welcomeLanguages:(n)=>`Hey ${n}! 👋 Ik spreek EN, NL, FR, DE en ES. Welke taal werkt voor jou?`,
-    welcomeA100Parts:(n)=>`Hey ${n}! 👋 A100 onderdelenhandleiding — goeie keuze! Pak een koffie ☕ en tegen de tijd dat je die op hebt zit hij in je inbox. Klik: [PDF ophalen →](https://ko-fi.com/airlessfix)`,
-    bc1t:'Je spuitmachine ontluchten',bc1p:'Stap-voor-stap handleiding voor alle Magnum modellen. Spuitklaar in 5 minuten.',bc1a:'Lees gids →',
-    bc2t:'Spuitdop maatgids',bc2p:'Welke dop voor welke verf? Compleet TrueAirless dopselectie overzicht.',bc2a:'Lees gids →',
-    bc3t:'Maak je spuitmachine langer mee',bc3p:'Reinigen en spoelen na elke klus. De 10 minuten die je honderden besparen.',bc3a:'Lees gids →',
-    bc4t:'A100 probleemoplossing',bc4p:'Meest voorkomende A100 problemen en hoe je ze oplost. Foutcodes E01-E05 uitgelegd.',bc4a:'Lees gids →',
-    bc5t:'Airless spuitmachine veiligheid',bc5p:'Hogedruk injectierisico, PPE vereisten, drukontlastingsprocedure.',bc5a:'Lees gids →',
-    unsupported:'Die taal spreek ik niet goed genoeg. Stuur een e-mail naar support@airlessfix.eu — ik help je daar verder.',
-  },
-  fr:{
-    hTitle:'Support IA gratuit pour<br><em>pistolets airless.</em>',
-    hSub:'Pièces &amp; Dépannage &amp; Partenaires réparation &amp; Manuels &amp; 24h/7j',
-    fTitle:'Ce que Marc peut faire',blogTitle:'Guides & Conseils',
-    f1t:'Pièces',f1p:'Numéros de pièces corrects pour votre modèle. Pompe ProConnect, protection buse, filtres, tuyaux.',
-    f2t:'Dépannage',f2p:'Perte de pression, pas de pulvérisation, déclenchement moteur, fuites. Marc guide étape par étape.',
-    f3t:'Stockage & hivernage',f3p:'Procédure Pump Armor, conseils de stockage, comment éviter une saisie de pompe en hiver.',
-    f4t:'Partenaires réparation',f4p:'Marc vous met en contact avec des partenaires réparation agréés. Mentionnez AirlessFix pour la priorité.',
-    f5t:'Manuel pièces A100',f5p:"Liste complète des pièces et schémas pour l'A100. Demandez à Marc. Café d'abord ☕",
-    f6t:'Manuels',f6p:'Documentation technique complète pour tous les modèles A20 à A100.',
-    marcStatus:'En ligne. Prêt à aider',qLabel:'Questions restantes :',
-    rgTitle:"Parle à Marc — c'est gratuit",rgSub:'Support IA pour ton pistolet airless. Gratuit.',
-    rgName:'Prénom',rgEmail:'E-mail',rgPhone:'Téléphone',rgCountry:'Pays',
-    rgLiab:'⚠️ Marc fournit des informations techniques générales uniquement. Vérifiez toujours avec un technicien qualifié.',
-    rgBtn:'Parle à Marc →',errFill:'Veuillez entrer votre adresse e-mail.',errLiab:'Veuillez cocher les trois cases pour continuer.',
-    kofiTxt:"On discute depuis un moment et j'aurais bien un café ☕ Tu m'en passes un ?",
-    kofiLink:'Un café pour Marc →',
-    kofi2:['Un café serait vraiment bienvenu ☕','Prends-en un pour toi aussi — et un pour moi ☕','Je suis à sec ici ☕'],
-    peek:'Votre pistolet vous pose des problèmes ? Dites-moi tout.',
-    bubbleText:'<strong>Une question ?</strong><br>Demandez à Marc directement.',
-    welcome:(n,m)=>`Salut ${n} ! 👋 Moi c'est Marc. Qu'est-ce qu'il fait ton ${m} ?`,
-    welcomeGeneral:(n)=>`Salut ${n} ! 👋 Je suis Marc. Qu'est-ce qui se passe avec ton pistolet ?`,
-    welcomeParts:(n)=>`Salut ${n} ! 👋 Besoin de pièces ? Dis-moi ton modèle et ce qu'il te faut.`,
-    welcomeTrouble:(n)=>`Salut ${n} ! 👋 Qu'est-ce que ton pistolet fait? Ou ne fait plus?`,
-    welcomeStorage:(n)=>`Salut ${n} ! 👋 Stockage ou hivernage ? Dis-moi ton modèle.`,
-    welcomePartners:(n)=>`Salut ${n} ! 👋 Tu cherches un partenaire réparation ? Dans quel pays es-tu ?`,
-    welcomeManuals:(n)=>`Salut ${n} ! 👋 Quel modèle et que cherches-tu dans le manuel ?`,
-    welcomeLanguages:(n)=>`Salut ${n} ! 👋 Je parle EN, NL, FR, DE et ES. Quelle langue tu préfères ?`,
-    welcomeA100Parts:(n)=>`Salut ${n} ! 👋 Le manuel pièces A100 — excellent choix ! Prends un café ☕ et il sera dans ta boîte avant que tu aies fini. Clique: [Obtenir le PDF →](https://ko-fi.com/airlessfix)`,
-    bc1t:'Amorcer votre pistolet airless',bc1p:"Guide d'amorçage étape par étape pour tous les modèles Magnum. Prêt à pulvériser en 5 minutes.",bc1a:'Lire le guide →',
-    bc2t:'Guide de sélection des buses',bc2p:'Quelle buse pour quelle peinture? Tableau complet de sélection TrueAirless.',bc2a:'Lire le guide →',
-    bc3t:'Prolonger la durée de vie de votre pistolet',bc3p:"Nettoyage et rinçage après chaque travail. Les 10 minutes qui vous font économiser des centaines.",bc3a:'Lire le guide →',
-    bc4t:'Dépannage A100',bc4p:"Problèmes A100 les plus courants et comment les résoudre. Codes d'erreur E01-E05 expliqués.",bc4a:'Lire le guide →',
-    bc5t:'Sécurité du pistolet airless',bc5p:"Risque d'injection haute pression, équipements de protection, procédure de décharge.",bc5a:'Lire le guide →',
-    unsupported:"Je ne parle pas assez bien cette langue. Envoyez un e-mail à support@airlessfix.eu — je vous aiderai là-bas.",
-  },
-  de:{
-    hTitle:'Kostenloser KI-Support für<br><em>Airless-Sprühgeräte.</em>',
-    hSub:'Teile &amp; Fehlersuche &amp; Reparaturpartner &amp; Handbücher &amp; 24/7',
-    fTitle:'Womit Marc helfen kann',blogTitle:'Anleitungen & Tipps',
-    f1t:'Teileidentifikation',f1p:'Korrekte Teilenummern für dein Modell. ProConnect-Pumpe, Düsenschutz, Filter, Schläuche.',
-    f2t:'Fehlerdiagnose',f2p:'Druckverlust, kein Sprühen, Motorauslösung, Undichtigkeiten. Marc führt dich Schritt für Schritt.',
-    f3t:'Lagerung & Einwinterung',f3p:'Pump Armor-Verfahren, Lagerungstipps, wie du Pumpenschäden im Winter vermeidest.',
-    f4t:'Reparaturpartner',f4p:'Marc verbindet dich mit autorisierten Reparaturpartnern in deinem Land. AirlessFix erwähnen für Priorität.',
-    f5t:'A100 Ersatzteilhandbuch',f5p:'Vollständige Ersatzteilliste und Zeichnungen für den A100. Frag Marc. Erst Kaffee ☕',
-    f6t:'Handbücher',f6p:'Vollständige technische Dokumentation für alle Modelle A20 bis A100.',
-    marcStatus:'Online. Bereit zu helfen',qLabel:'Verbleibende Fragen:',
-    rgTitle:'Sprich mit Marc — kostenlos',rgSub:'KI-Support für dein Airless-Gerät. Kostenlos.',
-    rgName:'Name',rgEmail:'E-Mail',rgPhone:'Telefon',rgCountry:'Land',
-    rgLiab:'⚠️ Marc liefert nur allgemeine technische Infos. Immer mit einem Fachmann verifizieren.',
-    rgBtn:'Mit Marc sprechen →',errFill:'Bitte E-Mail-Adresse eingeben.',errLiab:'Bitte alle drei Kästchen ankreuzen.',
-    kofiTxt:'Wir sind schon eine Weile dabei und ich könnte echt einen Kaffee gebrauchen ☕ Gönnst du mir einen?',
-    kofiLink:'Kaffee für Marc →',
-    kofi2:['Ein Kaffee wäre jetzt echt gut ☕','Gönn dir auch einen — und einen für mich mit ☕','Läuft auf Reserve hier ☕'],
-    peek:'Macht dein Gerät Ärger? Erzähl mir was los ist.',
-    bubbleText:'<strong>Frage?</strong><br>Direkt Marc fragen. Ohne scrollen.',
-    welcome:(n,m)=>`Hey ${n}! 👋 Ich bin Marc. Was macht dein ${m}?`,
-    welcomeGeneral:(n)=>`Hey ${n}! 👋 Ich bin Marc. Was ist mit deinem Gerät los?`,
-    welcomeParts:(n)=>`Hey ${n}! 👋 Teile gesucht? Sag mir dein Modell und was du brauchst.`,
-    welcomeTrouble:(n)=>`Hey ${n}! 👋 Was macht dein Gerät? Oder eben nicht?`,
-    welcomeStorage:(n)=>`Hey ${n}! 👋 Einlagern oder einwintern? Sag mir dein Modell.`,
-    welcomePartners:(n)=>`Hey ${n}! 👋 Du suchst einen Reparaturpartner? In welchem Land bist du?`,
-    welcomeManuals:(n)=>`Hey ${n}! 👋 Welches Modell und was suchst du im Handbuch?`,
-    welcomeLanguages:(n)=>`Hey ${n}! 👋 Ich spreche EN, NL, FR, DE und ES. Welche Sprache passt dir?`,
-    welcomeA100Parts:(n)=>`Hey ${n}! 👋 A100 Ersatzteilhandbuch — gute Wahl! Gönn dir einen Kaffee ☕ und bis du fertig bist liegt es in deiner Inbox. Klick: [PDF holen →](https://ko-fi.com/airlessfix)`,
-    bc1t:'Airless-Gerät entlüften',bc1p:'Schritt-für-Schritt Entlüftungsanleitung für alle Magnum Modelle. In 5 Minuten sprühbereit.',bc1a:'Anleitung lesen →',
-    bc2t:'Düsenauswahl-Leitfaden',bc2p:'Welche Düse für welche Farbe? Vollständige TrueAirless Düsenauswahltabelle.',bc2a:'Anleitung lesen →',
-    bc3t:'Gerät länger haltbar machen',bc3p:'Reinigen und Spülen nach jedem Einsatz. Die 10 Minuten, die Ihnen Hunderte sparen.',bc3a:'Anleitung lesen →',
-    bc4t:'A100 Fehlerdiagnose',bc4p:'Häufigste A100 Probleme und deren Lösungen. Fehlercodes E01-E05 erklärt.',bc4a:'Anleitung lesen →',
-    bc5t:'Sicherheit beim Airless-Sprühen',bc5p:'Hochdruckinjektionsgefahr, Schutzausrüstung, Druckentlastungsverfahren.',bc5a:'Anleitung lesen →',
-    unsupported:'Diese Sprache spreche ich nicht gut genug. Bitte schreib an support@airlessfix.eu — ich helfe dir dort.',
-  },
-  es:{
-    hTitle:'Soporte IA gratuito para<br><em>pistolas airless.</em>',
-    hSub:'Piezas &amp; Diagnóstico &amp; Talleres &amp; Manuales &amp; 24/7',
-    fTitle:'En qué puede ayudar Marc',blogTitle:'Guías y Consejos',
-    f1t:'Identificación de piezas',f1p:'Números de pieza correctos para tu modelo. Bomba ProConnect, protector de boquilla, filtros.',
-    f2t:'Diagnóstico',f2p:'Pérdida de presión, sin pulverización, disparo del motor, fugas. Marc te guía paso a paso.',
-    f3t:'Almacenamiento e invernada',f3p:'Procedimiento Pump Armor, consejos de almacenamiento, cómo evitar daños en la bomba.',
-    f4t:'Talleres',f4p:'Marc te conecta con talleres autorizados en tu país. Menciona AirlessFix para prioridad.',
-    f5t:'Manual de piezas A100',f5p:'Lista completa de piezas y diagramas del A100. Pregunta a Marc. Café primero ☕',
-    f6t:'Manuales',f6p:'Documentación técnica completa para todos los modelos A20 hasta A100.',
-    marcStatus:'En línea. Listo para ayudar',qLabel:'Preguntas restantes:',
-    rgTitle:'Habla con Marc — es gratis',rgSub:'Soporte IA para tu pistola airless. Gratis.',
-    rgName:'Nombre',rgEmail:'Email',rgPhone:'Teléfono',rgCountry:'País',
-    rgLiab:'⚠️ Marc solo proporciona información técnica general. Verifica siempre con un técnico cualificado.',
-    rgBtn:'Hablar con Marc →',errFill:'Por favor introduce tu correo electrónico.',errLiab:'Por favor marca las tres casillas para continuar.',
-    kofiTxt:'Llevamos un rato y yo podría tomar un café ☕ ¿Me pasas uno?',
-    kofiLink:'Café para Marc →',
-    kofi2:['Un café me vendría de maravilla ahora ☕','Tómate uno también — y uno para mí ☕','Estoy casi sin combustible ☕'],
-    peek:'¿Tu pistola te da problemas? Cuéntame.',
-    bubbleText:'<strong>¿Una pregunta?</strong><br>Pregunta a Marc directamente.',
-    welcome:(n,m)=>`¡Hola ${n}! 👋 Soy Marc. ¿Qué hace tu ${m}?`,
-    welcomeGeneral:(n)=>`¡Hola ${n}! 👋 Soy Marc. ¿Qué pasa con tu pistola?`,
-    welcomeParts:(n)=>`¡Hola ${n}! 👋 ¿Necesitas piezas? Dime tu modelo y qué buscas.`,
-    welcomeTrouble:(n)=>`¡Hola ${n}! 👋 ¿Qué hace tu pistola? ¿O qué deja de hacer?`,
-    welcomeStorage:(n)=>`¡Hola ${n}! 👋 ¿Almacenamiento o invernada? Dime tu modelo.`,
-    welcomePartners:(n)=>`¡Hola ${n}! 👋 ¿Buscas un taller? ¿En qué país estás?`,
-    welcomeManuals:(n)=>`¡Hola ${n}! 👋 ¿Qué modelo y qué buscas en el manual?`,
-    welcomeLanguages:(n)=>`¡Hola ${n}! 👋 Hablo EN, NL, FR, DE y ES. ¿Qué idioma prefieres?`,
-    welcomeA100Parts:(n)=>`¡Hola ${n}! 👋 Manual de piezas A100 — excelente! Tómate un café ☕ y cuando acabes ya lo tendrás en tu correo. Clic: [Obtener el PDF →](https://ko-fi.com/airlessfix)`,
-    bc1t:'Cómo cebar tu pistola airless',bc1p:'Guía de cebado paso a paso para todos los modelos Magnum. Listo para pulverizar en 5 minutos.',bc1a:'Leer guía →',
-    bc2t:'Guía de selección de boquillas',bc2p:'¿Qué boquilla para qué pintura? Tabla completa de selección TrueAirless.',bc2a:'Leer guía →',
-    bc3t:'Alarga la vida de tu pistola',bc3p:'Limpieza y purga después de cada trabajo. Los 10 minutos que te ahorran cientos.',bc3a:'Leer guía →',
-    bc4t:'Solución de problemas A100',bc4p:'Problemas más comunes del A100 y cómo solucionarlos. Códigos de error E01-E05 explicados.',bc4a:'Leer guía →',
-    bc5t:'Seguridad de la pistola airless',bc5p:'Riesgo de inyección de alta presión, requisitos de EPP, procedimiento de alivio de presión.',bc5a:'Leer guía →',
-    unsupported:'No hablo ese idioma lo suficientemente bien. Por favor escribe a support@airlessfix.eu — te ayudaré allí.',
-  }
-};
-
-let lang='en',history=[],qFree=5,busy=false,registered=false,userData={},techCount=0,idleTimer=null,chatOpen=false,pendingOpen=null,kofiNudgeCount=0;
-
-const EU_CODES=['AD','AL','AT','BA','BE','BG','BY','CH','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GI','GR','HR','HU','IE','IS','IT','LI','LT','LU','LV','MC','MD','ME','MK','MT','NL','NO','PL','PT','RO','RS','SE','SI','SK','SM','TR','UA','UK','VA','XK'];
-
-(function geoCheck(){
-  const saved=localStorage.getItem('af_country');
-  const savedName=localStorage.getItem('af_country_name');
-  const savedDial=localStorage.getItem('af_dial');
-  if(saved){
-    if(!EU_CODES.includes(saved))document.getElementById('geo-block').style.display='flex';
-    if(savedName)prefillGeo(savedName,savedDial||'');
-    return;
-  }
-  fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
-    const c=d.country_code||'',name=d.country_name||'',dial=d.country_calling_code?'+'+d.country_calling_code.replace('+',''):'';
-    localStorage.setItem('af_country',c);localStorage.setItem('af_country_name',name);localStorage.setItem('af_dial',dial);
-    if(c&&!EU_CODES.includes(c))document.getElementById('geo-block').style.display='flex';
-    prefillGeo(name,dial);
-  }).catch(()=>{});
-})();
-
-function prefillGeo(countryName,dialCode){
-  const cf=document.getElementById('fCountry'),pf=document.getElementById('fPhone');
-  if(cf&&!cf.value&&countryName)cf.value=countryName;
-  if(pf&&!pf.value&&dialCode){
-    pf.value=dialCode+' ';pf.placeholder=dialCode+' ...';
-    pf.addEventListener('focus',function(){if(this.value===dialCode+' '){const len=this.value.length;this.setSelectionRange(len,len);}},{once:false});
-  }
-  window._geoDialCode=dialCode;
-}
-
-function setLang(l){
-  lang=l;
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
-  applyLang();
-}
-
-function applyLang(){
-  const t=T[lang];
-  const set=(id,val)=>{const el=document.getElementById(id);if(el)el.innerHTML=val;};
-  set('h-title',t.hTitle);set('h-sub',t.hSub);set('f-title',t.fTitle);set('blog-title',t.blogTitle);
-  set('f1t',t.f1t);set('f1p',t.f1p);set('f2t',t.f2t);set('f2p',t.f2p);set('f3t',t.f3t);set('f3p',t.f3p);
-  set('f4t',t.f4t);set('f4p',t.f4p);set('f5t',t.f5t);set('f5p',t.f5p);set('f6t',t.f6t);set('f6p',t.f6p);
-  set('bc1t',t.bc1t);set('bc1p',t.bc1p);set('bc1a',t.bc1a);set('bc2t',t.bc2t);set('bc2p',t.bc2p);set('bc2a',t.bc2a);
-  set('bc3t',t.bc3t);set('bc3p',t.bc3p);set('bc3a',t.bc3a);set('bc4t',t.bc4t);set('bc4p',t.bc4p);set('bc4a',t.bc4a);
-  set('bc5t',t.bc5t);set('bc5p',t.bc5p);set('bc5a',t.bc5a);
-  set('marc-status',t.marcStatus);set('q-label',t.qLabel);
-  set('rg-title',t.rgTitle);set('rg-sub',t.rgSub);set('rg-name',t.rgName);set('rg-email',t.rgEmail);
-  set('rg-phone',t.rgPhone);set('rg-country',t.rgCountry);set('rg-liab',t.rgLiab);set('rg-btn',t.rgBtn);
-  const peek=document.getElementById('chat-peek');if(peek)peek.textContent=t.peek;
-  const kwTitles={en:'Marc runs on coffee',nl:'Marc draait op koffie',fr:'Marc tourne au café',de:'Marc läuft auf Kaffee',es:'Marc funciona con café'};
-  const kwBodies={en:'Free sprayer help for everyone. If Marc sorted you out, a coffee keeps him going 24/7.',nl:'Gratis hulp voor iedereen. Als Marc je geholpen heeft, houdt een koffie hem 24/7 online.',fr:"Support gratuit pour tous. Si Marc t'a aidé, un café le garde en ligne 24h/7j.",de:'Kostenlose Hilfe für alle. Wenn Marc dir geholfen hat, hält ein Kaffee ihn am Laufen.',es:'Ayuda gratuita para todos. Si Marc te ayudó, un café lo mantiene disponible 24/7.'};
-  const kwBtns={en:'Grab Marc a coffee →',nl:'Koffie voor Marc →',fr:'Un café pour Marc →',de:'Kaffee für Marc →',es:'Café para Marc →'};
-  const kwt=document.getElementById('kw-title');if(kwt)kwt.textContent=kwTitles[lang]||kwTitles.en;
-  const kwb=document.getElementById('kw-body');if(kwb)kwb.textContent=kwBodies[lang]||kwBodies.en;
-  const kwbtn=document.getElementById('kw-btn');if(kwbtn)kwbtn.textContent=kwBtns[lang]||kwBtns.en;
-  const bubble=document.getElementById('marc-bubble-text');
-  if(bubble)bubble.innerHTML=t.bubbleText||'<strong>Got a question?</strong><br>Ask Marc directly';
-  updateKofi();
-}
-
-function resetIdle(){
-  clearTimeout(idleTimer);
-  if(chatOpen||registered)return;
-  idleTimer=setTimeout(()=>{
-    const btn=document.getElementById('chat-btn');if(btn)btn.classList.add('pulse');
-    setTimeout(()=>{if(!chatOpen){const peek=document.getElementById('chat-peek');if(peek){peek.textContent=T[lang].peek;peek.classList.add('show');}}},7000);
-  },5000);
-}
-document.addEventListener('mousemove',resetIdle);
-document.addEventListener('scroll',resetIdle);
-document.addEventListener('click',()=>{const peek=document.getElementById('chat-peek');if(peek)peek.classList.remove('show');});
-resetIdle();
-
-function openChat(type,value){
-  clearTimeout(idleTimer);
-  const peek=document.getElementById('chat-peek');if(peek)peek.classList.remove('show');
-  pendingOpen={type,value};
-  if(!registered){document.getElementById('reg-overlay').classList.add('active');return;}
-  doOpenChat(type,value);
-}
-
-function toggleChat(){
-  if(!chatOpen){
-    clearTimeout(idleTimer);
-    const peek=document.getElementById('chat-peek');if(peek)peek.classList.remove('show');
-    if(!registered){pendingOpen={type:'general',value:''};document.getElementById('reg-overlay').classList.add('active');return;}
-    doOpenChat('general','');
-  } else closeChat();
-}
-
-function closeChat(){
-  const panel=document.getElementById('chat-panel');
-  panel.classList.remove('open');panel.style.display='none';chatOpen=false;
-  document.body.style.overflow='';
-}
-
-function doOpenChat(type,value){
-  const panel=document.getElementById('chat-panel');
-  panel.classList.add('open');panel.style.display='flex';chatOpen=true;
-  document.getElementById('chat-btn').classList.remove('pulse');
-  if(history.length===0)sendWelcome(type,value);
-  setTimeout(()=>scrollToBottom(),100);
-}
-
-function submitReg(){
-  const t=T[lang];const err=document.getElementById('reg-err');err.style.display='none';
-  if(document.getElementById('hp').value)return;
-  const email=document.getElementById('fEmail').value.trim();
-  const name=(document.getElementById('fName')||{value:''}).value.trim();
-  const phone=(document.getElementById('fPhone')||{value:''}).value.trim();
-  const country=(document.getElementById('fCountry')||{value:''}).value.trim();
-  const cbAI=document.getElementById('cbAI').checked;
-  const cbLiab=document.getElementById('cbLiab').checked;
-  const cbConsent=document.getElementById('cbConsent').checked;
-  if(!email){err.textContent=t.errFill;err.style.display='block';return;}
-  if(!cbAI||!cbLiab||!cbConsent){err.textContent=t.errLiab;err.style.display='block';return;}
-  userData={name,email,phone,country,lang,consent:true,ts:new Date().toISOString()};
-  registered=true;
-  document.getElementById('reg-overlay').classList.remove('active');
-  sendThankYouEmail(userData);
-  if(pendingOpen){doOpenChat(pendingOpen.type,pendingOpen.value);pendingOpen=null;}
-}
-
-function sendThankYouEmail(data){
-  const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbz1xQMA2N_tYgGj6219O6Vtb8EBCAZJvWBjDvo0k7cOTnY6FV3btjeL6WuOn8tZht9oFA/exec';
-  if(APPS_SCRIPT_URL.includes('PASTE'))return;
-  fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(data)}).catch(()=>{});
-}
-
-function sendWelcome(type,value){
-  const t=T[lang];const n=userData.name?userData.name.split(' ')[0]:'';
-  let msg='';
-  if(type==='model')msg=t.welcome(n,value);
-  else if(type==='topic'){
-    if(value==='parts')msg=t.welcomeParts(n);
-    else if(value==='troubleshooting')msg=t.welcomeTrouble(n);
-    else if(value==='storage')msg=t.welcomeStorage(n);
-    else if(value==='partners')msg=t.welcomePartners(n);
-    else if(value==='manuals')msg=t.welcomeManuals(n);
-    else if(value==='languages')msg=t.welcomeLanguages(n);
-    else if(value==='a100parts')msg=t.welcomeA100Parts(n);
-    else msg=t.welcomeGeneral(n);
-  } else msg=t.welcomeGeneral(n);
-  if(type==='model'&&value){history.push({role:'user',content:`I have the ${value}`});history.push({role:'assistant',content:msg});}
-  else if(type==='topic'&&value==='partners'&&userData.country){history.push({role:'user',content:'I need a repair partner'});history.push({role:'assistant',content:msg});}
-  else history.push({role:'assistant',content:msg});
-  addBot(msg,false);
-}
-
-function escHtml(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-
-function fmt(t){
-  return escHtml(t)
-    .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank" rel="noopener" style="color:var(--accent2);font-weight:700;text-decoration:none">$1</a>')
-    .replace(/\n/g,'<br>');
-}
-
-function addBot(text,isPartner=false){
-  const c=document.getElementById('chat-msgs');
-  document.getElementById('typing').style.display='none';
-  const d=document.createElement('div');d.className='msg bot';
-  const tm=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
-  const pt=isPartner?'<div class="partner-tag">📍 Repair Partner</div>':'';
-  d.innerHTML=`<div class="mb">${fmt(text)}${pt}</div><div class="mt">${tm}</div>`;
-  c.insertBefore(d,document.getElementById('typing'));
-  setTimeout(()=>{d.scrollIntoView({behavior:'smooth',block:'start'});},50);
-}
-
-function addUser(text){
-  const c=document.getElementById('chat-msgs');
-  const d=document.createElement('div');d.className='msg usr';
-  const tm=new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
-  const mb=document.createElement('div');mb.className='mb';mb.textContent=text;
-  const mt=document.createElement('div');mt.className='mt';mt.textContent=tm;
-  d.appendChild(mb);d.appendChild(mt);
-  c.insertBefore(d,document.getElementById('typing'));
-  scrollToBottom();
-}
-
-function scrollToBottom(){
-  const c=document.getElementById('chat-msgs');
-  const msgs=c.querySelectorAll('.msg.bot');
-  if(msgs.length>0)msgs[msgs.length-1].scrollIntoView({behavior:'smooth',block:'start'});
-  else c.scrollTop=c.scrollHeight;
-}
-
-function autoResize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,80)+'px';}
-function handleKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}}
-function updateQCounter(){const el=document.getElementById('q-count');if(el)el.textContent=Math.max(0,qFree);}
-
-function updateKofi(){
-  const bar=document.getElementById('kofi-bar'),txt=document.getElementById('kofi-txt'),lnk=document.getElementById('kofi-link');
-  if(!bar||!txt||!lnk)return;
-  if(qFree<=0){
-    bar.style.display='flex';const t=T[lang];
-    if(kofiNudgeCount===0)txt.textContent=t.kofiTxt;
-    else txt.textContent=t.kofi2[(kofiNudgeCount-1)%t.kofi2.length];
-    lnk.textContent='☕ '+t.kofiLink;
-  }
-}
-
-async function send(){
-  if(busy)return;
-  const inp=document.getElementById('chat-in');
-  const msg=inp.value.trim();
-  if(!msg)return;
-  inp.value='';inp.style.height='auto';
-  addUser(msg);
-  history.push({role:'user',content:msg});
-  busy=true;
-  document.getElementById('send-btn').disabled=true;
-  document.getElementById('typing').style.display='flex';
-  scrollToBottom();
-  try{
-    const resp=await fetch('https://airlessfix-proxy.floral-meadow-01b0.workers.dev',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:600,
-        messages:history,
-        qFree:qFree
-      })
-    });
-    const data=await resp.json();
-    const reply=data.content
-      ?data.content.filter(b=>b.type==='text').map(b=>b.text).join('\n')||'Sorry, connection issue. Try again.'
-      :'Sorry, connection issue. Try again.';
-    history.push({role:'assistant',content:reply});
-    const isPartner=/AFX10|repair partner|reparatiepartner|Reparaturpartner|partenaire|taller/i.test(reply);
-    addBot(reply,isPartner);
-    techCount++;
-    const techKeywords=/\b(part|pump|tip|pressure|leak|prime|priming|filter|hose|motor|valve|error|fault|repair|broken|fix|replace|kit|number|manual|pdf|spray|nozzle|clog|flow|piston|seal|TSL|armor|solvent|lacquer|\bA20\b|\bA30\b|\bA45\b|\bA60\b|\bA80\b|\bA100\b|ProX|ProConnect|how to|won't|doesn't|not working|problem|issue)/i;
-    const isTechnical=techKeywords.test(msg);
-    if(isTechnical&&techCount>=1){qFree=Math.max(0,qFree-1);updateQCounter();}
-    if(qFree<=0){kofiNudgeCount++;updateKofi();}
-  }catch(e){
-    document.getElementById('typing').style.display='none';
-    addBot('⚠️ Connection issue. Check your internet and try again.');
-    history.pop();
-  }
-  busy=false;
-  document.getElementById('send-btn').disabled=false;
-  setTimeout(()=>scrollToBottom(),100);
-}
-
-function closeReg(){document.getElementById('reg-overlay').classList.remove('active');pendingOpen=null;}
-function toggleKofiPanel(){document.getElementById('kofi-panel').classList.toggle('open');}
-lyLang;
-
-applyLang();
-updateQCounter();
-(function detectLang(){
-  const bl=(navigator.language||'en').toLowerCase().substring(0,2);
-  const map={nl:'nl',fr:'fr',de:'de',es:'es'};
-  setLang(map[bl]||'en');
-})();
-
-// Mobile touch fix
-document.addEventListener('DOMContentLoaded',function(){
-  function addTouch(el,fn){
-    if(!el)return;
-    el.addEventListener('touchend',function(e){e.preventDefault();fn();});
-  }
-  addTouch(document.getElementById('chat-btn'),toggleChat);
-  addTouch(document.getElementById('send-btn'),send);
-  addTouch(document.querySelector('.marc-bubble'),function(){openChat('general','');});
-  document.querySelectorAll('.model-card').forEach(function(c){
-    c.addEventListener('touchend',function(e){
-      e.preventDefault();
-      var oc=c.getAttribute('onclick');
-      if(oc)eval(oc);
-    });
-  });
-  document.querySelectorAll('.feat-card').forEach(function(c){
-    c.addEventListener('touchend',function(e){
-      e.preventDefault();
-      var oc=c.getAttribute('onclick');
-      if(oc)eval(oc);
-    });
-  });
-});
-</script>
 </body>
 </html>
