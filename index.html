@@ -292,7 +292,7 @@ footer a:hover{color:var(--accent)}
     </div>
     <div class="gcb-row">
       <input type="checkbox" id="gf-gdpr">
-      <label id="gf-gdpr-label" for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties. Unsubscribe anytime via <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="770402070718050337161e051b120404111e0f591202">[email&#160;protected]</a></label>
+      <label id="gf-gdpr-label" for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties.</label>
     </div>
     <button class="btn-primary" id="gf-submit" onclick="submitGuideForm()">Get my guide →</button>
   </div>
@@ -429,6 +429,7 @@ function getGuides(group){
   ];
   if(group==='pros') return [
     { name:'Operation & Parts — ProS19 / ProS21', desc:'Full repair and parts manual (EN)', url: BASE + '3A3237EN-D.pdf' },
+    { name:'ProS19 Pro Plus — Product Brochure (EU)', desc:'Specifications · Features · EU edition', url: BASE + '300953NL.pdf' },
     { name:'TrueAirless Spray Tip Selection Guide', desc:'Which tip for which job', url: TIP },
   ];
   return [];
@@ -734,8 +735,7 @@ document.addEventListener('click',()=>{
 document.addEventListener('DOMContentLoaded',function(){
   const addT=(el,fn)=>{if(el)el.addEventListener('touchend',e=>{e.preventDefault();fn();});};
   addT(document.getElementById('chat-btn'),toggleChat);
-  do
-cument.querySelectorAll('.model-card').forEach(function(c){
+  document.querySelectorAll('.model-card').forEach(function(c){
     c.addEventListener('touchend',function(e){
       e.preventDefault();
       var oc=c.getAttribute('onclick');if(oc)eval(oc);
