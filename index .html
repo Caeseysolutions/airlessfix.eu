@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AirlessFix — Free AI Support for Airless Paint Sprayers</title>
+<meta name="description" content="Free multilingual AI support for airless paint sprayers. Parts, troubleshooting, repair partners, manuals. Ask Marc — EN, NL, FR, DE, ES. 24/7.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://airlessfix.eu/">
+<meta property="og:title" content="AirlessFix — Free AI Support for Airless Paint Sprayers">
+<meta property="og:description" content="Free multilingual AI support for airless paint sprayers. Parts, troubleshooting, repair partners. 24/7.">
+<meta property="og:url" content="https://airlessfix.eu/">
+<meta property="og:type" content="website">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"AirlessFix","url":"https://airlessfix.eu","description":"Free multilingual AI technical support for airless paint sprayers","potentialAction":{"@type":"SearchAction","target":"https://airlessfix.eu/?q={search_term_string}","query-input":"required name=search_term_string"}}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C3KKDC0RF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7C3KKDC0RF');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f1a;--surface:#111827;--surface2:#1a2235;--border:#1e3048;
+  --accent:#0e8fff;--accent2:#00c9a7;--orange:#efa400;
+  --text:#e8edf5;--muted:#7a8fa8;--warn:#f0a500;--danger:#e5534b;
+  --radius:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;background:rgba(10,15,26,.97);backdrop-filter:blur(12px)}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px;cursor:pointer}
+.logo span{color:var(--orange)}
+.lang-pills{display:flex;gap:6px}
+.lang-btn{background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:600;padding:5px 10px;border-radius:20px;cursor:pointer;transition:.2s}
+.lang-btn.active,.lang-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+
+.hero{padding:72px 32px 48px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 0%,rgba(14,143,255,.1) 0%,transparent 70%);pointer-events:none}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(30px,5vw,60px);font-weight:800;line-height:1.1;letter-spacing:-1.5px;margin-bottom:12px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:16px;color:var(--muted);margin-bottom:16px}
+.hero-tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:0}
+.tag{background:var(--surface2);border:1px solid var(--border);padding:5px 12px;border-radius:20px;font-size:12px;color:var(--muted)}
+.tag strong{color:var(--text)}
+
+/* STATUS BADGE */
+.marc-status-bar{display:flex;justify-content:center;padding:20px 32px 0}
+.marc-status-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(239,164,0,.08);border:1px solid rgba(239,164,0,.25);color:var(--orange);font-size:12px;font-weight:600;padding:7px 18px;border-radius:20px;letter-spacing:.3px}
+.status-dot{width:7px;height:7px;background:var(--orange);border-radius:50%;animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+
+/* MODEL CARDS — original style */
+.models{padding:40px 32px 20px;max-width:1100px;margin:0 auto}
+.models h2{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;text-align:center;margin-bottom:24px}
+.model-grid-orig{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.model-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 10px;text-align:center;cursor:pointer;transition:.2s;position:relative;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.model-card:hover{border-color:var(--orange);transform:translateY(-2px);background:var(--surface2)}
+.model-card::after{content:'Get guide →';position:absolute;bottom:6px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--orange);opacity:0;transition:.2s;white-space:nowrap}
+.model-card:hover::after{opacity:1}
+.model-name{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--orange);margin-bottom:6px}
+.model-spec{font-size:11px;line-height:1.85}
+.model-spec .tip{color:#ffffff;font-weight:700;font-size:12px;display:block}
+.model-spec .lmin{color:var(--accent2);font-weight:600;display:block}
+.model-spec .hp{color:#7a8fa8;font-size:10px;display:block}
+.model-card.a100{border-color:rgba(14,143,255,.5);box-shadow:0 0 14px rgba(14,143,255,.2)}
+.model-card.a100 .model-name{color:var(--accent)}
+.model-card.a100:hover{border-color:var(--accent);box-shadow:0 0 24px rgba(14,143,255,.5)}
+
+/* PROS CARDS */
+.pros-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:340px;margin:10px auto 0}
+
+/* GUIDE SECTION */
+.guide-section{padding:20px 32px 48px;max-width:720px;margin:0 auto}
+.guide-section-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:var(--muted);text-align:center;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+
+/* GUIDE FORM */
+.guide-form-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;display:none}
+.guide-form-wrap.visible{display:block}
+.guide-form-wrap h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin-bottom:6px}
+.guide-form-desc{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.5}
+.gfield{margin-bottom:14px}
+.gfield label{display:block;font-size:11px;font-weight:600;color:var(--muted);margin-bottom:5px;letter-spacing:.4px;text-transform:uppercase}
+.gfield input{width:100%;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:14px;padding:11px 14px;border-radius:10px;outline:none;transition:.2s;font-family:'Inter',sans-serif}
+.gfield input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(14,143,255,.12)}
+.gfield input::placeholder{color:#3a4d63}
+.gfield-row{display:flex;gap:12px}
+.gfield-row .gfield{flex:1;min-width:130px}
+.gcb-row{display:flex;gap:10px;align-items:flex-start;margin:12px 0 20px;font-size:12px;color:var(--muted);line-height:1.5}
+.gcb-row input[type="checkbox"]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--accent);cursor:pointer}
+.gcb-row a{color:var(--accent)}
+.btn-primary{width:100%;background:var(--accent);color:#fff;border:none;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;padding:13px;border-radius:var(--radius);cursor:pointer;transition:.2s}
+.btn-primary:hover{background:#0077e6;transform:translateY(-1px)}
+.btn-primary:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* KO-FI CARD for A100 */
+.kofi-guide-card{background:var(--surface);border:1px solid rgba(239,164,0,.35);border-radius:var(--radius);padding:24px;display:none}
+.kofi-guide-card h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--orange);margin-bottom:8px}
+.kofi-guide-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:18px}
+.kofi-guide-btn{display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#0a0f1a;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;padding:12px 24px;border-radius:var(--radius);text-decoration:none;transition:.2s}
+.kofi-guide-btn:hover{background:#d4920a;text-decoration:none}
+.kofi-guide-note{font-size:11px;color:var(--muted);margin-top:10px}
+
+/* DOWNLOAD RESULT */
+.dl-result{display:none;flex-direction:column;gap:12px}
+.dl-result.visible{display:flex}
+.dl-header{background:rgba(0,201,167,.06);border:1px solid rgba(0,201,167,.2);border-radius:var(--radius);padding:18px 22px}
+.dl-header h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--accent2);margin-bottom:4px}
+.dl-header p{font-size:13px;color:var(--muted)}
+.dl-links{display:flex;flex-direction:column;gap:8px}
+.dl-btn{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;text-decoration:none;color:var(--text);transition:.2s}
+.dl-btn:hover{border-color:var(--accent);background:var(--surface2);text-decoration:none;transform:translateY(-1px)}
+.dl-icon{font-size:20px;flex-shrink:0}
+.dl-name{font-weight:600;font-size:13px;display:block}
+.dl-desc{font-size:11px;color:var(--muted);display:block;margin-top:2px}
+.coffee-nudge{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.coffee-nudge p{font-size:13px;color:var(--muted);line-height:1.5;flex:1;min-width:160px}
+.coffee-nudge a{display:inline-flex;align-items:center;gap:6px;background:#ff5e5b;color:#fff;font-size:12px;font-weight:700;padding:8px 16px;border-radius:8px;text-decoration:none;white-space:nowrap}
+.coffee-nudge a:hover{background:#e04e4b;text-decoration:none}
+.afx-strip{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 20px}
+.afx-code{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--orange);letter-spacing:.08em;flex-shrink:0}
+.afx-text{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* MARC BUBBLE BAR */
+.marc-bubble-bar{padding:0 32px 40px;max-width:1100px;margin:0 auto;display:flex;justify-content:center}
+.marc-bubble{background:rgba(14,143,255,.1);border:1px solid rgba(14,143,255,.3);border-radius:20px 20px 20px 4px;padding:14px 22px;cursor:pointer;transition:.3s;display:inline-flex;align-items:center;gap:10px;max-width:420px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.marc-bubble:hover{background:rgba(14,143,255,.2);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px rgba(14,143,255,.2)}
+.marc-bubble-icon{font-size:22px;flex-shrink:0}
+.marc-bubble-text{font-size:14px;color:var(--text);line-height:1.5}
+.marc-bubble-text strong{color:var(--accent)}
+.marc-bubble-arrow{font-size:12px;color:var(--accent);flex-shrink:0}
+
+/* FEATURES */
+.features{padding:56px 32px;max-width:1100px;margin:0 auto}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;text-align:center;margin-bottom:36px}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;cursor:pointer;transition:.2s;touch-action:manipulation}
+.feat-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.feat-card.manuals{border-color:rgba(0,201,167,.4);box-shadow:0 0 12px rgba(0,201,167,.15)}
+.feat-card.manuals:hover{border-color:var(--accent2);box-shadow:0 0 20px rgba(0,201,167,.3)}
+.feat-card.a100-parts{border-color:rgba(0,201,167,.6);box-shadow:0 0 16px rgba(0,201,167,.2);background:var(--surface2)}
+.feat-card.a100-parts:hover{border-color:var(--accent2);box-shadow:0 0 28px rgba(0,201,167,.4);transform:translateY(-3px)}
+.feat-icon{font-size:26px;margin-bottom:12px}
+.feat-card h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px}
+.feat-card p{font-size:13px;color:var(--muted);line-height:1.6}
+.feat-card.a100-parts h3{color:var(--accent2)}
+
+/* BLOG */
+.blog-section{padding:56px 32px;max-width:1100px;margin:0 auto;border-top:1px solid var(--border)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.blog-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:.2s;cursor:pointer}
+.blog-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.blog-card h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:8px;color:var(--text)}
+.blog-card p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.blog-card a{font-size:12px;color:var(--accent);font-weight:600}
+
+/* KO-FI WIDGET */
+#kofi-widget{position:fixed;left:0;bottom:24px;z-index:150;display:flex;flex-direction:column;align-items:flex-start}
+#kofi-tab{background:linear-gradient(135deg,#ff5e5b,#ff8c00);color:#fff;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;padding:12px 20px;border-radius:0 12px 12px 0;cursor:pointer;letter-spacing:.03em;box-shadow:3px 3px 16px rgba(255,94,91,.4);transition:.2s;white-space:nowrap}
+#kofi-tab:hover{padding-left:28px;box-shadow:6px 3px 24px rgba(255,94,91,.6);transform:translateX(4px)}
+#kofi-panel{display:none;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 16px;width:240px;box-shadow:0 -4px 24px rgba(0,0,0,.5);margin-bottom:10px}
+#kofi-panel.open{display:block}
+#kofi-panel h4{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;margin-bottom:6px;color:var(--text)}
+#kofi-panel p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+#kofi-panel a{display:block;background:#ff5e5b;color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;padding:10px 14px;border-radius:8px;text-decoration:none;text-align:center;transition:.2s}
+#kofi-panel a:hover{background:#e04e4b;text-decoration:none}
+@media(max-width:600px){#kofi-widget{display:none}}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px;text-align:center;color:var(--muted);font-size:12px;line-height:1.8}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--accent)}
+.ai-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(14,143,255,.08);border:1px solid rgba(14,143,255,.2);color:var(--accent);font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;margin-top:10px}
+
+/* CHAT BUBBLE */
+#chat-bubble{position:fixed;bottom:24px;right:24px;z-index:200;cursor:pointer;transition:.3s}
+#chat-btn{width:56px;height:56px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 20px rgba(14,143,255,.4);transition:.3s;border:none;cursor:pointer;animation:pulse 2s infinite;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+#chat-btn:hover{transform:scale(1.1)}
+@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(14,143,255,.4)}50%{box-shadow:0 4px 30px rgba(14,143,255,.8)}}
+#chat-peek{position:absolute;bottom:66px;right:0;background:var(--surface);border:1px solid var(--border);border-radius:12px 12px 0 12px;padding:10px 14px;font-size:13px;color:var(--text);max-width:260px;white-space:normal;display:none;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+#chat-peek.show{display:block}
+
+/* OFFLINE CHAT PANEL */
+#chat-panel{position:fixed;bottom:90px;right:24px;width:340px;max-width:calc(100vw - 32px);background:var(--surface);border:1px solid var(--border);border-radius:16px;display:none;flex-direction:column;z-index:200;box-shadow:0 8px 40px rgba(0,0,0,.6);overflow:hidden}
+#chat-panel.open{display:flex}
+.chat-head{background:var(--surface2);border-bottom:1px solid var(--border);padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.marc-av{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:14px;flex-shrink:0}
+.chat-head-info{flex:1}
+.chat-head-info h3{font-family:'Syne',sans-serif;font-weight:700;font-size:14px}
+.chat-head-info span{font-size:11px;color:var(--orange);display:flex;align-items:center;gap:4px}
+.chat-head-info span::before{content:'';width:6px;height:6px;background:var(--orange);border-radius:50%;display:inline-block}
+#chat-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px;line-height:1}
+#chat-close:hover{color:var(--text)}
+#chat-offline-msg{padding:16px;font-size:14px;color:var(--text);line-height:1.6}
+#chat-offline-msg strong{color:var(--accent)}
+#chat-offline-msg a{color:var(--accent2);font-weight:600}
+.chat-offline-action{padding:12px 16px;border-top:1px solid var(--border);background:var(--surface2)}
+.chat-offline-action a{display:block;background:var(--orange);color:#0a0f1a;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;padding:10px 14px;border-radius:8px;text-decoration:none;text-align:center}
+.chat-offline-action a:hover{background:#d4920a;text-decoration:none}
+
+@media(max-width:600px){
+  header{padding:14px 16px}
+  .hero{padding:48px 16px 32px}
+  .models{padding:24px 16px 16px}
+  .model-grid-orig{grid-template-columns:repeat(3,1fr)}
+  .guide-section{padding:16px 16px 40px}
+  .features{padding:40px 16px}
+  .feat-grid{grid-template-columns:1fr}
+  .blog-section{padding:40px 16px}
+  .blog-grid{grid-template-columns:1fr}
+  .lang-pills{display:none}
+  .gfield-row{flex-direction:column}
+  #chat-panel{width:calc(100vw - 16px);right:8px;bottom:80px}
+  #chat-bubble{right:16px;bottom:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- GEO BLOCK -->
+<div id="geo-block" style="display:none;position:fixed;inset:0;z-index:9999;background:var(--bg);align-items:center;justify-content:center;text-align:center;padding:40px">
+  <div>
+    <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:12px">Airless<span style="color:#efa400">Fix</span></div>
+    <p style="color:var(--muted);font-size:15px">AirlessFix is currently available in Europe only.<br>Coming to your region soon.</p>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo" onclick="window.scrollTo(0,0)">Airless<span>Fix</span></div>
+  <div class="lang-pills">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('nl')">NL</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 id="h-title">Free AI support for<br><em>airless paint sprayers.</em></h1>
+  <p class="hero-sub" id="h-sub">Parts &amp; Troubleshooting &amp; Repair Partners &amp; Manuals 24/7</p>
+  <div class="hero-tags">
+    <span class="tag"><strong>A20</strong> · A30 · A45 · A60 · A80 · <strong>A100</strong></span>
+    <span class="tag">🇧🇪 🇳🇱 🇩🇪 🇫🇷 🇬🇧 🇪🇸 🇦🇹 🇨🇭</span>
+    <span class="tag">Free · No subscription</span>
+  </div>
+</section>
+
+<!-- MARC STATUS -->
+<div class="marc-status-bar">
+  <div class="marc-status-badge"><div class="status-dot"></div> <span id="marc-status-txt">Marc is in training — guides available now</span></div>
+</div>
+
+<!-- MODEL CARDS -->
+<div class="models">
+  <h2 id="modTitle">Select your model — get your guide</h2>
+  <div class="model-grid-orig">
+    <div class="model-card" onclick="selectModel('A20','a20-a45')"><div class="model-name">A20</div><div class="model-spec"><span class="tip">max TRA515</span><span class="lmin">0.8 L/min</span><span class="hp">0.27 HP</span></div></div>
+    <div class="model-card" onclick="selectModel('A30','a20-a45')"><div class="model-name">A30</div><div class="model-spec"><span class="tip">max TRA515</span><span class="lmin">1.0 L/min</span><span class="hp">0.375 HP</span></div></div>
+    <div class="model-card" onclick="selectModel('A45','a20-a45')"><div class="model-name">A45</div><div class="model-spec"><span class="tip">max TRA517</span><span class="lmin">1.2 L/min</span><span class="hp">0.5 HP</span></div></div>
+    <div class="model-card" onclick="selectModel('A60','a60-a80')"><div class="model-name">A60</div><div class="model-spec"><span class="tip">max TRA619</span><span class="lmin">1.5 L/min</span><span class="hp">0.625 HP</span></div></div>
+    <div class="model-card" onclick="selectModel('A80','a60-a80')"><div class="model-name">A80</div><div class="model-spec"><span class="tip">max TRA621</span><span class="lmin">1.8 L/min</span><span class="hp">0.75 HP · ProXChange</span></div></div>
+    <div class="model-card a100" onclick="selectModel('A100','a100')"><div class="model-name">A100</div><div class="model-spec"><span class="tip">max TRA621</span><span class="lmin">1.8 L/min</span><span class="hp">1.0 HP · TSL · ProConnect</span></div></div>
+  </div>
+  <div class="pros-grid">
+    <div class="model-card" onclick="selectModel('ProS19','pros')"><div class="model-name" style="font-size:18px">ProS19</div><div class="model-spec"><span class="lmin">1.4 L/min</span><span class="hp">207 bar · ProXChange</span></div></div>
+    <div class="model-card" onclick="selectModel('ProS21','pros')"><div class="model-name" style="font-size:18px">ProS21</div><div class="model-spec"><span class="lmin">1.6 L/min</span><span class="hp">207 bar · ProXChange</span></div></div>
+  </div>
+</div>
+
+<!-- GUIDE SECTION -->
+<div class="guide-section">
+  <div class="guide-section-title" id="guide-section-title">↑ Pick your model above to get your free guide</div>
+
+  <!-- EMAIL FORM -->
+  <div class="guide-form-wrap" id="guide-form">
+    <h3 id="gform-title">Get your free guide</h3>
+    <div class="guide-form-desc" id="gform-desc">Enter your details — your guide bundle opens instantly. No spam, ever.</div>
+    <div class="gfield-row">
+      <div class="gfield"><label>First name</label><input type="text" id="gf-name" placeholder="Jan / Jean / Hans" autocomplete="given-name"></div>
+      <div class="gfield"><label>Email</label><input type="email" id="gf-email" placeholder="you@example.com" autocomplete="email"></div>
+    </div>
+    <div class="gfield-row">
+      <div class="gfield"><label>Phone (optional)</label><input type="tel" id="gf-phone" placeholder="+32 ..."></div>
+      <div class="gfield"><label>Country</label><input type="text" id="gf-country" placeholder="Belgium / Nederland..."></div>
+    </div>
+    <div class="gcb-row">
+      <input type="checkbox" id="gf-gdpr">
+      <label id="gf-gdpr-label" for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties. Unsubscribe anytime via <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="770402070718050337161e051b120404111e0f591202">[email&#160;protected]</a></label>
+    </div>
+    <button class="btn-primary" id="gf-submit" onclick="submitGuideForm()">Get my guide →</button>
+  </div>
+
+  <!-- A100 KOFI -->
+  <div class="kofi-guide-card" id="kofi-guide">
+    <h3>☕ A100 Parts &amp; Troubleshooting Guide</h3>
+    <p>Marc's own 14-page guide for the Magnum A100 — parts breakdown, common faults, what to order before you call the dealer. Available in EN, NL, FR, DE, ES. Buy Marc a coffee and get it instantly.</p>
+    <a class="kofi-guide-btn" href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener">☕ Get the A100 Guide on Ko-fi</a>
+    <div class="kofi-guide-note">Independent guide · Not affiliated with Graco · Instant download via Ko-fi</div>
+  </div>
+
+  <!-- DOWNLOAD RESULT -->
+  <div class="dl-result" id="dl-result">
+    <div class="dl-header">
+      <h3 id="dl-title">Your guides are ready ✓</h3>
+      <p>Click each file to open and download. Bookmark this page — Marc goes live soon.</p>
+    </div>
+    <div class="dl-links" id="dl-links"></div>
+    <div class="coffee-nudge">
+      <p>Marc saved you a trip to the dealer. If these guides helped, a coffee keeps the lights on — and gets you the premium A100 guide too.</p>
+      <a href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener">☕ Buy Marc a coffee</a>
+    </div>
+    <div class="afx-strip">
+      <div class="afx-code">AFX10</div>
+      <div class="afx-text">Mention this code at your authorised dealer.<br>They'll know what to do. More when Marc goes live.</div>
+    </div>
+  </div>
+</div>
+
+<!-- MARC BUBBLE -->
+<div class="marc-bubble-bar">
+  <div class="marc-bubble" onclick="toggleChat()">
+    <span class="marc-bubble-icon">🔧</span>
+    <span class="marc-bubble-text" id="marc-bubble-text"><strong>Marc is in training.</strong><br>Click to leave him a message</span>
+    <span class="marc-bubble-arrow">→</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2 class="section-title" id="f-title">What Marc can help with</h2>
+  <div class="feat-grid">
+    <div class="feat-card" onclick="scrollToGuide()"><div class="feat-icon">🔧</div><h3 id="f1t">Parts identification</h3><p id="f1p">Correct part numbers for your model. ProConnect pump, tip guard, filters, hoses and more.</p></div>
+    <div class="feat-card" onclick="scrollToGuide()"><div class="feat-icon">⚡</div><h3 id="f2t">Troubleshooting</h3><p id="f2p">Pressure loss, no-spray, motor trips, leaks. Marc guides you step by step.</p></div>
+    <div class="feat-card" onclick="scrollToGuide()"><div class="feat-icon">❄️</div><h3 id="f3t">Storage &amp; winterising</h3><p id="f3p">Pump Armor procedure, storage tips, how to avoid costly pump seizure over winter.</p></div>
+    <div class="feat-card" onclick="scrollToGuide()"><div class="feat-icon">📍</div><h3 id="f4t">Repair Partners</h3><p id="f4p">Marc connects you with authorised repair partners in your country. Mention AFX10 for priority.</p></div>
+    <div class="feat-card a100-parts" onclick="selectModel('A100','a100');scrollToGuide()"><div class="feat-icon">📋</div><h3 id="f5t">A100 Parts Guide</h3><p id="f5p">Full spare parts list and diagrams for the A100. Buy Marc a coffee ☕ and get it instantly.</p></div>
+    <div class="feat-card manuals" onclick="scrollToGuide()"><div class="feat-icon">📄</div><h3 id="f6t">Guides &amp; Manuals</h3><p id="f6p">Parts and troubleshooting guides for all models A20 through ProS21. Free download.</p></div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section">
+  <h2 class="section-title" id="blog-title">Guides &amp; Tips</h2>
+  <div class="blog-grid">
+    <div class="blog-card" onclick="window.location='/blog/how-to-prime-airless-sprayer.html'"><h3 id="bc1t">How to prime your airless sprayer</h3><p id="bc1p">Step-by-step priming guide for all Magnum models. Get spray-ready in 5 minutes.</p><a id="bc1a" href="/blog/how-to-prime-airless-sprayer.html">Read guide →</a></div>
+    <div class="blog-card" onclick="window.location='/blog/airless-tip-size-guide.html'"><h3 id="bc2t">Airless tip size guide</h3><p id="bc2p">Which tip for which paint? Complete TrueAirless tip selection chart.</p><a id="bc2a" href="/blog/airless-tip-size-guide.html">Read guide →</a></div>
+    <div class="blog-card" onclick="window.location='/blog/winterising-airless-sprayer.html'"><h3 id="bc3t">Make your sprayer last longer</h3><p id="bc3p">Cleaning and flushing after every job. The 10 minutes that save you hundreds.</p><a id="bc3a" href="/blog/winterising-airless-sprayer.html">Read guide →</a></div>
+    <div class="blog-card" onclick="window.location='/blog/a100-troubleshooting.html'"><h3 id="bc4t">A100 troubleshooting</h3><p id="bc4p">Most common A100 problems and how to fix them. Error codes E01-E05 explained.</p><a id="bc4a" href="/blog/a100-troubleshooting.html">Read guide →</a></div>
+    <div class="blog-card" onclick="window.location='/blog/airless-sprayer-safety.html'"><h3 id="bc5t">Airless sprayer safety</h3><p id="bc5p">High-pressure injection hazard, PPE requirements, pressure relief procedure.</p><a id="bc5a" href="/blog/airless-sprayer-safety.html">Read guide →</a></div>
+    <div class="blog-card" style="border-color:rgba(0,201,167,.4);box-shadow:0 0 12px rgba(0,201,167,.12)" onclick="selectModel('A100','a100');scrollToGuide()"><h3 style="color:var(--accent2)">A100 Parts Guide</h3><p>Complete Magnum A100 spare parts reference. Buy Marc a coffee — get it instantly ☕</p><a href="#" style="color:var(--accent2)" onclick="selectModel('A100','a100');scrollToGuide();return false">Get the guide →</a></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;margin-bottom:8px">Airless<span style="color:#efa400">Fix</span></div>
+  <p>Independent technical support platform &nbsp;·&nbsp; airlessfix.eu</p>
+  <p>Not affiliated with the manufacturer. All model names used for identification only.</p>
+  <div style="margin-top:8px">
+    <a href="/cdn-cgi/l/email-protection#1c6f696c6c736e685c7d756e70796f6f7a7564327969"><span class="__cf_email__" data-cfemail="1e6d6b6e6e716c6a5e7f776c727b6d6d787766307b6b">[email&#160;protected]</span></a>
+    &nbsp;·&nbsp;<a href="/privacy.html">Privacy Policy</a>
+    &nbsp;·&nbsp;<a href="/blog/airless-sprayer-safety.html">Safety</a>
+  </div>
+  <div class="ai-badge">🤖 AI-assisted · EU AI Act Art. 52 · Not a human technician</div>
+</footer>
+
+<!-- KO-FI WIDGET -->
+<div id="kofi-widget">
+  <div id="kofi-panel">
+    <h4>Marc runs on coffee ☕</h4>
+    <p>Free sprayer support for everyone. If Marc helped you, a coffee keeps him running 24/7.</p>
+    <a href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener">Grab Marc a coffee →</a>
+  </div>
+  <div id="kofi-tab" onclick="document.getElementById('kofi-panel').classList.toggle('open')">Support Marc ☕</div>
+</div>
+
+<!-- CHAT BUBBLE -->
+<div id="chat-bubble">
+  <div id="chat-peek"></div>
+  <button id="chat-btn" onclick="toggleChat()" aria-label="Chat with Marc">🔧</button>
+</div>
+
+<!-- OFFLINE CHAT PANEL -->
+<div id="chat-panel">
+  <div class="chat-head">
+    <div class="marc-av">M</div>
+    <div class="chat-head-info"><h3>Marc</h3><span id="marc-panel-status">Out on site — back soon</span></div>
+    <button id="chat-close" onclick="closeChat()">✕</button>
+  </div>
+  <div id="chat-offline-msg"></div>
+  <div class="chat-offline-action">
+    <a href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener">☕ Get the A100 Guide on Ko-fi</a>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── GUIDE DATA ────────────────────────────────────────────────────────────────
+const BASE = 'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/';
+const TIP = BASE + 'Spray%20tip%20selection%20guide.pdf';
+
+// Operation guide — language matched for A20/A30/A45
+const OP_LANG = {
+  en: BASE + '3A6433EN-E.pdf',
+  nl: BASE + '3A6437NL-E.pdf',
+  fr: BASE + '3A6435FR-E.pdf',
+  de: BASE + '3A6436DE-E.pdf',
+  es: BASE + '3A6434ES-E.pdf',
+};
+
+function getGuides(group){
+  const op = OP_LANG[lang] || OP_LANG.en;
+  if(group==='a20-a45') return [
+    { name:'Parts & Repair Guide — A20 / A30 / A45 / A60', desc:'Repair manual · Parts list · Troubleshooting (EN)', url: BASE + '332697EN-C.pdf' },
+    { name:'Operation & Parts — A20 / A30 / A45 (EU)', desc:'EU edition · Your language', url: op },
+    { name:'TrueAirless Spray Tip Selection Guide', desc:'Which tip for which job', url: TIP },
+  ];
+  if(group==='a60-a80') return [
+    { name:'Parts & Repair Guide — A20–A60', desc:'Repair manual · Parts list · Troubleshooting (EN)', url: BASE + '332697EN-C.pdf' },
+    { name:'Operation & Parts — A60 / A80 Pro Plus (EU)', desc:'EU 230V edition · EN', url: BASE + '3A3240EN-C.pdf' },
+    { name:'Operation & Parts — A60 / A80 (EU)', desc:'EU edition · EN', url: BASE + '3A5819EN-A.pdf' },
+    { name:'TrueAirless Spray Tip Selection Guide', desc:'Which tip for which job', url: TIP },
+  ];
+  if(group==='pros') return [
+    { name:'Operation & Parts — ProS19 / ProS21', desc:'Full repair and parts manual (EN)', url: BASE + '3A3237EN-D.pdf' },
+    { name:'TrueAirless Spray Tip Selection Guide', desc:'Which tip for which job', url: TIP },
+  ];
+  return [];
+}
+
+const GUIDES = {}; // kept for compatibility — getGuides() used instead
+
+// ── LANGUAGE STRINGS ──────────────────────────────────────────────────────────
+const T = {
+  en:{
+    hTitle:'Free AI support for<br><em>airless paint sprayers.</em>',
+    hSub:'Parts &amp; Troubleshooting &amp; Repair Partners &amp; Manuals 24/7',
+    fTitle:'What Marc can help with',blogTitle:'Guides & Tips',
+    modTitle:'Select your model — get your guide',
+    marcStatus:'Marc is in training · Guides available now',
+    f1t:'Parts identification',f1p:'Correct part numbers for your model. ProConnect pump, tip guard, filters, hoses and more.',
+    f2t:'Troubleshooting',f2p:'Pressure loss, no-spray, motor trips, leaks. Marc guides you step by step.',
+    f3t:'Storage & winterising',f3p:'Pump Armor procedure, storage tips, how to avoid costly pump seizure over winter.',
+    f4t:'Repair Partners',f4p:'Marc connects you with authorised repair partners in your country. Mention AFX10 for priority.',
+    f5t:'A100 Parts Guide',f5p:'Full spare parts list and diagrams for the A100. Buy Marc a coffee ☕ and get it instantly.',
+    f6t:'Guides & Manuals',f6p:'Parts and troubleshooting guides for all models A20 through ProS21. Free download.',
+    bc1t:'How to prime your airless sprayer',bc1p:'Step-by-step priming guide for all Magnum models.',bc1a:'Read guide →',
+    bc2t:'Airless tip size guide',bc2p:'Which tip for which paint? Complete TrueAirless tip selection chart.',bc2a:'Read guide →',
+    bc3t:'Make your sprayer last longer',bc3p:'Cleaning and flushing after every job. The 10 minutes that save you hundreds.',bc3a:'Read guide →',
+    bc4t:'A100 troubleshooting',bc4p:'Most common A100 problems and how to fix them.',bc4a:'Read guide →',
+    bc5t:'Airless sprayer safety',bc5p:'High-pressure injection hazard, PPE, pressure relief procedure.',bc5a:'Read guide →',
+    peek:'Sprayer giving you grief? Click to chat.',
+    bubble:'<strong>Marc is in training.</strong><br>Click to leave him a message',
+    offlineMsg:'Hey! 👋 I\'m Marc — I\'m out on site right now, getting some extra training. <strong>Back online soon!</strong><br><br>In the meantime, scroll up and pick your model to get your <strong>free parts & troubleshooting guide</strong>.<br><br>Or get the full <strong>A100 guide</strong> instantly: <a href="https://ko-fi.com/airlessfix" target="_blank">ko-fi.com/airlessfix ☕</a>',
+    panelStatus:'Out on site — back soon',
+    formTitle:(m)=>'Get your free '+m+' guide',
+    formDesc:(m)=>'Enter your details — your '+m+' guide bundle opens instantly. No spam, ever.',
+    formBtn:'Get my guide →',
+    gdprText:'I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc\'s AI support service. My data will not be shared with third parties. Unsubscribe anytime via support@airlessfix.eu',
+  },
+  nl:{
+    hTitle:'Gratis AI-support voor<br><em>airless spuitmachines.</em>',
+    hSub:'Onderdelen &amp; Probleemoplossing &amp; Reparatiepartners &amp; Handleidingen &amp; 24/7',
+    fTitle:'Waarmee Marc kan helpen',blogTitle:'Handleidingen & Tips',
+    modTitle:'Kies je model — ontvang je gids',
+    marcStatus:'Marc volgt training · Gidsen nu beschikbaar',
+    f1t:'Onderdelen',f1p:'Correcte onderdeelnummers voor jouw model.',
+    f2t:'Probleemoplossing',f2p:'Drukval, niet spuiten, motorstoring, lekken. Marc begeleidt je stap voor stap.',
+    f3t:'Opslag & winterisering',f3p:'Pump Armor procedure, opslagtips, hoe je pompbeschadiging voorkomt.',
+    f4t:'Reparatiepartners',f4p:'Marc verbindt je met erkende reparatiepartners. Noem AFX10 voor prioriteit.',
+    f5t:'A100 Onderdelengids',f5p:'Volledig onderdelenlijst voor de A100. Koffie voor Marc ☕ en je hebt hem meteen.',
+    f6t:'Gidsen & Handleidingen',f6p:'Onderdelen en storingsgidsen voor alle modellen A20 t/m ProS21. Gratis.',
+    bc1t:'Je spuitmachine ontluchten',bc1p:'Stap-voor-stap voor alle Magnum modellen.',bc1a:'Lees gids →',
+    bc2t:'Spuitdop maatgids',bc2p:'Welke dop voor welke verf?',bc2a:'Lees gids →',
+    bc3t:'Maak je spuitmachine langer mee',bc3p:'Reinigen na elke klus. De 10 minuten die je honderden besparen.',bc3a:'Lees gids →',
+    bc4t:'A100 probleemoplossing',bc4p:'Meest voorkomende A100 problemen en oplossingen.',bc4a:'Lees gids →',
+    bc5t:'Veiligheid spuitmachine',bc5p:'Hogedruk injectierisico, PPE, drukontlasting.',bc5a:'Lees gids →',
+    peek:'Problemen met je spuitmachine? Klik om te chatten.',
+    bubble:'<strong>Marc is in training.</strong><br>Klik om hem een bericht te sturen',
+    offlineMsg:'Hey! 👋 Ik ben Marc — ik ben even op de werf, wat bijscholen. <strong>Snel terug online!</strong><br><br>Scroll ondertussen omhoog en kies je model voor de <strong>gratis onderdelen & storingsgids</strong>.<br><br>Of de volledige <strong>A100 gids</strong> meteen: <a href="https://ko-fi.com/airlessfix" target="_blank">ko-fi.com/airlessfix ☕</a>',
+    panelStatus:'Op de werf — snel terug',
+    formTitle:(m)=>'Ontvang je gratis '+m+' gids',
+    formDesc:(m)=>'Vul je gegevens in — je '+m+' gids opent meteen. Geen spam, ooit.',
+    formBtn:'Geef me mijn gids →',
+    gdprText:'Ik ga ermee akkoord dat AirlessFix mijn contactgegevens opslaat om mij de gevraagde gids en updates over Marcs AI-ondersteuning te sturen. Mijn gegevens worden niet gedeeld met derden. Uitschrijven via support@airlessfix.eu',
+  },
+  fr:{
+    hTitle:'Support IA gratuit pour<br><em>pistolets airless.</em>',
+    hSub:'Pièces &amp; Dépannage &amp; Partenaires réparation &amp; Manuels &amp; 24h/7j',
+    fTitle:'Ce que Marc peut faire',blogTitle:'Guides & Conseils',
+    modTitle:'Choisissez votre modèle — obtenez votre guide',
+    marcStatus:'Marc en formation · Guides disponibles maintenant',
+    f1t:'Pièces',f1p:'Numéros de pièces corrects pour votre modèle.',
+    f2t:'Dépannage',f2p:'Perte de pression, pas de pulvérisation, déclenchement moteur, fuites.',
+    f3t:'Stockage & hivernage',f3p:'Procédure Pump Armor, conseils de stockage.',
+    f4t:'Partenaires réparation',f4p:'Marc vous met en contact avec des partenaires agréés. Mentionnez AFX10.',
+    f5t:'Guide pièces A100',f5p:"Liste complète des pièces pour l'A100. Café pour Marc ☕ et c'est à vous.",
+    f6t:'Guides & Manuels',f6p:'Guides pièces et dépannage pour tous les modèles A20 à ProS21. Gratuit.',
+    bc1t:'Amorcer votre pistolet airless',bc1p:"Guide d'amorçage pour tous les modèles Magnum.",bc1a:'Lire le guide →',
+    bc2t:'Guide de sélection des buses',bc2p:'Quelle buse pour quelle peinture?',bc2a:'Lire le guide →',
+    bc3t:'Prolonger la durée de vie',bc3p:"Nettoyage après chaque travail. Les 10 minutes qui vous font économiser.",bc3a:'Lire le guide →',
+    bc4t:'Dépannage A100',bc4p:"Problèmes A100 les plus courants et solutions.",bc4a:'Lire le guide →',
+    bc5t:'Sécurité pistolet airless',bc5p:"Risque d'injection haute pression, EPI, décharge de pression.",bc5a:'Lire le guide →',
+    peek:'Votre pistolet pose des problèmes? Cliquez pour discuter.',
+    bubble:'<strong>Marc est en formation.</strong><br>Cliquez pour lui laisser un message',
+    offlineMsg:'Salut ! 👋 Je suis Marc — je suis sur le chantier en ce moment, en formation. <strong>Je reviens bientôt !</strong><br><br>En attendant, remontez et choisissez votre modèle pour le <strong>guide pièces & dépannage gratuit</strong>.<br><br>Ou le <strong>guide A100 complet</strong> immédiatement : <a href="https://ko-fi.com/airlessfix" target="_blank">ko-fi.com/airlessfix ☕</a>',
+    panelStatus:'Sur le chantier — bientôt de retour',
+    formTitle:(m)=>'Obtenez votre guide '+m+' gratuit',
+    formDesc:(m)=>'Entrez vos coordonnées — votre guide '+m+' s\'ouvre instantanément. Aucun spam.',
+    formBtn:'Obtenir mon guide →',
+    gdprText:'J\'accepte qu\'AirlessFix conserve mes coordonnées pour m\'envoyer le guide demandé et des mises à jour sur le service IA de Marc. Mes données ne seront pas partagées. Se désabonner via support@airlessfix.eu',
+  },
+  de:{
+    hTitle:'Kostenloser KI-Support für<br><em>Airless-Sprühgeräte.</em>',
+    hSub:'Teile &amp; Fehlersuche &amp; Reparaturpartner &amp; Handbücher &amp; 24/7',
+    fTitle:'Womit Marc helfen kann',blogTitle:'Anleitungen & Tipps',
+    modTitle:'Wähle dein Modell — erhalte deine Anleitung',
+    marcStatus:'Marc in Schulung · Anleitungen jetzt verfügbar',
+    f1t:'Teileidentifikation',f1p:'Korrekte Teilenummern für dein Modell.',
+    f2t:'Fehlerdiagnose',f2p:'Druckverlust, kein Sprühen, Motorauslösung, Undichtigkeiten.',
+    f3t:'Lagerung & Einwinterung',f3p:'Pump Armor-Verfahren, Lagerungstipps.',
+    f4t:'Reparaturpartner',f4p:'Marc verbindet dich mit autorisierten Reparaturpartnern. AFX10 erwähnen.',
+    f5t:'A100 Ersatzteilanleitung',f5p:'Vollständige Ersatzteilliste für den A100. Kaffee für Marc ☕ und du hast sie sofort.',
+    f6t:'Anleitungen & Handbücher',f6p:'Teile- und Fehleranleitungen für alle Modelle A20 bis ProS21. Kostenlos.',
+    bc1t:'Airless-Gerät entlüften',bc1p:'Schritt-für-Schritt für alle Magnum Modelle.',bc1a:'Anleitung lesen →',
+    bc2t:'Düsenauswahl-Leitfaden',bc2p:'Welche Düse für welche Farbe?',bc2a:'Anleitung lesen →',
+    bc3t:'Gerät länger haltbar machen',bc3p:'Reinigen nach jedem Einsatz. Die 10 Minuten, die Hunderte sparen.',bc3a:'Anleitung lesen →',
+    bc4t:'A100 Fehlerdiagnose',bc4p:'Häufigste A100 Probleme und deren Lösungen.',bc4a:'Anleitung lesen →',
+    bc5t:'Sicherheit beim Airless-Sprühen',bc5p:'Hochdruckinjektionsgefahr, Schutzausrüstung.',bc5a:'Anleitung lesen →',
+    peek:'Macht dein Gerät Ärger? Klick zum Chatten.',
+    bubble:'<strong>Marc ist in Schulung.</strong><br>Klick, um ihm eine Nachricht zu hinterlassen',
+    offlineMsg:'Hey! 👋 Ich bin Marc — ich bin gerade auf der Baustelle, etwas Nachschulung. <strong>Bald wieder online!</strong><br><br>Scroll nach oben und wähl dein Modell für die <strong>kostenlose Teile- & Fehleranleitung</strong>.<br><br>Oder die vollständige <strong>A100 Anleitung</strong> sofort: <a href="https://ko-fi.com/airlessfix" target="_blank">ko-fi.com/airlessfix ☕</a>',
+    panelStatus:'Auf der Baustelle — gleich zurück',
+    formTitle:(m)=>'Erhalte deine kostenlose '+m+' Anleitung',
+    formDesc:(m)=>'Trag deine Daten ein — deine '+m+' Anleitung öffnet sofort. Kein Spam.',
+    formBtn:'Meine Anleitung holen →',
+    gdprText:'Ich stimme zu, dass AirlessFix meine Kontaktdaten speichert, um mir die gewünschte Anleitung und Updates zum Marc-KI-Service zu senden. Meine Daten werden nicht weitergegeben. Abmelden über support@airlessfix.eu',
+  },
+  es:{
+    hTitle:'Soporte IA gratuito para<br><em>pistolas airless.</em>',
+    hSub:'Piezas &amp; Diagnóstico &amp; Talleres &amp; Manuales &amp; 24/7',
+    fTitle:'En qué puede ayudar Marc',blogTitle:'Guías y Consejos',
+    modTitle:'Selecciona tu modelo — obtén tu guía',
+    marcStatus:'Marc en formación · Guías disponibles ahora',
+    f1t:'Identificación de piezas',f1p:'Números de pieza correctos para tu modelo.',
+    f2t:'Diagnóstico',f2p:'Pérdida de presión, sin pulverización, disparo del motor, fugas.',
+    f3t:'Almacenamiento e invernada',f3p:'Procedimiento Pump Armor, consejos de almacenamiento.',
+    f4t:'Talleres',f4p:'Marc te conecta con talleres autorizados. Menciona AFX10 para prioridad.',
+    f5t:'Guía de piezas A100',f5p:'Lista completa de piezas del A100. Café para Marc ☕ y lo tienes al instante.',
+    f6t:'Guías y Manuales',f6p:'Guías de piezas y diagnóstico para todos los modelos A20 a ProS21. Gratis.',
+    bc1t:'Cómo cebar tu pistola airless',bc1p:'Guía de cebado para todos los modelos Magnum.',bc1a:'Leer guía →',
+    bc2t:'Guía de selección de boquillas',bc2p:'¿Qué boquilla para qué pintura?',bc2a:'Leer guía →',
+    bc3t:'Alarga la vida de tu pistola',bc3p:'Limpieza después de cada trabajo.',bc3a:'Leer guía →',
+    bc4t:'Solución de problemas A100',bc4p:'Problemas más comunes del A100 y soluciones.',bc4a:'Leer guía →',
+    bc5t:'Seguridad de la pistola airless',bc5p:'Riesgo de inyección de alta presión, EPP.',bc5a:'Leer guía →',
+    peek:'¿Tu pistola te da problemas? Haz clic para chatear.',
+    bubble:'<strong>Marc está en formación.</strong><br>Haz clic para dejarle un mensaje',
+    offlineMsg:'¡Hola! 👋 Soy Marc — estoy en obra ahora, formándome. <strong>¡Vuelvo pronto!</strong><br><br>Sube y selecciona tu modelo para la <strong>guía gratuita de piezas & diagnóstico</strong>.<br><br>O la <strong>guía completa del A100</strong> al instante: <a href="https://ko-fi.com/airlessfix" target="_blank">ko-fi.com/airlessfix ☕</a>',
+    panelStatus:'En obra — vuelvo pronto',
+    formTitle:(m)=>'Obtén tu guía '+m+' gratuita',
+    formDesc:(m)=>'Introduce tus datos — tu guía '+m+' se abre al instante. Sin spam.',
+    formBtn:'Obtener mi guía →',
+    gdprText:'Acepto que AirlessFix almacene mis datos de contacto para enviarme la guía solicitada y actualizaciones sobre el servicio IA de Marc. Mis datos no serán compartidos. Cancelar suscripción via support@airlessfix.eu',
+  }
+};
+
+let lang='en';
+let selectedModel=null, selectedGroup=null;
+let chatOpen=false;
+
+// ── GEO BLOCK ─────────────────────────────────────────────────────────────────
+const EU=['AD','AL','AT','BA','BE','BG','BY','CH','CY','CZ','DE','DK','EE','ES','FI','FR','GB','GI','GR','HR','HU','IE','IS','IT','LI','LT','LU','LV','MC','MD','ME','MK','MT','NL','NO','PL','PT','RO','RS','SE','SI','SK','SM','TR','UA','VA','XK'];
+fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
+  if(d.country_code&&!EU.includes(d.country_code))document.getElementById('geo-block').style.display='flex';
+}).catch(()=>{});
+
+// ── LANGUAGE ──────────────────────────────────────────────────────────────────
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
+  applyLang();
+}
+
+function applyLang(){
+  const t=T[lang];
+  const s=(id,v)=>{const e=document.getElementById(id);if(e)e.innerHTML=v;};
+  s('h-title',t.hTitle);s('h-sub',t.hSub);s('f-title',t.fTitle);s('blog-title',t.blogTitle);
+  s('modTitle',t.modTitle);s('marc-status-txt',t.marcStatus);
+  s('f1t',t.f1t);s('f1p',t.f1p);s('f2t',t.f2t);s('f2p',t.f2p);s('f3t',t.f3t);s('f3p',t.f3p);
+  s('f4t',t.f4t);s('f4p',t.f4p);s('f5t',t.f5t);s('f5p',t.f5p);s('f6t',t.f6t);s('f6p',t.f6p);
+  s('bc1t',t.bc1t);s('bc1p',t.bc1p);s('bc1a',t.bc1a);s('bc2t',t.bc2t);s('bc2p',t.bc2p);s('bc2a',t.bc2a);
+  s('bc3t',t.bc3t);s('bc3p',t.bc3p);s('bc3a',t.bc3a);s('bc4t',t.bc4t);s('bc4p',t.bc4p);s('bc4a',t.bc4a);
+  s('bc5t',t.bc5t);s('bc5p',t.bc5p);s('bc5a',t.bc5a);
+  s('marc-bubble-text',t.bubble);
+  s('marc-panel-status',t.panelStatus);
+  const peek=document.getElementById('chat-peek');if(peek)peek.textContent=t.peek;
+  // Refresh form text if model already selected
+  if(selectedModel){
+    const el=document.getElementById('gform-title');if(el)el.textContent=t.formTitle(selectedModel);
+    const ed=document.getElementById('gform-desc');if(ed)ed.textContent=t.formDesc(selectedModel);
+    const eb=document.getElementById('gf-submit');if(eb&&!eb.disabled)eb.textContent=t.formBtn;
+    const eg=document.getElementById('gf-gdpr-label');if(eg)eg.textContent=t.gdprText;
+  }
+}
+
+// ── MODEL SELECTION ───────────────────────────────────────────────────────────
+function selectModel(model,group){
+  selectedModel=model; selectedGroup=group;
+  document.querySelectorAll('.model-card').forEach(c=>{
+    c.style.borderColor='';
+    c.style.background='';
+  });
+  // Highlight selected card
+  document.querySelectorAll('.model-card').forEach(c=>{
+    if(c.getAttribute('onclick')&&c.getAttribute('onclick').includes("'"+model+"'")){
+      c.style.borderColor='var(--orange)';
+      c.style.background='var(--surface2)';
+    }
+  });
+
+  document.getElementById('guide-form').classList.remove('visible');
+  document.getElementById('kofi-guide').style.display='none';
+  document.getElementById('dl-result').classList.remove('visible');
+  document.getElementById('guide-section-title').textContent=model+' guide';
+
+  if(group==='a100'){
+    document.getElementById('kofi-guide').style.display='block';
+    document.getElementById('kofi-guide').scrollIntoView({behavior:'smooth',block:'center'});
+  } else {
+    const t=T[lang];
+    const form=document.getElementById('guide-form');
+    document.getElementById('gform-title').textContent=t.formTitle(model);
+    document.getElementById('gform-desc').textContent=t.formDesc(model);
+    document.getElementById('gf-submit').textContent=t.formBtn;
+    document.getElementById('gf-gdpr-label').textContent=t.gdprText;
+    form.classList.add('visible');
+    form.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  document.getElementById('gf-submit').disabled=false;
+}
+
+function scrollToGuide(){
+  document.querySelector('.guide-section').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function submitGuideForm(){
+  const name=document.getElementById('gf-name').value.trim();
+  const email=document.getElementById('gf-email').value.trim();
+  const gdpr=document.getElementById('gf-gdpr').checked;
+  if(!name){alert('Please enter your name.');return;}
+  if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
+  if(!gdpr){alert('Please agree to the data terms to receive your guide.');return;}
+
+  const btn=document.getElementById('gf-submit');
+  btn.disabled=true;btn.textContent='Opening your guides...';
+
+  // Log to Google Sheet — replace with Apps Script URL
+  fetch('YOUR_APPS_SCRIPT_URL_HERE',{
+    method:'POST',mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      name,email,
+      phone:document.getElementById('gf-phone').value.trim(),
+      country:document.getElementById('gf-country').value.trim(),
+      model:selectedModel,
+      timestamp:new Date().toISOString()
+    })
+  }).catch(()=>{});
+
+  showDownloads();
+}
+
+function showDownloads(){
+  const guides=getGuides(selectedGroup);
+  const linksEl=document.getElementById('dl-links');
+  linksEl.innerHTML='';
+  guides.forEach(g=>{
+    const a=document.createElement('a');
+    a.className='dl-btn';a.href=g.url;a.target='_blank';a.rel='noopener';
+    a.innerHTML='<span class="dl-icon">📄</span><div><span class="dl-name">'+g.name+'</span><span class="dl-desc">'+g.desc+'</span></div>';
+    linksEl.appendChild(a);
+  });
+  document.getElementById('dl-title').textContent='Your '+selectedModel+' guides are ready ✓';
+  document.getElementById('guide-form').classList.remove('visible');
+  const r=document.getElementById('dl-result');
+  r.classList.add('visible');
+  r.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ── OFFLINE CHAT ──────────────────────────────────────────────────────────────
+function toggleChat(){
+  if(!chatOpen)openOfflineChat();
+  else closeChat();
+}
+
+function openOfflineChat(){
+  const panel=document.getElementById('chat-panel');
+  panel.classList.add('open');panel.style.display='flex';chatOpen=true;
+  const t=T[lang];
+  document.getElementById('marc-panel-status').innerHTML=t.panelStatus;
+  document.getElementById('chat-offline-msg').innerHTML=t.offlineMsg;
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function closeChat(){
+  const panel=document.getElementById('chat-panel');
+  panel.classList.remove('open');panel.style.display='none';chatOpen=false;
+}
+
+// ── IDLE PEEK ─────────────────────────────────────────────────────────────────
+setTimeout(()=>{
+  const peek=document.getElementById('chat-peek');
+  if(peek&&!chatOpen){peek.textContent=T[lang].peek;peek.classList.add('show');
+    setTimeout(()=>peek.classList.remove('show'),5000);}
+},12000);
+
+document.addEventListener('click',()=>{
+  const peek=document.getElementById('chat-peek');if(peek)peek.classList.remove('show');
+});
+
+// ── AUTO LANGUAGE DETECT ───────────────────────────
+(function(){
+  const bl=(navigator.language||'en').toLowerCase().substring(0,2);
+  setLang({nl:'nl',fr:'fr',de:'de',es:'es'}[bl]||'en');
+})();
+
+// ── MOBILE TOUCH ─────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded',function(){
+  const addT=(el,fn)=>{if(el)el.addEventListener('touchend',e=>{e.preventDefault();fn();});};
+  addT(document.getElementById('chat-btn'),toggleChat);
+  document.querySelectorAll('.model-card').forEach(function(c){
+    c.addEventListener('touchend',function(e){
+      e.preventDefault();
+      var oc=c.getAttribute('onclick');if(oc)eval(oc);
+    });
+  });
+});
+</script>
+</body>
+</html>
