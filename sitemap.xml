@@ -1,56 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- CORE -->
-  <url><loc>https://airlessfix.eu/</loc><lastmod>2026-03-24</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://airlessfix.eu/privacy.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <!-- Homepage -->
+  <url>
+    <loc>https://airlessfix.eu/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-  <!-- BLOG EN -->
-  <url><loc>https://airlessfix.eu/blog/how-to-prime-airless-sprayer.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/airless-tip-size-guide.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/winterising-airless-sprayer.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/a100-troubleshooting.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/airless-sprayer-safety.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/a100-parts-manual.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <!-- Blog — English -->
+  <url>
+    <loc>https://airlessfix.eu/blog/a100-troubleshooting.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://airlessfix.eu/blog/airless-tip-size-guide.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airlessfix.eu/blog/how-to-prime-airless-sprayer.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airlessfix.eu/blog/winterising-airless-sprayer.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airlessfix.eu/blog/airless-sprayer-safety.html</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-  <!-- BLOG FR -->
-  <url><loc>https://airlessfix.eu/blog/fr/comment-amorcer-pistolet-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/fr/guide-buse-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/fr/entretien-pistolet-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/fr/depannage-a100.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/fr/securite-pistolet-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/fr/manuel-pieces-a100.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <!-- Blog — French -->
+  <url>
+    <loc>https://airlessfix.eu/blog/a100-troubleshooting-fr.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-  <!-- BLOG DE -->
-  <url><loc>https://airlessfix.eu/blog/de/airless-geraet-grundieren.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/de/duesen-leitfaden-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/de/airless-geraet-reinigen.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/de/a100-fehlerdiagnose.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/de/sicherheit-airless-geraet.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/de/a100-ersatzteilhandbuch.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <!-- Blog — Dutch -->
+  <url>
+    <loc>https://airlessfix.eu/blog/a100-troubleshooting-nl.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-  <!-- BLOG NL -->
-  <url><loc>https://airlessfix.eu/blog/nl/airless-spuitmachine-opvoeren.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/nl/spuitdiameter-gids-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/nl/airless-spuitmachine-reinigen.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/nl/a100-probleemoplossing.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/nl/veiligheid-airless-spuitmachine.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/nl/a100-onderdelenhandleiding.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <!-- Blog — German -->
+  <url>
+    <loc>https://airlessfix.eu/blog/a100-troubleshooting-de.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-  <!-- BLOG ES -->
-  <url><loc>https://airlessfix.eu/blog/es/cebar-pistola-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/es/guia-boquillas-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/es/limpiar-pistola-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/es/diagnostico-a100.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/es/seguridad-pistola-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/es/manual-piezas-a100.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-
-  <!-- BLOG IT -->
-  <url><loc>https://airlessfix.eu/blog/it/caricare-pistola-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/it/guida-ugelli-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/it/pulire-pistola-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/it/diagnosi-a100.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/it/sicurezza-pistola-airless.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://airlessfix.eu/blog/it/manuale-pezzi-a100.html</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <!-- Blog — Spanish -->
+  <url>
+    <loc>https://airlessfix.eu/blog/a100-troubleshooting-es.html</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
 </urlset>
