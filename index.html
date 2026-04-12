@@ -292,7 +292,7 @@ footer a:hover{color:var(--accent)}
     </div>
     <div class="gcb-row">
       <input type="checkbox" id="gf-gdpr">
-      <label for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties. Unsubscribe anytime via <a href="mailto:support@airlessfix.eu">support@airlessfix.eu</a>.</label>
+      <label for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties. Unsubscribe anytime via support@airlessfix.eu</label>
     </div>
     <button class="btn-primary" id="gf-submit" onclick="submitGuideForm()">Get my guide →</button>
   </div>
@@ -400,7 +400,7 @@ footer a:hover{color:var(--accent)}
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── GUIDE DATA ────────────────────────────────────────────────────────────────
 const GUIDES = {
   'a20-a45': [
@@ -569,8 +569,17 @@ function applyLang(){
 // ── MODEL SELECTION ───────────────────────────────────────────────────────────
 function selectModel(model,group){
   selectedModel=model; selectedGroup=group;
-  document.querySelectorAll('.model-card').forEach(c=>c.style.borderColor='');
-  event&&event.currentTarget&&(event.currentTarget.style.borderColor='var(--orange)');
+  document.querySelectorAll('.model-card').forEach(c=>{
+    c.style.borderColor='';
+    c.style.background='';
+  });
+  // Highlight selected card
+  document.querySelectorAll('.model-card').forEach(c=>{
+    if(c.getAttribute('onclick')&&c.getAttribute('onclick').includes("'"+model+"'")){
+      c.style.borderColor='var(--orange)';
+      c.style.background='var(--surface2)';
+    }
+  });
 
   document.getElementById('guide-form').classList.remove('visible');
   document.getElementById('kofi-guide').style.display='none';
@@ -676,5 +685,4 @@ document.addEventListener('click',()=>{
   setLang({nl:'nl',fr:'fr',de:'de',es:'es'}[bl]||'en');
 })();
 
-// ── MOBILE TOUCH ──────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded
+// ─
