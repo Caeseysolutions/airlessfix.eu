@@ -292,7 +292,7 @@ footer a:hover{color:var(--accent)}
     </div>
     <div class="gcb-row">
       <input type="checkbox" id="gf-gdpr">
-      <label for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties. Unsubscribe anytime via <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b383e3b3b24393f0b2a2239272e38382d2233652e3e">[email&#160;protected]</a></label>
+      <label id="gf-gdpr-label" for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties. Unsubscribe anytime via support@airlessfix.eu</label>
     </div>
     <button class="btn-primary" id="gf-submit" onclick="submitGuideForm()">Get my guide →</button>
   </div>
@@ -400,7 +400,7 @@ footer a:hover{color:var(--accent)}
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // ── GUIDE DATA ────────────────────────────────────────────────────────────────
 const GUIDES = {
   'a20-a45': [
@@ -443,6 +443,10 @@ const T = {
     bubble:'<strong>Marc is in training.</strong><br>Click to leave him a message',
     offlineMsg:'Hey! 👋 I\'m Marc — I\'m out on site right now, getting some extra training. <strong>Back online soon!</strong><br><br>In the meantime, scroll up and pick your model to get your <strong>free parts & troubleshooting guide</strong>.<br><br>Or get the full <strong>A100 guide</strong> instantly: <a href="https://ko-fi.com/airlessfix" target="_blank">ko-fi.com/airlessfix ☕</a>',
     panelStatus:'Out on site — back soon',
+    formTitle:(m)=>'Get your free '+m+' guide',
+    formDesc:(m)=>'Enter your details — your '+m+' guide bundle opens instantly. No spam, ever.',
+    formBtn:'Get my guide →',
+    gdprText:'I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc\'s AI support service. My data will not be shared with third parties. Unsubscribe anytime via support@airlessfix.eu',
   },
   nl:{
     hTitle:'Gratis AI-support voor<br><em>airless spuitmachines.</em>',
@@ -465,6 +469,10 @@ const T = {
     bubble:'<strong>Marc is in training.</strong><br>Klik om hem een bericht te sturen',
     offlineMsg:'Hey! 👋 Ik ben Marc — ik ben even op de werf, wat bijscholen. <strong>Snel terug online!</strong><br><br>Scroll ondertussen omhoog en kies je model voor de <strong>gratis onderdelen & storingsgids</strong>.<br><br>Of de volledige <strong>A100 gids</strong> meteen: <a href="https://ko-fi.com/airlessfix" target="_blank">ko-fi.com/airlessfix ☕</a>',
     panelStatus:'Op de werf — snel terug',
+    formTitle:(m)=>'Ontvang je gratis '+m+' gids',
+    formDesc:(m)=>'Vul je gegevens in — je '+m+' gids opent meteen. Geen spam, ooit.',
+    formBtn:'Geef me mijn gids →',
+    gdprText:'Ik ga ermee akkoord dat AirlessFix mijn contactgegevens opslaat om mij de gevraagde gids en updates over Marcs AI-ondersteuning te sturen. Mijn gegevens worden niet gedeeld met derden. Uitschrijven via support@airlessfix.eu',
   },
   fr:{
     hTitle:'Support IA gratuit pour<br><em>pistolets airless.</em>',
@@ -487,6 +495,10 @@ const T = {
     bubble:'<strong>Marc est en formation.</strong><br>Cliquez pour lui laisser un message',
     offlineMsg:'Salut ! 👋 Je suis Marc — je suis sur le chantier en ce moment, en formation. <strong>Je reviens bientôt !</strong><br><br>En attendant, remontez et choisissez votre modèle pour le <strong>guide pièces & dépannage gratuit</strong>.<br><br>Ou le <strong>guide A100 complet</strong> immédiatement : <a href="https://ko-fi.com/airlessfix" target="_blank">ko-fi.com/airlessfix ☕</a>',
     panelStatus:'Sur le chantier — bientôt de retour',
+    formTitle:(m)=>'Obtenez votre guide '+m+' gratuit',
+    formDesc:(m)=>'Entrez vos coordonnées — votre guide '+m+' s\'ouvre instantanément. Aucun spam.',
+    formBtn:'Obtenir mon guide →',
+    gdprText:'J\'accepte qu\'AirlessFix conserve mes coordonnées pour m\'envoyer le guide demandé et des mises à jour sur le service IA de Marc. Mes données ne seront pas partagées. Se désabonner via support@airlessfix.eu',
   },
   de:{
     hTitle:'Kostenloser KI-Support für<br><em>Airless-Sprühgeräte.</em>',
@@ -509,6 +521,10 @@ const T = {
     bubble:'<strong>Marc ist in Schulung.</strong><br>Klick, um ihm eine Nachricht zu hinterlassen',
     offlineMsg:'Hey! 👋 Ich bin Marc — ich bin gerade auf der Baustelle, etwas Nachschulung. <strong>Bald wieder online!</strong><br><br>Scroll nach oben und wähl dein Modell für die <strong>kostenlose Teile- & Fehleranleitung</strong>.<br><br>Oder die vollständige <strong>A100 Anleitung</strong> sofort: <a href="https://ko-fi.com/airlessfix" target="_blank">ko-fi.com/airlessfix ☕</a>',
     panelStatus:'Auf der Baustelle — gleich zurück',
+    formTitle:(m)=>'Erhalte deine kostenlose '+m+' Anleitung',
+    formDesc:(m)=>'Trag deine Daten ein — deine '+m+' Anleitung öffnet sofort. Kein Spam.',
+    formBtn:'Meine Anleitung holen →',
+    gdprText:'Ich stimme zu, dass AirlessFix meine Kontaktdaten speichert, um mir die gewünschte Anleitung und Updates zum Marc-KI-Service zu senden. Meine Daten werden nicht weitergegeben. Abmelden über support@airlessfix.eu',
   },
   es:{
     hTitle:'Soporte IA gratuito para<br><em>pistolas airless.</em>',
@@ -531,6 +547,10 @@ const T = {
     bubble:'<strong>Marc está en formación.</strong><br>Haz clic para dejarle un mensaje',
     offlineMsg:'¡Hola! 👋 Soy Marc — estoy en obra ahora, formándome. <strong>¡Vuelvo pronto!</strong><br><br>Sube y selecciona tu modelo para la <strong>guía gratuita de piezas & diagnóstico</strong>.<br><br>O la <strong>guía completa del A100</strong> al instante: <a href="https://ko-fi.com/airlessfix" target="_blank">ko-fi.com/airlessfix ☕</a>',
     panelStatus:'En obra — vuelvo pronto',
+    formTitle:(m)=>'Obtén tu guía '+m+' gratuita',
+    formDesc:(m)=>'Introduce tus datos — tu guía '+m+' se abre al instante. Sin spam.',
+    formBtn:'Obtener mi guía →',
+    gdprText:'Acepto que AirlessFix almacene mis datos de contacto para enviarme la guía solicitada y actualizaciones sobre el servicio IA de Marc. Mis datos no serán compartidos. Cancelar suscripción via support@airlessfix.eu',
   }
 };
 
@@ -564,6 +584,13 @@ function applyLang(){
   s('marc-bubble-text',t.bubble);
   s('marc-panel-status',t.panelStatus);
   const peek=document.getElementById('chat-peek');if(peek)peek.textContent=t.peek;
+  // Refresh form text if model already selected
+  if(selectedModel){
+    const el=document.getElementById('gform-title');if(el)el.textContent=t.formTitle(selectedModel);
+    const ed=document.getElementById('gform-desc');if(ed)ed.textContent=t.formDesc(selectedModel);
+    const eb=document.getElementById('gf-submit');if(eb&&!eb.disabled)eb.textContent=t.formBtn;
+    const eg=document.getElementById('gf-gdpr-label');if(eg)eg.textContent=t.gdprText;
+  }
 }
 
 // ── MODEL SELECTION ───────────────────────────────────────────────────────────
@@ -590,14 +617,16 @@ function selectModel(model,group){
     document.getElementById('kofi-guide').style.display='block';
     document.getElementById('kofi-guide').scrollIntoView({behavior:'smooth',block:'center'});
   } else {
+    const t=T[lang];
     const form=document.getElementById('guide-form');
-    document.getElementById('gform-title').textContent='Get your free '+model+' guide';
-    document.getElementById('gform-desc').textContent='Enter your details — your '+model+' guide bundle opens instantly. No spam, ever.';
+    document.getElementById('gform-title').textContent=t.formTitle(model);
+    document.getElementById('gform-desc').textContent=t.formDesc(model);
+    document.getElementById('gf-submit').textContent=t.formBtn;
+    document.getElementById('gf-gdpr-label').textContent=t.gdprText;
     form.classList.add('visible');
     form.scrollIntoView({behavior:'smooth',block:'center'});
   }
   document.getElementById('gf-submit').disabled=false;
-  document.getElementById('gf-submit').textContent='Get my guide →';
 }
 
 function scrollToGuide(){
