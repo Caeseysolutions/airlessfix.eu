@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A100 Probleemoplossing — Foutcodes, Drukval, Pompproblemen</title>
+<meta name="description" content="Volledige storingsoplossing voor de Magnum A100 airless spuitmachine. Foutcodes E01, E02, E05 uitgelegd. Drukval, pomp, tip — snel opgelost.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://airlessfix.eu/blog/a100-troubleshooting-nl.html">
+<meta property="og:title" content="A100 — AirlessFix">
+<meta property="og:description" content="Volledige storingsoplossing voor de Magnum A100 airless spuitmachine. Foutcodes E01, E02, E05 uitgelegd. Drukval, pomp, tip — snel opgelost.">
+<meta property="og:url" content="https://airlessfix.eu/blog/a100-troubleshooting-nl.html">
+<meta property="og:type" content="article">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C3KKDC0RF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7C3KKDC0RF');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0f1a;--surface:#111827;--surface2:#1a2235;--border:#1e3048;--accent:#0e8fff;--accent2:#00c9a7;--orange:#efa400;--text:#e8edf5;--muted:#7a8fa8;--warn:#f0a500;--radius:12px;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;line-height:1.7}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);background:rgba(10,15,26,.97);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px}
+.logo span{color:var(--orange)}
+.back-link{font-size:13px;color:var(--muted)}
+.back-link:hover{color:var(--accent)}
+.hero{padding:56px 32px 40px;max-width:780px;margin:0 auto}
+.label{font-size:12px;font-weight:600;color:var(--accent2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:16px}
+.intro{font-size:17px;color:var(--muted);max-width:620px;line-height:1.7;margin-bottom:0}
+.content{max-width:780px;margin:0 auto;padding:0 32px 80px}
+h2{font-family:'Syne',sans-serif;font-size:clamp(20px,3vw,28px);font-weight:800;margin:48px 0 16px;color:var(--text)}
+h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:28px 0 10px;color:var(--accent)}
+p{margin-bottom:16px;color:var(--text)}
+ul,ol{margin:0 0 20px 20px}
+li{margin-bottom:8px;color:var(--text)}
+strong{color:var(--text);font-weight:600}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+th{background:var(--surface2);border:1px solid var(--border);padding:10px 14px;text-align:left;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+td{border:1px solid var(--border);padding:10px 14px;vertical-align:top}
+tr:nth-child(even) td{background:rgba(26,34,53,.5)}
+.part-num{font-family:'Inter',sans-serif;font-weight:600;color:var(--accent2);font-size:13px}
+.warn-box{background:rgba(229,83,75,.08);border:1px solid rgba(229,83,75,.3);border-radius:var(--radius);padding:16px 20px;margin:24px 0}
+.warn-box strong{color:#ff8080}
+.tip-box{background:rgba(0,201,167,.06);border:1px solid rgba(0,201,167,.2);border-radius:var(--radius);padding:16px 20px;margin:24px 0}
+.tip-box strong{color:var(--accent2)}
+.error-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin:16px 0}
+.error-card .code{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--warn);margin-bottom:6px}
+.error-card h3{margin:0 0 8px;color:var(--text);font-size:16px}
+.error-card p{margin:0;font-size:14px;color:var(--muted)}
+.cta-box{background:var(--surface);border:1px solid rgba(239,164,0,.3);border-radius:var(--radius);padding:24px 28px;margin:48px 0;text-align:center}
+.cta-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--orange);margin-bottom:8px}
+.cta-box p{font-size:14px;color:var(--muted);margin-bottom:18px}
+.cta-btn{display:inline-block;background:var(--orange);color:#0a0f1a;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;padding:12px 28px;border-radius:var(--radius);text-decoration:none}
+.cta-btn:hover{background:#d4920a;text-decoration:none}
+.related{border-top:1px solid var(--border);padding:40px 32px;max-width:780px;margin:0 auto}
+.related h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;color:var(--muted)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;transition:.2s;display:block}
+.related-card:hover{border-color:var(--accent);text-decoration:none}
+.related-card h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px}
+.related-card span{font-size:12px;color:var(--accent)}
+footer{border-top:1px solid var(--border);padding:24px 32px;text-align:center;color:var(--muted);font-size:12px}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--accent)}
+@media(max-width:600px){header{padding:14px 16px}.hero,.content,.related{padding-left:16px;padding-right:16px}table{font-size:12px}th,td{padding:8px 10px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="https://airlessfix.eu/">Airless<span>Fix</span></a>
+  <a class="back-link" href="https://airlessfix.eu/">← Terug</a>
+</header>
+<div class="hero">
+  <div class="label">Probleemoplossing gids</div>
+  <h1>A100 Probleemoplossing — Foutcodes, Drukval &amp; Pompproblemen</h1>
+  <p class="intro">De A100 is de krachtigste machine in de Magnum-reeks — en als hij stopt, is de oplossing meestal sneller dan je denkt. Deze gids behandelt elke veelvoorkomende storing met de exacte oorzaak en oplossing, inclusief onderdeelnummers.</p>
+</div>
+<div class="content">
+  <div class="warn-box"><strong>⚠️ Veiligheid eerst — altijd:</strong> Volg altijd de <strong>Drukontlastingsprocedure</strong> vóór inspectie of reparatie: schakel uit → druk naar nul → Prime/Spray-ventiel naar PRIME → trek de trekker boven een emmer. Werk nooit aan een machine onder druk.</div>
+  <h2>Foutcodes — E01, E02, E05</h2>
+  <p>De A100 toont foutcodes op de besturingskaart. Hier is wat elke code betekent en wat je moet doen.</p>
+  <div class="error-card"><div class="code">E01</div><h3>Besturingskaartfout of motoroverbelasting</h3><p>Stekker eruit. Wacht 45 minuten totdat motor en kaart volledig zijn afgekoeld. Opnieuw inpluggen en proberen. Als E01 direct terugkeert — besturingskaart of motor moet worden vervangen (nummers in de A100 gids). Neem contact op met uw erkend servicecentrum en vermeld code AFX10.</p></div>
+  <div class="error-card"><div class="code">E02</div><h3>Motoroverstroom — meestal pompblokkering</h3><p>Stekker eruit. Controleer op gedroogde verf in de pomp — vooral als de machine is opgeslagen zonder spoelen. Verwijder de ProConnect-pomp (nummer in de A100 gids) en controleer op blokkering. Als de pomp na het vrijmaken met de hand vrij draait — herstart. Als E02 aanhoudt: besturingskaart (nummer in de A100 gids).</p></div>
+  <div class="error-card"><div class="code">E05</div><h3>Druksensor of kaartfout</h3><p>Stekker eruit. Wacht 45 minuten. Opnieuw proberen. E05 is meestal een kaartfout. Als het terugkeert: besturingskaart (nummer in de A100 gids). Houd uw serienummer bij de hand bij contact met het servicecentrum.</p></div>
+  <div class="tip-box"><strong>💡 Belangrijke onderdeelnummers:</strong> Besturingskaart <strong>→ guide A100</strong> (vervangt 24P895) · Motor 240V <strong>→ guide A100</strong> (vervangt 17C798) · ProConnect-pomp (nummer in de A100 gids)</div>
+  <h2>Volledige storingstabel</h2>
+  <table><thead><tr><th>Problème / Probleem / Problem / Problema</th><th>Cause</th><th>Solution</th></tr></thead><tbody><tr><td><strong>Motor start niet</strong></td><td>Schakelaar UIT of druk op nul</td><td>Inschakelen. Drukknop rechtsom draaien.</td></tr>
+<tr><td><strong></strong></td><td>Geen stroom in stopcontact</td><td>Stopcontact testen. Zekering controleren.</td></tr>
+<tr><td><strong></strong></td><td>Verlengsnoer defect of te dun</td><td>Vervangen. Min. 1,5mm² bij 30m · 2,5mm² bij 50m.</td></tr>
+<tr><td><strong></strong></td><td>Pomp geblokkeerd — verf of vorst</td><td>Stekker eruit. Vorst: volledig ontdooien. Ventilator vrijdraaien vóór herstart.</td></tr>
+<tr><td><strong>Pomp zuigt niet aan</strong></td><td>Prime/Spray-ventiel op SPRAY</td><td>Ventiel op PRIME. 30–60 sec laten lopen.</td></tr>
+<tr><td><strong></strong></td><td>Inlaatfilter verstopt of slang niet gedompeld</td><td>Filter 187651 reinigen. Slang tot bodem.</td></tr>
+<tr><td><strong>Drukval</strong></td><td>Aanzuigslang gebarsten of los</td><td>Slang 17C949 inspecteren. Tuinslangdichting 115099 vervangen.</td></tr>
+<tr><td><strong></strong></td><td>Verf te dik of vuil</td><td>Zeven. Op aanbevolen viscositeit verdunnen.</td></tr>
+<tr><td><strong>Verf loopt op muur</strong></td><td>Te lage druk of dop te groot</td><td>Druk verhogen. Kleinere dop. Max TRA621. Pistool 30cm afstand.</td></tr>
+<tr><td><strong>Dop verstopt</strong></td><td>Vuil of droge verf</td><td>Vergrendelen. Dop op ONTSTOPPEN. Trekker in emmer. Terug naar SPRAY.</td></tr>
+<tr><td><strong>Motor oververhit</strong></td><td>Ventilatie geblokkeerd of ongeregelde generator</td><td>Ventilatieopeningen reinigen. Min. 3500W geregeld. 45 min. koelen.</td></tr>
+</tbody></table>
+  <h2>Drukval — Stap voor stap diagnose</h2>
+  <p>Drukval op de A100 heeft vier veelvoorkomende oorzaken. Werk in deze volgorde voordat u een servicecentrum belt:</p>
+  <ol><li><strong>Versleten of verkeerde spuitdop.</strong> Verwissel de dop als eerste — dit lost het probleem in de meeste gevallen op. Maximale dop voor A100: TRA621 (0,021 inch).</li>
+<li><strong>Vloeistoffilter verstopt.</strong> Druk ontlasten. Verwijder vloeistoffilter <strong>→ guide A100</strong> uit het uitlaatcollector. Schoonmaken onder stromend water. Vervangen indien beschadigd.</li>
+<li><strong>Inlaatfilter verstopt.</strong> Het inlaatfilter <strong>→ guide A100</strong> bevindt zich onderaan de aanzuigbuis. Verwijderen en reinigen.</li>
+<li><strong>Pompkleppen versleten.</strong> Als alle filters schoon zijn en de druk nog steeds laag is, heeft de ProConnect-pomp (nummer in de A100 gids) versleten kleppen. Vervang de pomp als complete eenheid.</li>
+</ol>
+  <h2>TSL — Dichtkopvloeistof</h2>
+  <p>De A100 heeft een Easy Access-deur (onderdeel V op het componentdiagram) die opent naar het TSL-vulpunt. TSL <strong>→ guide A100</strong> is een afdichtingsvloeistof die de pompdichtkop beschermt tijdens gebruik en opslag.</p>
+  <div class="tip-box"><strong>Regel:</strong> Controleer vóór elk gebruik het TSL-niveau via de Easy Access-deur. Voeg TSL <strong>→ guide A100</strong> (4oz fles) toe indien laag. Gebruik de A100 nooit zonder TSL — de pompdichtkop droogt binnen enkele minuten uit.</div>
+  <h2>ProConnect-pomp verwijderen</h2>
+  <p>De A100 gebruikt het ProConnect-systeem — de pomp kan in minder dan twee minuten zonder gereedschap worden verwijderd.</p>
+  <ol><li>Volg de drukontlastingsprocedure (zie boven).</li>
+<li>Open de Easy Access-deur (onderdeel V).</li>
+<li>Gebruik het bij de machine geleverde gereedschap — steek het in de pompborgtandmoer.</li>
+<li>Draai de borgmoer linksom om los te maken.</li>
+<li>Koppel de uitlaatslang en de aanzuigslang los van de pomp.</li>
+<li>Schuif de pomp uit het aandrijfhuis.</li>
+<li>Inspecteer op blokkering. Reinigen of vervangen <strong>→ guide A100</strong>.</li>
+<li>Herinstallatie: inschuiven, slangen aansluiten, borgring aandraaien op <strong>95 ±7 Nm</strong>. Controleer O-ring <strong>→ guide A100</strong> bij de kraag.</li>
+</ol>
+  <h2>Wanneer een servicecentrum bellen</h2>
+  <p>Sommige reparaties aan de A100 vereisen erkend service — met name alles wat te maken heeft met de motor, besturingskaart of aandrijfhuis. Als u alle filters heeft gereinigd, de pomp heeft vervangen en de foutcode blijft aanhouden — is het tijd om een erkend centrum te contacteren.</p>
+  <p>Houd bij het bellen uw <strong>modelnummer</strong> en <strong>serienummer</strong> bij de hand van het label onder de machine (bijv. Model 17H213, Serie A). Vermeld code <strong>AFX10</strong> — AirlessFix-gebruikers krijgen prioriteitsbehandeling.</p>
+  <div class="cta-box">
+    <h3>☕ Ontvang de volledige A100 onderdelengids</h3>
+    <p>14 pagina's onderdelenreferentie met volledige schema's, alle onderdeelnummers en servicenotities voor de A100 230V EU. Beschikbaar in NL, FR, DE, EN, ES. Koop Marc een koffie en ontvang het meteen.</p>
+    <a class="cta-btn" href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener">Ontvang de A100 gids op Ko-fi →</a>
+  </div>
+</div>
+<div class="related">
+  <h3>Gerelateerde gidsen</h3>
+  <div class="related-grid"><a class="related-card" href="/blog/how-to-prime-airless-sprayer.html"><h4>Je spuitmachine ontluchten</h4><span>Lees gids →</span></a>
+<a class="related-card" href="/blog/airless-tip-size-guide.html"><h4>Spuitdop maatgids</h4><span>Lees gids →</span></a>
+<a class="related-card" href="/blog/winterising-airless-sprayer.html"><h4>Je spuitmachine winteriseren</h4><span>Lees gids →</span></a>
+<a class="related-card" href="/blog/airless-sprayer-safety.html"><h4>Veiligheid spuitmachine</h4><span>Lees gids →</span></a>
+</div>
+</div>
+<footer>© 2026 AirlessFix · <a href="https://airlessfix.eu/">airlessfix.eu</a> · Onafhankelijk technisch support · Niet gelieerd aan de fabrikant · <a href="/privacy.html">Privacybeleid</a></footer>
+</body>
+</html>

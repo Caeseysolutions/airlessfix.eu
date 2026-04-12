@@ -3,118 +3,271 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A100 Troubleshooting Guide — Common Faults & Fixes | AirlessFix</title>
-<meta name="description" content="Magnum A100 troubleshooting guide. Pressure loss, no spray, motor trips, leaks. Fix common A100 problems yourself. Free guide by AirlessFix.">
+<title>A100 Troubleshooting Guide — Error Codes, Pressure Loss, Pump Problems</title>
+<meta name="description" content="Complete troubleshooting guide for the Magnum A100 airless sprayer. Error codes E01, E02, E05 explained. Pressure loss, pump not priming, tip clogged — fix it fast.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://airlessfix.eu/blog/a100-troubleshooting.html">
+<meta property="og:title" content="A100 Troubleshooting Guide — AirlessFix">
+<meta property="og:description" content="Error codes E01/E02/E05, pressure loss, pump not priming. Full A100 fault diagnosis. Error codes, pressure loss, pump problems explained.">
+<meta property="og:url" content="https://airlessfix.eu/blog/a100-troubleshooting.html">
+<meta property="og:type" content="article">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"TechArticle","headline":"A100 Troubleshooting Guide — Error Codes, Pressure Loss, Pump Problems","description":"Complete troubleshooting guide for the Magnum A100 airless sprayer. Error codes E01, E02, E05, pressure loss, pump faults and part numbers.","url":"https://airlessfix.eu/blog/a100-troubleshooting.html","author":{"@type":"Organization","name":"AirlessFix"},"publisher":{"@type":"Organization","name":"AirlessFix","url":"https://airlessfix.eu"}}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C3KKDC0RF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7C3KKDC0RF');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0f1a;--surface:#111827;--surface2:#1a2235;--border:#1e3048;--accent:#0e8fff;--orange:#efa400;--text:#e8edf5;--muted:#7a8fa8;--danger:#e5534b;--radius:12px}
+:root{--bg:#0a0f1a;--surface:#111827;--surface2:#1a2235;--border:#1e3048;--accent:#0e8fff;--accent2:#00c9a7;--orange:#efa400;--text:#e8edf5;--muted:#7a8fa8;--warn:#f0a500;--radius:12px;}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;line-height:1.7}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);background:rgba(10,15,26,.97);position:sticky;top:0;z-index:100}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.5px;color:var(--text)}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);background:rgba(10,15,26,.97);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px}
 .logo span{color:var(--orange)}
-.content{max-width:760px;margin:0 auto;padding:48px 32px 80px}
-.eyebrow{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.1;margin-bottom:16px}
-.lead{font-size:17px;color:var(--muted);margin-bottom:36px;line-height:1.7}
-h2{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin:36px 0 14px}
-p{color:var(--muted);margin-bottom:14px;line-height:1.85}
-.fault-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:12px}
-.fault-title{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--text);margin-bottom:8px;display:flex;align-items:center;gap:10px}
-.fault-tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:6px;background:rgba(239,164,0,.15);color:var(--orange)}
-.fault-tag.diy{background:rgba(34,197,94,.1);color:#22C55E}
-.fault-tag.partner{background:rgba(239,68,68,.1);color:#EF4444}
-.fault-body{font-size:14px;color:var(--muted);line-height:1.7}
-.fault-body strong{color:var(--text)}
-
-.warning{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.25);border-radius:10px;padding:16px 18px;margin:20px 0}
-.warning strong{color:#EF4444}
-.warning p{color:rgba(239,68,68,.9);margin:0;font-size:14px}
-.cta-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-top:48px;text-align:center}
-.cta-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:8px}
-.cta-box p{color:var(--muted);font-size:14px;margin-bottom:16px}
-.cta-btn{display:inline-block;background:var(--accent);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:15px;padding:12px 28px;border-radius:8px;text-decoration:none}
-.related{margin-top:48px;border-top:1px solid var(--border);padding-top:32px}
-.related h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin-bottom:16px}
-.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.related-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px}
-.related-card h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px}
-.related-card a{font-size:13px;color:var(--accent)}
-footer{border-top:1px solid var(--border);padding:24px 32px;text-align:center;font-size:12px;color:var(--muted)}
-@media(max-width:600px){header{padding:14px 16px}.content{padding:32px 16px 60px}.related-grid{grid-template-columns:1fr}}
+.back-link{font-size:13px;color:var(--muted)}
+.back-link:hover{color:var(--accent)}
+.hero{padding:56px 32px 40px;max-width:780px;margin:0 auto}
+.label{font-size:12px;font-weight:600;color:var(--accent2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:16px}
+.intro{font-size:17px;color:var(--muted);max-width:620px;line-height:1.7;margin-bottom:0}
+.content{max-width:780px;margin:0 auto;padding:0 32px 80px}
+h2{font-family:'Syne',sans-serif;font-size:clamp(20px,3vw,28px);font-weight:800;margin:48px 0 16px;color:var(--text)}
+h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:28px 0 10px;color:var(--accent)}
+p{margin-bottom:16px;color:var(--text)}
+ul,ol{margin:0 0 20px 20px}
+li{margin-bottom:8px;color:var(--text)}
+strong{color:var(--text);font-weight:600}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+th{background:var(--surface2);border:1px solid var(--border);padding:10px 14px;text-align:left;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+td{border:1px solid var(--border);padding:10px 14px;vertical-align:top}
+tr:nth-child(even) td{background:rgba(26,34,53,.5)}
+.part-num{font-family:'Inter',sans-serif;font-weight:600;color:var(--accent2);font-size:13px}
+.warn-box{background:rgba(229,83,75,.08);border:1px solid rgba(229,83,75,.3);border-radius:var(--radius);padding:16px 20px;margin:24px 0}
+.warn-box strong{color:#ff8080}
+.tip-box{background:rgba(0,201,167,.06);border:1px solid rgba(0,201,167,.2);border-radius:var(--radius);padding:16px 20px;margin:24px 0}
+.tip-box strong{color:var(--accent2)}
+.error-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin:16px 0}
+.error-card .code{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--warn);margin-bottom:6px}
+.error-card h3{margin:0 0 8px;color:var(--text);font-size:16px}
+.error-card p{margin:0;font-size:14px;color:var(--muted)}
+.cta-box{background:var(--surface);border:1px solid rgba(239,164,0,.3);border-radius:var(--radius);padding:24px 28px;margin:48px 0;text-align:center}
+.cta-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--orange);margin-bottom:8px}
+.cta-box p{font-size:14px;color:var(--muted);margin-bottom:18px}
+.cta-btn{display:inline-block;background:var(--orange);color:#0a0f1a;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;padding:12px 28px;border-radius:var(--radius);text-decoration:none}
+.cta-btn:hover{background:#d4920a;text-decoration:none}
+.related{border-top:1px solid var(--border);padding:40px 32px;max-width:780px;margin:0 auto}
+.related h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;color:var(--muted)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;transition:.2s}
+.related-card:hover{border-color:var(--accent);text-decoration:none}
+.related-card h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px}
+.related-card span{font-size:12px;color:var(--accent)}
+footer{border-top:1px solid var(--border);padding:24px 32px;text-align:center;color:var(--muted);font-size:12px}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--accent)}
+@media(max-width:600px){
+  header{padding:14px 16px}
+  .hero,.content,.related{padding-left:16px;padding-right:16px}
+  table{font-size:12px}
+  th,td{padding:8px 10px}
+}
 </style>
 </head>
 <body>
+
 <header>
-  <a href="/" class="logo">Airless<span>Fix</span></a>
-  <a href="/" style="font-size:13px;color:var(--muted)">← Back</a>
+  <a class="logo" href="https://airlessfix.eu/">Airless<span>Fix</span></a>
+  <a class="back-link" href="https://airlessfix.eu/">← Back</a>
 </header>
+
+<div class="hero">
+  <div class="label">Troubleshooting Guide</div>
+  <h1>A100 Troubleshooting — Error Codes, Pressure Loss &amp; Pump Problems</h1>
+  <p class="intro">The A100 is the most capable sprayer in the Magnum range — and when it stops working, the fix is usually faster than you think. This guide covers every common fault with the exact cause and fix, including part numbers.</p>
+</div>
+
 <div class="content">
-  <p class="eyebrow">Troubleshooting Guide · A100</p>
-  <h1>A100 Troubleshooting — Common Faults &amp; Fixes</h1>
-  <p class="lead">The A100 is a professional machine. Most faults have straightforward causes. This guide covers the most common issues, error codes, and what to do about them — before calling a repair partner.</p>
 
-  <div class="warning"><p><strong>⚠ Always perform pressure relief before any inspection or repair.</strong> Turn off, unplug, set Prime/Spray valve to PRIME, hold gun against metal pail, pull trigger. Open drain valve to release any residual pressure.</p></div>
-
-
-
-  <h2>Common faults</h2>
-
-  <div class="fault-card">
-    <div class="fault-title">No pressure / motor runs but no spray <span class="fault-tag diy">Often DIY</span></div>
-    <div class="fault-body"><strong>Check 1:</strong> Prime/Spray valve in correct position (SPRAY). <strong>Check 2:</strong> Tip not clogged — rotate to UNCLOG, trigger briefly into waste pail, rotate back. <strong>Check 3:</strong> Fluid filter blocked (part 243080) — remove and clean. <strong>Check 4:</strong> Inlet screen blocked (part 187651) — remove suction tube fitting and clean screen.</div>
+  <div class="warn-box">
+    <strong>⚠️ Safety first — always:</strong> Before inspecting or servicing any component, follow the <strong>Pressure Relief Procedure</strong>: turn power switch OFF → turn pressure control to minimum → move Prime/Spray valve to PRIME → hold gun toward pail and trigger briefly. Never work on a pressurised sprayer.
   </div>
 
-  <div class="fault-card">
-    <div class="fault-title">Pressure loss / patchy coverage <span class="fault-tag diy">Often DIY</span></div>
-    <div class="fault-body"><strong>Most likely:</strong> Tip too large for paint viscosity. Try TRA619 instead of TRA621 for thinner paints. <strong>Also check:</strong> Inlet/outlet valves worn — replace displacement pump (part 17C487 for A100). <strong>Generator users:</strong> minimum 3500W regulated — unregulated generators cause pressure fluctuation.</div>
+  <h2>Error Codes — E01, E02, E05</h2>
+  <p>The A100 shows error codes on the control board when something is wrong. Here is what each means and what to do.</p>
+
+  <div class="error-card">
+    <div class="code">E01</div>
+    <h3>Control board fault or motor overload</h3>
+    <p>Unplug from mains. Wait 45 minutes for the motor and board to cool completely. Plug back in and try again. If E01 returns immediately — the control board or motor needs replacing — part numbers in the A100 guide. Contact your authorised service centre and quote code AFX10.</p>
   </div>
 
-  <div class="fault-card">
-    <div class="fault-title">Motor trips / thermal cutout <span class="fault-tag diy">Often DIY</span></div>
-    <div class="fault-body"><strong>Most common cause:</strong> Unregulated generator. Use 3500W regulated minimum. <strong>Also:</strong> Extension cord too thin or too long — 15m min 1.5mm², 30m min 2.5mm². <strong>Thermal reset:</strong> Switch off, unplug, wait minimum 45 minutes before restarting.</div>
+  <div class="error-card">
+    <div class="code">E02</div>
+    <h3>Motor overcurrent — usually pump blockage</h3>
+    <p>Unplug. Check for dried paint in the pump — particularly if the sprayer was stored without flushing. Remove the ProConnect pump (number in A100 guide) and check for blockage. If the pump turns freely by hand after clearing — restart. If E02 persists after clearing: control board (number in A100 guide).</p>
   </div>
 
-  <div class="fault-card">
-    <div class="fault-title">Paint sags / runs on surface <span class="fault-tag diy">Technique</span></div>
-    <div class="fault-body"><strong>Pressure too low</strong> or tip too large. Increase pressure. Try smaller orifice tip. <strong>Gun too close:</strong> maintain 30cm from surface. <strong>Gun speed:</strong> move at even pace — if you slow down, release trigger before stopping.</div>
+  <div class="error-card">
+    <div class="code">E05</div>
+    <h3>Pressure sensor or board fault</h3>
+    <p>Unplug. Wait 45 minutes. Try again. E05 is typically a board fault. If it returns: control board (number in A100 guide). Have your series code ready when contacting the service centre — it's on the model tag on the bottom of the unit.</p>
   </div>
 
-  <div class="fault-card">
-    <div class="fault-title">Pump loses prime / suction loss <span class="fault-tag diy">Often DIY</span></div>
-    <div class="fault-body"><strong>Check:</strong> Suction tube for cracks or kinks. Garden hose washer worn (part 115099). Suction tube not reaching bottom of container. Inlet screen partially blocked.</div>
+  <div class="tip-box"><strong>💡 Part numbers:</strong> All part numbers for the A100 are in the full parts manual — get it instantly on Ko-fi.</div>
+
+  <h2>Full Troubleshooting Table</h2>
+
+  <table>
+    <thead>
+      <tr><th>Problem</th><th>Likely cause</th><th>Fix</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Motor does not start</strong></td>
+        <td>Switch OFF or pressure at zero</td>
+        <td>Switch ON. Turn pressure knob clockwise.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>No power at outlet</td>
+        <td>Test outlet with another device. Check fuse.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Extension cord damaged or too thin</td>
+        <td>Replace cord. Min. 1.5mm² up to 30m · 2.5mm² up to 50m.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Pump blocked — paint or frost</td>
+        <td>Unplug. If frozen: thaw completely first. Remove pump cover and check fan turns freely by hand before restarting. Forcing a blocked pump destroys the motor.</td>
+      </tr>
+      <tr>
+        <td><strong>Pump does not prime</strong></td>
+        <td>Prime/Spray valve on SPRAY</td>
+        <td>Move valve to PRIME. Let fluid run 30–60 seconds.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Inlet filter blocked or suction tube not submerged</td>
+        <td>Clean inlet filter <strong>→ A100 guide</strong>. Push suction tube to bottom of pail.</td>
+      </tr>
+      <tr>
+        <td><strong>Pump loses pressure during spraying</strong></td>
+        <td>Suction hose cracked or loose</td>
+        <td>Inspect suction hose <strong>→ A100 guide</strong>. Replace garden hose seal <strong>→ A100 guide</strong>.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Paint too thick or contaminated</td>
+        <td>Strain paint. Thin to recommended viscosity — max 5% water for emulsions.</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Fluid filter blocked</td>
+        <td>Relieve pressure (see above). Clean or replace fluid filter <strong>→ A100 guide</strong>.</td>
+      </tr>
+      <tr>
+        <td><strong>Paint runs on wall</strong></td>
+        <td>Pressure too low, tip too large, or gun too close</td>
+        <td>Increase pressure. Use smaller tip. Max tip for A100: TRA621. Hold gun 30cm from surface.</td>
+      </tr>
+      <tr>
+        <td><strong>Uneven / thin coverage</strong></td>
+        <td>Pressure, tip, or speed incorrect</td>
+        <td>Increase pressure. Use larger tip. Move gun slower. Overlap passes 50%.</td>
+      </tr>
+      <tr>
+        <td><strong>Tip clogged</strong></td>
+        <td>Debris or dried paint in opening</td>
+        <td>Engage trigger lock. Rotate tip to UNCLOG position. Trigger briefly into pail. Rotate back to SPRAY.</td>
+      </tr>
+      <tr>
+        <td><strong>Motor overheating</strong></td>
+        <td>Ventilation blocked, cord issue, or unregulated generator</td>
+        <td>Clear ventilation slots. Check cord. Generator: minimum 3500W regulated. Allow 45 min to cool before restarting.</td>
+      </tr>
+      <tr>
+        <td><strong>Trigger jams</strong></td>
+        <td>Trigger lock engaged</td>
+        <td>Rotate trigger lock lever to unlocked position before use.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Pressure Loss — Step by Step Diagnosis</h2>
+  <p>Pressure loss on the A100 has four common causes. Work through them in this order before calling a service centre:</p>
+
+  <ol>
+    <li><strong>Tip worn or wrong size.</strong> A worn tip loses up to 30% efficiency. Swap tip first — it solves the problem in most cases. Max tip for A100: TRA621 (0.021 inch).</li>
+    <li><strong>Fluid filter blocked.</strong> Relieve pressure. Remove the fluid filter <strong>→ A100 guide</strong> from the outlet manifold. Clean under running water. Replace if damaged — do not run without it.</li>
+    <li><strong>Inlet filter blocked.</strong> The inlet strainer <strong>→ A100 guide</strong> sits at the bottom of the suction tube. Remove and clean.</li>
+    <li><strong>Pump valves worn.</strong> If all filters are clean and pressure is still low, the ProConnect displacement pump <strong>→ A100 guide</strong> has worn inlet or outlet valves. Replace the pump as a complete unit — do not attempt to service valves individually.</li>
+  </ol>
+
+  <h2>TSL — Throat Seal Liquid</h2>
+  <p>The A100 has an Easy Access Door (part V on the component diagram) that opens to reveal the TSL fill point. TSL <strong>→ A100 guide</strong> is a sealing fluid that protects the pump throat seal during operation and storage.</p>
+
+  <div class="tip-box">
+    <strong>Rule:</strong> Before every use, check the TSL level through the Easy Access Door. Add TSL <strong>→ A100 guide</strong> (4oz bottle) if low. Never operate the A100 without TSL — the pump throat seal dries out within minutes of dry running.
   </div>
 
-  <div class="fault-card">
-    <div class="fault-title">Leaking collar / fluid around pump rod <span class="fault-tag partner">Repair partner</span></div>
-    <div class="fault-body">O-ring FX-90 locking ring collar (part 16H137) — replace this O-ring first. If leak continues, displacement pump replacement needed (part 17C487). Contact repair partner — torque spec is 95 ±7 Nm.</div>
-  </div>
+  <h2>ProConnect Pump Removal</h2>
+  <p>The A100 uses Graco's ProConnect system — the pump can be removed without tools in under two minutes. This is essential for clearing blockages and replacing the pump.</p>
 
-  <h2>A100-specific notes</h2>
-  <p><strong>TSL:</strong> The throat seal cup must be filled before every use. If the cup is empty during operation, pump rod wear accelerates rapidly. TSL is a lubricant, not optional.</p>
-  <p><strong>Voltage:</strong> A100 is 240V EU only. Never fit a 110V motor — it will fail immediately and may cause electrical damage. This is a safety-critical point.</p>
+  <ol>
+    <li>Follow Pressure Relief Procedure (see top of page).</li>
+    <li>Open the Easy Access Door (part V).</li>
+    <li>Use the pump removal tool included with the sprayer — insert into the pump retaining nut.</li>
+    <li>Turn retaining nut counterclockwise to loosen.</li>
+    <li>Disconnect outlet hose and suction hose from pump.</li>
+    <li>Slide pump out of the drive housing.</li>
+    <li>Inspect for blockage. Clear or replace pump <strong>→ A100 guide</strong>.</li>
+    <li>Reinstall: slide in, connect hoses, torque retaining ring to <strong>95 ±7 Nm</strong>. Check O-ring <strong>→ A100 guide</strong> at collar — replace if leaking.</li>
+  </ol>
+
+  <h2>When to Call a Service Centre</h2>
+  <p>Some repairs on the A100 require authorised service — particularly anything involving the motor, control board, or drive housing. If you have cleared all filters, replaced the pump, and the error code persists — it is time to contact an authorised centre.</p>
+
+  <p>When you call, have ready: your <strong>model number</strong> and <strong>series code</strong> from the tag on the bottom of the unit (e.g. Model 17H213, Series A). Mention code <strong>AFX10</strong> — AirlessFix users get priority handling.</p>
 
   <div class="cta-box">
-    <h3>Still stuck?</h3>
-    <p>Ask Marc — describe exactly what your A100 is doing and he'll walk you through the diagnosis.</p>
-    <a href="/" class="cta-btn">Ask Marc now →</a>
+    <h3>☕ Get the full A100 Parts Manual</h3>
+    <p>14-page parts reference with full diagrams, all part numbers and service notes for the A100 230V EU model. Available in EN, NL, FR, DE, ES. Buy Marc a coffee and get it instantly.</p>
+    <a class="cta-btn" href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener">Get the A100 Manual on Ko-fi →</a>
   </div>
 
-  <div class="related">
-    <h3>Related guides</h3>
-    <div class="related-grid">
-      <div class="related-card"><h4>How to prime your sprayer</h4><a href="/blog/how-to-prime-airless-sprayer.html">Read guide →</a></div>
-      <div class="related-card"><h4>Tip size guide</h4><a href="/blog/airless-tip-size-guide.html">Read guide →</a></div>
-      <div class="related-card"><h4>Winterising guide</h4><a href="/blog/winterising-airless-sprayer.html">Read guide →</a></div>
-      <div class="related-card"><h4>Safety guide</h4><a href="/blog/airless-sprayer-safety.html">Read guide →</a></div>
-    </div>
+</div>
+
+<div class="related">
+  <h3>Related guides</h3>
+  <div class="related-grid">
+    <a class="related-card" href="/blog/how-to-prime-airless-sprayer.html">
+      <h4>How to prime your airless sprayer</h4>
+      <span>Read guide →</span>
+    </a>
+    <a class="related-card" href="/blog/airless-tip-size-guide.html">
+      <h4>Airless tip size guide</h4>
+      <span>Read guide →</span>
+    </a>
+    <a class="related-card" href="/blog/winterising-airless-sprayer.html">
+      <h4>Winterising your sprayer</h4>
+      <span>Read guide →</span>
+    </a>
+    <a class="related-card" href="/blog/airless-sprayer-safety.html">
+      <h4>Airless sprayer safety</h4>
+      <span>Read guide →</span>
+    </a>
   </div>
 </div>
-<footer>© 2026 AirlessFix · <a href="/">airlessfix.eu</a> · Independent technical support · Not affiliated with the manufacturer · <a href="/privacy.html">Privacy</a></footer>
+
+<footer>
+  © 2026 AirlessFix · <a href="https://airlessfix.eu/">airlessfix.eu</a> · Independent technical support · Not affiliated with the manufacturer · <a href="/privacy.html">Privacy</a>
+</footer>
+
 </body>
 </html>
