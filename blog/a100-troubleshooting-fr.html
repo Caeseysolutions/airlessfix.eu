@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dépannage A100 — Codes erreur, Perte de pression, Problèmes de pompe</title>
+<meta name="description" content="Guide complet de dépannage pour le pistolet airless Magnum A100. Codes erreur E01, E02, E05 expliqués. Perte de pression, pompe, buse — résolvez rapidement.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://airlessfix.eu/blog/a100-troubleshooting-fr.html">
+<meta property="og:title" content="A100 — AirlessFix">
+<meta property="og:description" content="Guide complet de dépannage pour le pistolet airless Magnum A100. Codes erreur E01, E02, E05 expliqués. Perte de pression, pompe, buse — résolvez rapidement.">
+<meta property="og:url" content="https://airlessfix.eu/blog/a100-troubleshooting-fr.html">
+<meta property="og:type" content="article">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C3KKDC0RF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7C3KKDC0RF');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0f1a;--surface:#111827;--surface2:#1a2235;--border:#1e3048;--accent:#0e8fff;--accent2:#00c9a7;--orange:#efa400;--text:#e8edf5;--muted:#7a8fa8;--warn:#f0a500;--radius:12px;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;line-height:1.7}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;border-bottom:1px solid var(--border);background:rgba(10,15,26,.97);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px}
+.logo span{color:var(--orange)}
+.back-link{font-size:13px;color:var(--muted)}
+.back-link:hover{color:var(--accent)}
+.hero{padding:56px 32px 40px;max-width:780px;margin:0 auto}
+.label{font-size:12px;font-weight:600;color:var(--accent2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+h1{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:16px}
+.intro{font-size:17px;color:var(--muted);max-width:620px;line-height:1.7;margin-bottom:0}
+.content{max-width:780px;margin:0 auto;padding:0 32px 80px}
+h2{font-family:'Syne',sans-serif;font-size:clamp(20px,3vw,28px);font-weight:800;margin:48px 0 16px;color:var(--text)}
+h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin:28px 0 10px;color:var(--accent)}
+p{margin-bottom:16px;color:var(--text)}
+ul,ol{margin:0 0 20px 20px}
+li{margin-bottom:8px;color:var(--text)}
+strong{color:var(--text);font-weight:600}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+th{background:var(--surface2);border:1px solid var(--border);padding:10px 14px;text-align:left;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+td{border:1px solid var(--border);padding:10px 14px;vertical-align:top}
+tr:nth-child(even) td{background:rgba(26,34,53,.5)}
+.part-num{font-family:'Inter',sans-serif;font-weight:600;color:var(--accent2);font-size:13px}
+.warn-box{background:rgba(229,83,75,.08);border:1px solid rgba(229,83,75,.3);border-radius:var(--radius);padding:16px 20px;margin:24px 0}
+.warn-box strong{color:#ff8080}
+.tip-box{background:rgba(0,201,167,.06);border:1px solid rgba(0,201,167,.2);border-radius:var(--radius);padding:16px 20px;margin:24px 0}
+.tip-box strong{color:var(--accent2)}
+.error-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin:16px 0}
+.error-card .code{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--warn);margin-bottom:6px}
+.error-card h3{margin:0 0 8px;color:var(--text);font-size:16px}
+.error-card p{margin:0;font-size:14px;color:var(--muted)}
+.cta-box{background:var(--surface);border:1px solid rgba(239,164,0,.3);border-radius:var(--radius);padding:24px 28px;margin:48px 0;text-align:center}
+.cta-box h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--orange);margin-bottom:8px}
+.cta-box p{font-size:14px;color:var(--muted);margin-bottom:18px}
+.cta-btn{display:inline-block;background:var(--orange);color:#0a0f1a;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;padding:12px 28px;border-radius:var(--radius);text-decoration:none}
+.cta-btn:hover{background:#d4920a;text-decoration:none}
+.related{border-top:1px solid var(--border);padding:40px 32px;max-width:780px;margin:0 auto}
+.related h3{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:20px;color:var(--muted)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.related-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;transition:.2s;display:block}
+.related-card:hover{border-color:var(--accent);text-decoration:none}
+.related-card h4{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px}
+.related-card span{font-size:12px;color:var(--accent)}
+footer{border-top:1px solid var(--border);padding:24px 32px;text-align:center;color:var(--muted);font-size:12px}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--accent)}
+@media(max-width:600px){header{padding:14px 16px}.hero,.content,.related{padding-left:16px;padding-right:16px}table{font-size:12px}th,td{padding:8px 10px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="https://airlessfix.eu/">Airless<span>Fix</span></a>
+  <a class="back-link" href="https://airlessfix.eu/">← Retour</a>
+</header>
+<div class="hero">
+  <div class="label">Guide de dépannage</div>
+  <h1>Dépannage A100 — Codes erreur, Perte de pression &amp; Problèmes de pompe</h1>
+  <p class="intro">Le A100 est la machine la plus puissante de la gamme Magnum — et quand il tombe en panne, la solution est souvent plus rapide qu'on ne le croit. Ce guide couvre toutes les pannes courantes avec la cause exacte et la solution, y compris les numéros de pièces.</p>
+</div>
+<div class="content">
+  <div class="warn-box"><strong>⚠️ Sécurité d'abord — toujours :</strong> Avant d'inspecter ou de réparer un composant, suivez la <strong>Procédure de décharge de pression</strong> : coupez l'alimentation → mettez la pression à zéro → passez la vanne Prime/Spray sur PRIME → déclenchez le pistolet vers le seau. Ne travaillez jamais sur un pistolet sous pression.</div>
+  <h2>Codes erreur — E01, E02, E05</h2>
+  <p>Le A100 affiche des codes erreur sur la carte de contrôle. Voici ce que chaque code signifie et quoi faire.</p>
+  <div class="error-card"><div class="code">E01</div><h3>Défaut carte de contrôle ou surcharge moteur</h3><p>Débranchez du secteur. Attendez 45 minutes que le moteur et la carte refroidissent complètement. Rebranchez et réessayez. Si E01 revient immédiatement — la carte de contrôle <span class="part-num">16X295</span> ou le moteur <span class="part-num">17C799</span> doit être remplacé. Contactez votre centre de service agréé en mentionnant le code AFX10.</p></div>
+  <div class="error-card"><div class="code">E02</div><h3>Surintensité moteur — généralement blocage pompe</h3><p>Débranchez. Vérifiez la présence de peinture sèche dans la pompe — surtout si le pistolet a été stocké sans rinçage. Retirez la pompe ProConnect <span class="part-num">17C487</span> et vérifiez le blocage. Si la pompe tourne librement à la main après nettoyage — redémarrez. Si E02 persiste : carte de contrôle <span class="part-num">16X295</span>.</p></div>
+  <div class="error-card"><div class="code">E05</div><h3>Défaut capteur de pression ou carte</h3><p>Débranchez. Attendez 45 minutes. Réessayez. E05 est généralement un défaut de carte. Si le code revient : carte de contrôle <span class="part-num">16X295</span>. Ayez votre code de série prêt en contactant le centre de service.</p></div>
+  <div class="tip-box"><strong>💡 Numéros de pièces clés :</strong> Carte de contrôle <span class="part-num">16X295</span> (remplace 24P895) · Moteur 240V <span class="part-num">17C799</span> (remplace 17C798) · Pompe ProConnect <span class="part-num">17C487</span></div>
+  <h2>Tableau de dépannage complet</h2>
+  <table><thead><tr><th>Problème / Probleem / Problem / Problema</th><th>Cause</th><th>Solution</th></tr></thead><tbody><tr><td><strong>Le moteur ne démarre pas</strong></td><td>Interrupteur sur OFF ou pression à zéro</td><td>Mettre sur ON. Tourner le bouton de pression vers la droite.</td></tr>
+<tr><td><strong></strong></td><td>Pas d'alimentation à la prise</td><td>Tester la prise. Vérifier le fusible.</td></tr>
+<tr><td><strong></strong></td><td>Rallonge défectueuse ou trop fine</td><td>Remplacer. Min. 1,5mm² à 30m · 2,5mm² à 50m.</td></tr>
+<tr><td><strong></strong></td><td>Pompe bloquée — peinture ou gel</td><td>Débrancher. Si gelé : dégeler complètement. Vérifier rotation libre du ventilateur avant de redémarrer.</td></tr>
+<tr><td><strong>La pompe n'amorce pas</strong></td><td>Vanne Prime/Spray sur SPRAY</td><td>Mettre sur PRIME. Laisser couler 30–60 secondes.</td></tr>
+<tr><td><strong></strong></td><td>Filtre admission bouché ou tube non immergé</td><td>Nettoyer le filtre 187651. Tube jusqu'au fond.</td></tr>
+<tr><td><strong>Perte de pression</strong></td><td>Tuyau d'aspiration fissuré ou desserré</td><td>Inspecter tuyau 17C949. Remplacer joint de tuyau d'arrosage 115099.</td></tr>
+<tr><td><strong></strong></td><td>Peinture trop épaisse ou contaminée</td><td>Filtrer. Diluer à la viscosité recommandée.</td></tr>
+<tr><td><strong>Peinture coule sur le mur</strong></td><td>Pression trop basse, buse trop grande</td><td>Augmenter la pression. Buse plus petite. Max TRA621. Pistolet à 30cm.</td></tr>
+<tr><td><strong>Buse bouchée</strong></td><td>Saleté ou peinture sèche</td><td>Verrouiller. Buse en DÉBOUCHAGE. Déclencher dans le seau. Retour sur SPRAY.</td></tr>
+<tr><td><strong>Moteur en surchauffe</strong></td><td>Ventilation bloquée ou générateur non régulé</td><td>Nettoyer les fentes. Min. 3500W régulé. Refroidir 45 min.</td></tr>
+</tbody></table>
+  <h2>Perte de pression — Diagnostic étape par étape</h2>
+  <p>La perte de pression sur le A100 a quatre causes courantes. Travaillez dans cet ordre avant d'appeler un centre de service :</p>
+  <ol><li><strong>Buse usée ou taille incorrecte.</strong> Remplacez la buse en premier — c'est la solution dans la majorité des cas. Buse max pour A100 : TRA621 (0,021 pouce).</li>
+<li><strong>Filtre fluide bouché.</strong> Déchargez la pression. Retirez le filtre fluide <span class="part-num">243080</span> du collecteur de sortie. Nettoyez à l'eau courante. Remplacez si endommagé.</li>
+<li><strong>Filtre d'admission bouché.</strong> Le filtre d'admission <span class="part-num">187651</span> se trouve au bas du tube d'aspiration. Retirez et nettoyez.</li>
+<li><strong>Clapets de pompe usés.</strong> Si tous les filtres sont propres et la pression reste faible, la pompe ProConnect <span class="part-num">17C487</span> a des clapets usés. Remplacez la pompe en unité complète.</li>
+</ol>
+  <h2>TSL — Liquide de joint de gorge</h2>
+  <p>Le A100 dispose d'une Porte d'accès facile (pièce V sur le schéma) qui s'ouvre pour révéler le point de remplissage TSL. Le TSL <span class="part-num">238049</span> est un liquide d'étanchéité qui protège le joint de gorge de la pompe pendant le fonctionnement et le stockage.</p>
+  <div class="tip-box"><strong>Règle :</strong> Avant chaque utilisation, vérifiez le niveau TSL par la Porte d'accès facile. Ajoutez du TSL <span class="part-num">238049</span> (flacon 4oz) si le niveau est bas. Ne faites jamais fonctionner le A100 sans TSL — le joint de gorge se dessèche en quelques minutes.</div>
+  <h2>Dépose de la pompe ProConnect</h2>
+  <p>Le A100 utilise le système ProConnect — la pompe peut être retirée sans outils en moins de deux minutes.</p>
+  <ol><li>Suivez la Procédure de décharge de pression (voir en haut de page).</li>
+<li>Ouvrez la Porte d'accès facile (pièce V).</li>
+<li>Utilisez l'outil de dépose inclus avec le pistolet — insérez dans l'écrou de retenue de la pompe.</li>
+<li>Tournez l'écrou de retenue dans le sens antihoraire pour desserrer.</li>
+<li>Déconnectez le tuyau de sortie et le tuyau d'aspiration de la pompe.</li>
+<li>Faites glisser la pompe hors du boîtier d'entraînement.</li>
+<li>Inspectez le blocage. Nettoyez ou remplacez la pompe <span class="part-num">17C487</span>.</li>
+<li>Réinstallation : faites glisser, connectez les tuyaux, serrez la bague de verrouillage à <strong>95 ±7 Nm</strong>. Vérifiez le joint torique <span class="part-num">16H137</span> au niveau du collier.</li>
+</ol>
+  <h2>Pièces de rechange clés — A100 (230V EU)</h2>
+  <table><thead><tr><th>Pièce</th><th>Numéro de pièce</th><th>Remplace</th><th>Notes</th></tr></thead><tbody><tr><td>Control board / Steuerplatine / Carte de contrôle / Placa de control</td><td class="part-num">16X295</td><td>24P895</td><td>E01/E02/E05</td></tr>
+<tr><td>Motor 240V</td><td class="part-num">17C799</td><td>17C798</td><td>EU 240V only</td></tr>
+<tr><td>ProConnect pump / Pompe / Pumpe / Bomba</td><td class="part-num">17C487</td><td>17C475</td><td>95±7 Nm</td></tr>
+<tr><td>Fluid filter 60 mesh</td><td class="part-num">243080</td><td>195173</td><td></td></tr>
+<tr><td>Filter manifold kit</td><td class="part-num">243102</td><td>17C593</td><td></td></tr>
+<tr><td>Inlet strainer / Inlaatfilter</td><td class="part-num">187651</td><td>—</td><td></td></tr>
+<tr><td>Suction hose / Tuyau / Schlauch / Tubo</td><td class="part-num">17C949</td><td>—</td><td></td></tr>
+<tr><td>Garden hose seal / Dichting / Dichtung / Junta</td><td class="part-num">115099</td><td>—</td><td></td></tr>
+<tr><td>TSL 4oz</td><td class="part-num">238049</td><td>—</td><td></td></tr>
+<tr><td>Pump collar O-ring</td><td class="part-num">16H137</td><td>—</td><td></td></tr>
+<tr><td>Drive housing</td><td class="part-num">24W817</td><td>17R461</td><td></td></tr>
+<tr><td>Connecting rod</td><td class="part-num">24W640</td><td>17C490</td><td></td></tr>
+<tr><td>Pressure regulator</td><td class="part-num">24X312</td><td>17D093</td><td></td></tr>
+</tbody></table>
+  <h2>Quand appeler un centre de service</h2>
+  <p>Certaines réparations sur le A100 nécessitent un service agréé — notamment tout ce qui concerne le moteur, la carte de contrôle ou le boîtier d'entraînement. Si vous avez nettoyé tous les filtres, remplacé la pompe et que le code erreur persiste — il est temps de contacter un centre agréé.</p>
+  <p>Lors de votre appel, ayez votre <strong>numéro de modèle</strong> et <strong>code de série</strong> sur l'étiquette sous l'appareil (ex : Modèle 17H213, Série A). Mentionnez le code <strong>AFX10</strong> — les utilisateurs AirlessFix bénéficient d'un traitement prioritaire.</p>
+  <div class="cta-box">
+    <h3>☕ Obtenez le guide complet des pièces A100</h3>
+    <p>Guide de référence de 14 pages avec schémas complets, tous les numéros de pièces et notes de service pour le A100 230V EU. Disponible en FR, NL, DE, EN, ES. Offrez un café à Marc et obtenez-le instantanément.</p>
+    <a class="cta-btn" href="https://ko-fi.com/airlessfix" target="_blank" rel="noopener">Obtenir le guide A100 sur Ko-fi →</a>
+  </div>
+</div>
+<div class="related">
+  <h3>Guides connexes</h3>
+  <div class="related-grid"><a class="related-card" href="/blog/how-to-prime-airless-sprayer.html"><h4>Comment amorcer votre pistolet airless</h4><span>Lire le guide →</span></a>
+<a class="related-card" href="/blog/airless-tip-size-guide.html"><h4>Guide de sélection des buses</h4><span>Lire le guide →</span></a>
+<a class="related-card" href="/blog/winterising-airless-sprayer.html"><h4>Hivernage de votre pistolet</h4><span>Lire le guide →</span></a>
+<a class="related-card" href="/blog/airless-sprayer-safety.html"><h4>Sécurité pistolet airless</h4><span>Lire le guide →</span></a>
+</div>
+</div>
+<footer>© 2026 AirlessFix · <a href="https://airlessfix.eu/">airlessfix.eu</a> · Support technique indépendant · Non affilié au fabricant · <a href="/privacy.html">Confidentialité</a></footer>
+</body>
+</html>
