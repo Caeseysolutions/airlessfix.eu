@@ -292,7 +292,7 @@ footer a:hover{color:var(--accent)}
     </div>
     <div class="gcb-row">
       <input type="checkbox" id="gf-gdpr">
-      <label for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties. Unsubscribe anytime via support@airlessfix.eu</label>
+      <label for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties. Unsubscribe anytime via <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b383e3b3b24393f0b2a2239272e38382d2233652e3e">[email&#160;protected]</a></label>
     </div>
     <button class="btn-primary" id="gf-submit" onclick="submitGuideForm()">Get my guide →</button>
   </div>
@@ -400,7 +400,7 @@ footer a:hover{color:var(--accent)}
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── GUIDE DATA ────────────────────────────────────────────────────────────────
 const GUIDES = {
   'a20-a45': [
@@ -584,7 +584,7 @@ function selectModel(model,group){
   document.getElementById('guide-form').classList.remove('visible');
   document.getElementById('kofi-guide').style.display='none';
   document.getElementById('dl-result').classList.remove('visible');
-  document.getElementById('guide-section-title').style.display='none';
+  document.getElementById('guide-section-title').textContent=model+' guide';
 
   if(group==='a100'){
     document.getElementById('kofi-guide').style.display='block';
@@ -601,7 +601,7 @@ function selectModel(model,group){
 }
 
 function scrollToGuide(){
-  document.getElementById('guide-section-title').scrollIntoView({behavior:'smooth',block:'center'});
+  document.querySelector('.guide-section').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 function submitGuideForm(){
@@ -679,10 +679,23 @@ document.addEventListener('click',()=>{
   const peek=document.getElementById('chat-peek');if(peek)peek.classList.remove('show');
 });
 
-// ── AUTO LANGUAGE DETECT ──────────────────────────────────────────────────────
+// ── AUTO LANGUAGE DETECT ───────────────────────────
 (function(){
   const bl=(navigator.language||'en').toLowerCase().substring(0,2);
   setLang({nl:'nl',fr:'fr',de:'de',es:'es'}[bl]||'en');
 })();
 
-// ─
+// ── MOBILE TOUCH ─────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded',function(){
+  const addT=(el,fn)=>{if(el)el.addEventListener('touchend',e=>{e.preventDefault();fn();});};
+  addT(document.getElementById('chat-btn'),toggleChat);
+  document.querySelectorAll('.model-card').forEach(function(c){
+    c.addEventListener('touchend',function(e){
+      e.preventDefault();
+      var oc=c.getAttribute('onclick');if(oc)eval(oc);
+    });
+  });
+});
+</script>
+</body>
+</html>
