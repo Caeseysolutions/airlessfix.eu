@@ -292,7 +292,7 @@ footer a:hover{color:var(--accent)}
     </div>
     <div class="gcb-row">
       <input type="checkbox" id="gf-gdpr">
-      <label id="gf-gdpr-label" for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties. Unsubscribe anytime via support@airlessfix.eu</label>
+      <label id="gf-gdpr-label" for="gf-gdpr">I agree that AirlessFix may store my contact details to send me the requested guide and occasional updates about Marc's AI support service. My data will not be shared with third parties. Unsubscribe anytime via <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="770402070718050337161e051b120404111e0f591202">[email&#160;protected]</a></label>
     </div>
     <button class="btn-primary" id="gf-submit" onclick="submitGuideForm()">Get my guide →</button>
   </div>
@@ -400,25 +400,41 @@ footer a:hover{color:var(--accent)}
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── GUIDE DATA ────────────────────────────────────────────────────────────────
-const GUIDES = {
-  'a20-a45': [
-    { name:'Parts & Repair Guide — A20 / A30 / A45', desc:'Repair manual · Parts list · Troubleshooting', url:'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/332697ENF.pdf' },
-    { name:'Operation & Parts — A20 / A30 / A45 (EU)', desc:'EU edition · magnumbygraco.eu', url:'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/3A6433ENE.pdf' },
-    { name:'Tip Selection Guide — All Models', desc:'Which tip for which job', url:'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/1075_MagnumTip_SelectionGuide.pdf' },
-  ],
-  'a60-a80': [
-    { name:'Parts & Repair Guide — A20–A60', desc:'Repair manual · Parts list · Troubleshooting', url:'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/332697ENF.pdf' },
-    { name:'Operation & Parts — A60 / A80 (EU)', desc:'EU edition · magnumbygraco.eu', url:'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/3A5819ENA.pdf' },
-    { name:'Tip Selection Guide — All Models', desc:'Which tip for which job', url:'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/1075_MagnumTip_SelectionGuide.pdf' },
-  ],
-  'pros': [
-    { name:'Operation & Parts — ProS19 / ProS21', desc:'Full repair and parts manual', url:'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/3A3237END.pdf' },
-    { name:'ProS19 Product Brochure (EU)', desc:'Specifications · Features', url:'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/300953NL.pdf' },
-    { name:'Tip Selection Guide — All Models', desc:'Which tip for which job', url:'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/1075_MagnumTip_SelectionGuide.pdf' },
-  ]
+const BASE = 'https://raw.githubusercontent.com/Caeseysolutions/airlessfix.eu/main/guides/';
+const TIP = BASE + 'Spray%20tip%20selection%20guide.pdf';
+
+// Operation guide — language matched for A20/A30/A45
+const OP_LANG = {
+  en: BASE + '3A6433EN-E.pdf',
+  nl: BASE + '3A6437NL-E.pdf',
+  fr: BASE + '3A6435FR-E.pdf',
+  de: BASE + '3A6436DE-E.pdf',
+  es: BASE + '3A6434ES-E.pdf',
 };
+
+function getGuides(group){
+  const op = OP_LANG[lang] || OP_LANG.en;
+  if(group==='a20-a45') return [
+    { name:'Parts & Repair Guide — A20 / A30 / A45 / A60', desc:'Repair manual · Parts list · Troubleshooting (EN)', url: BASE + '332697EN-C.pdf' },
+    { name:'Operation & Parts — A20 / A30 / A45 (EU)', desc:'EU edition · Your language', url: op },
+    { name:'TrueAirless Spray Tip Selection Guide', desc:'Which tip for which job', url: TIP },
+  ];
+  if(group==='a60-a80') return [
+    { name:'Parts & Repair Guide — A20–A60', desc:'Repair manual · Parts list · Troubleshooting (EN)', url: BASE + '332697EN-C.pdf' },
+    { name:'Operation & Parts — A60 / A80 Pro Plus (EU)', desc:'EU 230V edition · EN', url: BASE + '3A3240EN-C.pdf' },
+    { name:'Operation & Parts — A60 / A80 (EU)', desc:'EU edition · EN', url: BASE + '3A5819EN-A.pdf' },
+    { name:'TrueAirless Spray Tip Selection Guide', desc:'Which tip for which job', url: TIP },
+  ];
+  if(group==='pros') return [
+    { name:'Operation & Parts — ProS19 / ProS21', desc:'Full repair and parts manual (EN)', url: BASE + '3A3237EN-D.pdf' },
+    { name:'TrueAirless Spray Tip Selection Guide', desc:'Which tip for which job', url: TIP },
+  ];
+  return [];
+}
+
+const GUIDES = {}; // kept for compatibility — getGuides() used instead
 
 // ── LANGUAGE STRINGS ──────────────────────────────────────────────────────────
 const T = {
@@ -661,7 +677,7 @@ function submitGuideForm(){
 }
 
 function showDownloads(){
-  const guides=GUIDES[selectedGroup]||[];
+  const guides=getGuides(selectedGroup);
   const linksEl=document.getElementById('dl-links');
   linksEl.innerHTML='';
   guides.forEach(g=>{
@@ -718,7 +734,8 @@ document.addEventListener('click',()=>{
 document.addEventListener('DOMContentLoaded',function(){
   const addT=(el,fn)=>{if(el)el.addEventListener('touchend',e=>{e.preventDefault();fn();});};
   addT(document.getElementById('chat-btn'),toggleChat);
-  document.querySelectorAll('.model-card').forEach(function(c){
+  do
+cument.querySelectorAll('.model-card').forEach(function(c){
     c.addEventListener('touchend',function(e){
       e.preventDefault();
       var oc=c.getAttribute('onclick');if(oc)eval(oc);
